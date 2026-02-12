@@ -5,8 +5,8 @@
 
 const listaTitulos = [
     {titulo: 'Fratura', plataforma: 'Netflix'},
-    {titulo: 'Fratura', plataforma: 'Netflix'},
-    {titulo: 'Fratura', plataforma: 'Netflix'},
+    {titulo: 'Made in Abyss', plataforma: 'Netflix'},
+    {titulo: 'Hellsing', plataforma: ['Netflix', 'Prime Video']},
     {titulo: 'Fratura', plataforma: 'Netflix'},
     {titulo: 'Fratura', plataforma: 'Netflix'},
     {titulo: 'Fratura', plataforma: 'Netflix'},
