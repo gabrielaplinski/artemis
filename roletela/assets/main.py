@@ -16,8 +16,9 @@ def LerLista():
 def AdicionarAoJson(nome, canal):
     dados = LerLista()
     dados.append({
-        "nome": nome,
-        "canal": canal
+        "id": len(dados) + 1,
+        "titulo": nome,
+        "plataforma": canal
     })
     arquivo = open("./roletela/assets/filmes.json", "w")
     json.dump(dados, arquivo)
@@ -25,8 +26,8 @@ def AdicionarAoJson(nome, canal):
     
 def CadastrarFilme():
     while True:
-        nome = input("Digite o nome do filme: ")
-        canal = input("Digite o canal do filme: ")
+        nome = input("Digite o nome do filme: ").capitalize()
+        canal = input("Digite a plataforma do filme: ").capitalize()
         AdicionarAoJson(nome, canal)
         continuar = input("Deseja cadastrar outro filme? (s/n): ")
         if continuar.lower() == "s":
@@ -36,4 +37,20 @@ def CadastrarFilme():
         else:
             print("Resposta inválida. Por favor, digite 's' para sim ou 'n' para não.")
 
-CadastrarFilme()
+def ListarFilmes():
+    dados = LerLista()
+    for filme in dados:
+        print(f'{filme["id"]} - {filme["titulo"]} : {filme["plataforma"]}')
+
+def Sorteio():
+    import random
+    dados = LerLista()
+    filme_sorteado = random.choice(dados)
+    separator = '-' * 30
+    print(separator)
+    print(f'Filme sorteado: {filme_sorteado["titulo"]} - Plataforma: {filme_sorteado["plataforma"]}')
+    print(separator)
+    
+'''CadastrarFilme()
+ListarFilmes()'''
+Sorteio()
