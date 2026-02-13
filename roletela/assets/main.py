@@ -2,9 +2,9 @@ import json
    
 def LerLista():
     try:
-        arquivo = open("./apps/roletela/assets/filmes.json", "r")
+        arquivo = open("./roletela/assets/filmes.json", "r")
     except:
-        arquivo = open("./apps/roletela/assets/filmes.json", "w")
+        arquivo = open("./roletela/assets/filmes.json", "w")
     try:
         dados = json.load(arquivo)
     except:
@@ -19,7 +19,7 @@ def AdicionarAoJson(nome, canal):
         "nome": nome,
         "canal": canal
     })
-    arquivo = open("./apps/roletela/assets/filmes.json", "w")
+    arquivo = open("./roletela/assets/filmes.json", "w")
     json.dump(dados, arquivo)
     arquivo.close()
     
