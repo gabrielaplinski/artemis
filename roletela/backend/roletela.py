@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 
-app = Flask(__name__, template_folder='./js/src')
+app = Flask(__name__, template_folder='../')
 
 @app.route('/')
 def home():
@@ -8,4 +8,3 @@ def home():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
