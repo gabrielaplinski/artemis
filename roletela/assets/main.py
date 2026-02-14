@@ -51,6 +51,6 @@ def Sorteio():
     print(f'Filme sorteado: {filme_sorteado["titulo"]} - Plataforma: {filme_sorteado["plataforma"]}')
     print(separator)
     
-'''CadastrarFilme()
-ListarFilmes()'''
+'CadastrarFilme()'
+ListarFilmes()
 Sorteio()
