@@ -29,3 +29,13 @@ def sortearTitulo():
     dados = listarTitulos()
     filme_sorteado = random.choice(dados)    
     return filme_sorteado
+
+def filtrarTitulos(*plataformas):
+    dados = listarTitulos()
+    filmes_filtrados = []
+    for plataforma in list(plataformas):
+        print(plataforma)
+        for filme in dados:
+            if plataforma in filme["plataforma"]:
+                filmes_filtrados += [filme]
+    return filmes_filtrados
