@@ -13,8 +13,8 @@ def sortear():
 def filmes():
     return jsonify(listarTitulos())
 
-@app.route('/filmes', methods=['POST'])
-def cadastrar_filme():
+@app.route('/adicionar', methods=['POST'])
+def adicionar_filme():
     dados = request.get_json()
     titulo = dados.get('titulo')
     plataforma = dados.get('plataforma')
