@@ -17,7 +17,7 @@ export async function sortearTitulo(plataforma) {
 }
 
 export async function adicionarTitulo(titulo, plataforma) {
-  const resposta = await fetch(`${BASE_URL}/filmes`, {
+  const resposta = await fetch(`${BASE_URL}/adicionarTitulo`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ titulo, plataforma })

@@ -25,6 +25,11 @@ export default function App() {
           {sorteado.titulo}
         </p>
       )}
+      {sorteado && (
+        <p className="mt-6 text-xl text-yellow-700" >
+          {sorteado.plataforma}
+        </p>
+      )}
     </div>
   )
 };
