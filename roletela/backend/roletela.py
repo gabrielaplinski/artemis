@@ -1,5 +1,5 @@
 from flask_cors import CORS
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify, request
 from functions import *
 
 app = Flask(__name__, template_folder='../')
@@ -13,6 +13,11 @@ def sortear():
 @app.route('/filmes', methods=['GET'])
 def filmes():
     return jsonify(listarTitulos())
+
+@app.route('/filtrar', methods=['GET'])
+def filtrar():
+    plataformas = request.args.getlist('plataforma')    
+    return jsonify(filtrarTitulos(*plataformas))
 
 @app.route('/adicionar', methods=['POST'])
 def adicionar_filme():
