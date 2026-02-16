@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import { adicionarTitulo, listarTitulos, sortearTitulo } from "./services/api";
 
 export default function App() {
-  const [titulos, setTilulos] = useState([])
+  const [titulos, setTitulos] = useState([])
   const [sorteado, setSorteado] = useState(null)
   const [novoTitulo, setAdicionado] = useState("")
   const [novaPlataforma, setNovaPlataforma] = useState("")
+  const [filtroAtivo, setFiltroAtivo] = useState(null)
 
   useEffect(() => {
   buscarLista()
@@ -24,7 +25,26 @@ export default function App() {
 
   async function buscarLista() {
     const lista = await listarTitulos()
-    setTilulos(lista)
+    setTitulos(lista)
+  }
+
+  async function filtrar(plataforma) {
+    if (plataforma === filtroAtivo) {
+      setFiltroAtivo(null)
+      await buscarLista()
+    } else {
+      setFiltroAtivo(plataforma)
+      const lista = await filtrarTitulos(plataforma)
+      setTitulos(lista)
+    }
+  }
+
+  function BotaoPlataforma({ nome, onClick}) {
+    return (
+      <li>
+        <button onClick={onClick} className="...">{nome}</button>
+      </li>
+    )
   }
 
   return (
@@ -65,13 +85,13 @@ export default function App() {
       </nav>
 
       <ul className="w-full flex flex-row gap-5 justify-center" >
-        <li><button className="bg-gray-700 px-5 py-2 rounded-lg hover:cursor-pointer" >Netflix</button></li>
-        <li><button className="bg-gray-700 px-5 py-2 rounded-lg hover:cursor-pointer" >Crunchyroll</button></li>
-        <li><button className="bg-gray-700 px-5 py-2 rounded-lg hover:cursor-pointer" >Disney+</button></li>
-        <li><button className="bg-gray-700 px-5 py-2 rounded-lg hover:cursor-pointer" >GloboPlay</button></li>
-        <li><button className="bg-gray-700 px-5 py-2 rounded-lg hover:cursor-pointer" >HBOMax</button></li>
-        <li><button className="bg-gray-700 px-5 py-2 rounded-lg hover:cursor-pointer" >AppleTV</button></li>
-        <li><button className="bg-gray-700 px-5 py-2 rounded-lg hover:cursor-pointer" >PrimeVideo</button></li>
+        <BotaoPlataforma nome="Netflix" onClick={ () => filtrar("Netflix")} />
+        <BotaoPlataforma nome="Crunchyroll" onClick={ () => filtrar("Crunchyroll")} />
+        <BotaoPlataforma nome="Disney+" onClick={ () => filtrar("Disney")} />
+        <BotaoPlataforma nome="GloboPlay" onClick={ () => filtrar("GloboPlay")} />
+        <BotaoPlataforma nome="HBOMax" onClick={ () => filtrar("HBOMax")} />
+        <BotaoPlataforma nome="AppleTV" onClick={ () => filtrar("AppleTV")} />
+        <BotaoPlataforma nome="PrimeVideo" onClick={ () => filtrar("PrimeVideo")} />
       </ul>
 
       <ul className="pt-30 flex flex-wrap gap-6 items-center justify-center" >
