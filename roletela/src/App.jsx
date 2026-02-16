@@ -6,7 +6,7 @@ export default function App() {
   const [sorteado, setSorteado] = useState(null)
   const [novoTitulo, setAdicionado] = useState("")
   const [novaPlataforma, setNovaPlataforma] = useState("")
-  const [filtroAtivo, setFiltroAtivo] = useState(null)
+  const [filtrosAtivos, setFiltrosAtivos] = useState([])
 
   useEffect(() => {
   buscarLista()
@@ -29,14 +29,20 @@ export default function App() {
   }
 
   async function filtrar(plataforma) {
-    console.log("filtrando por:", plataforma)
-    if (plataforma === filtroAtivo) {
-      setFiltroAtivo(null)
+    let novaLista
+    
+    if (filtrosAtivos.includes(plataforma)) {
+      novaLista = filtrosAtivos.filter(p => p !== plataforma)
+    } else {
+      novaLista = [...filtrosAtivos, plataforma]
+    }
+    
+      setFiltrosAtivos(novaLista)
+
+    if (novaLista.length === 0) {
       await buscarLista()
     } else {
-      setFiltroAtivo(plataforma)
-      const lista = await filtrarTitulos(plataforma)
-      console.log("resultado:", lista)
+      const lista = await filtrarTitulos(novaLista)
       setTitulos(lista)
     }
   }
@@ -44,7 +50,7 @@ export default function App() {
   function BotaoPlataforma({ nome, onClick}) {
     return (
       <li>
-        <button onClick={onClick} className="bg-gray-700 px-5 py-2 rounded-lg hover:bg-gray-800 hover:cursor-pointer">{nome}</button>
+        <button onClick={onClick} className="bg-gray-700 px-5 py-2 rounded-lg hover:bg-gray-800 hover:cursor-pointer ">{nome}</button>
       </li>
     )
   }
@@ -96,9 +102,9 @@ export default function App() {
         <BotaoPlataforma nome="PrimeVideo" onClick={ () => filtrar("Prime Video")} />
       </ul>
 
-      <ul className="pt-30 flex flex-wrap gap-6 items-center justify-center" >
+      <ul className="pt-30 grid grid-cols-3 gap-6" >
         {titulos.map((titulo, index) => (
-          <li key={index} className="basis-md" >
+          <li key={index} className="p-1" >
             {titulo.id} - {titulo.titulo} — {titulo.plataforma}
           </li>
         ))}
