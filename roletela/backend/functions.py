@@ -14,7 +14,7 @@ def listarTitulos():
 
 def adicionarTitulo(titulo, plataforma):
     dados = listarTitulos()
-    if titulo not in [filme["titulo"] for filme in dados]:
+    if titulo.capitalize() not in [filme["titulo"] for filme in dados]:
         dados.append({
             "id": len(dados) + 1,
             "titulo": titulo.capitalize(),
