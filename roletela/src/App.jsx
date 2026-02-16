@@ -28,42 +28,57 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-50">
-      <h1 className="text-5xl font-bold mb-8">RoleTela</h1>
-      <button 
-        onClick={sortear}
-        className="bg-red-800 hover:bg-red-600 hover:cursor-pointer active:bg-red-500 text-white font-semibold px-6 py-1 rounded-lg transition-colors"
-      >
-        Sortear
-      </button>
+    <div className="bg-gray-900 text-white p-50 flex flex-wrap items-center justify-center">
+      <h1 className="text-5xl text-center font-bold mb-20 w-full">RoleTela</h1>
+      <nav className="mb-10 w-full flex flex-row justify-between" >
+        <div className="columns-2" >
+          <button
+            onClick={sortear}
+            className="bg-red-800 hover:bg-red-600 hover:cursor-pointer active:bg-red-500 text-white font-semibold px-6 py-1 rounded-lg transition-colors"
+          >
+            Sortear
+          </button>
+          {sorteado && (
+            <p className="mt-6 text-xl text-yellow-700" >
+              {sorteado.titulo}
+            </p>
+          )}
+          {sorteado && (
+            <p className="mt-2 mb-10 text-xl text-yellow-700" >
+              {sorteado.plataforma}
+            </p>
+          )}
+        </div>
+        <div className="flex items-center justify-center gap-5" >
+          <input type="text" value={novoTitulo} id="iNovoTitulo" onChange={(e) => setAdicionado(e.target.value)} placeholder="Novo título" className="border" />
+          <select value={novaPlataforma} id="iNovaPlataforma" onChange={(e) => setNovaPlataforma(e.target.value)}>
+            <option>Netflix</option>
+            <option>Crunchyroll</option>
+            <option>Disney+</option>
+            <option>GloboPlay</option>
+            <option>HBOMax</option>
+            <option>AppleTV</option>
+            <option>PrimeVideo</option>
+          </select>
+          <button onClick={adicionar} className="bg-green-600 font-semibold px-3 rounded-lg hover:cursor-pointer transition-colours" >Adicionar</button>
+        </div>
+      </nav>
 
-      {sorteado && (
-        <p className="mt-6 text-xl text-yellow-700" >
-          {sorteado.titulo}
-        </p>
-      )}
-      {sorteado && (
-        <p className="mt-6 text-xl text-yellow-700" >
-          {sorteado.plataforma}
-        </p>
-      )}
+      <ul className="w-full flex flex-row gap-5 justify-center" >
+        <li><button className="bg-gray-700 px-5 py-2 rounded-lg hover:cursor-pointer" >Netflix</button></li>
+        <li><button className="bg-gray-700 px-5 py-2 rounded-lg hover:cursor-pointer" >Crunchyroll</button></li>
+        <li><button className="bg-gray-700 px-5 py-2 rounded-lg hover:cursor-pointer" >Disney+</button></li>
+        <li><button className="bg-gray-700 px-5 py-2 rounded-lg hover:cursor-pointer" >GloboPlay</button></li>
+        <li><button className="bg-gray-700 px-5 py-2 rounded-lg hover:cursor-pointer" >HBOMax</button></li>
+        <li><button className="bg-gray-700 px-5 py-2 rounded-lg hover:cursor-pointer" >AppleTV</button></li>
+        <li><button className="bg-gray-700 px-5 py-2 rounded-lg hover:cursor-pointer" >PrimeVideo</button></li>
+      </ul>
 
-      <input type="text" value={novoTitulo} id="iNovoTitulo" onChange={(e) => setAdicionado(e.target.value)} placeholder="Novo título" />
-      <select value={novaPlataforma} id="iNovaPlataforma" onChange={(e) => setNovaPlataforma(e.target.value)}>
-        <option>Netflix</option>
-        <option>Crunchyroll</option>
-        <option>Disney+</option>
-        <option>GloboPlay</option>
-        <option>HBOMax</option>
-        <option>AppleTV</option>
-        <option>PrimeVideo</option>
-      </select>
-      <button onClick={adicionar}>Adicionar</button>
-
-      <ul>
+      <ul className="pt-30 flex flex-wrap gap-6 items-center justify-center" >
         {titulos.map((titulo, index) => (
-          <li key={index}>
+          <li key={index} className="basis-md" >
             {titulo.id} - {titulo.titulo} — {titulo.plataforma}
+            <input type="checkbox" id="iAssistido" />
           </li>
         ))}
       </ul>
