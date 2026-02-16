@@ -1,6 +1,6 @@
 import json
    
-def listarTitulos():
+def listarTitulos(*plataformas):
     try:
         arquivo = open("./roletela/backend/filmes.json", "r")
     except:
@@ -10,7 +10,11 @@ def listarTitulos():
     except:
         dados = []
     arquivo.close()
-    return dados  
+    if plataformas:
+        dados = filtrarTitulos(*plataformas)
+    if not dados:
+        return 'Nenhum filme encontrado para as plataformas selecionadas.'
+    return dados
 
 def adicionarTitulo(titulo, plataforma="X"):
     dados = listarTitulos()

@@ -12,12 +12,8 @@ def sortear():
 
 @app.route('/filmes', methods=['GET'])
 def filmes():
-    return jsonify(listarTitulos())
-
-@app.route('/filtrar', methods=['GET'])
-def filtrar():
     plataformas = request.args.getlist('plataforma')    
-    return jsonify(filtrarTitulos(*plataformas))
+    return jsonify(listarTitulos(*plataformas))
 
 @app.route('/adicionar', methods=['POST'])
 def adicionar_filme():
