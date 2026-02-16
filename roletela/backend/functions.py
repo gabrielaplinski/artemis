@@ -12,7 +12,7 @@ def listarTitulos():
     arquivo.close()
     return dados  
 
-def adicionarTitulo(titulo, plataforma):
+def adicionarTitulo(titulo, plataforma="X"):
     dados = listarTitulos()
     if titulo.capitalize() not in [filme["titulo"] for filme in dados]:
         dados.append({
@@ -42,3 +42,5 @@ def sortearTitulo(*plataformas):
         return 'Nenhum filme encontrado para as plataformas selecionadas.'
     filme_sorteado = random.choice(dados)    
     return filme_sorteado
+
+print(adicionarTitulo("fatura"))
