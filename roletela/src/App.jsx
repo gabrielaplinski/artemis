@@ -1,13 +1,22 @@
 import { useState } from "react";
-import { listarTitulos, sortearTitulo } from "./services/api";
+import { adicionarTitulo, listarTitulos, sortearTitulo } from "./services/api";
 
 export default function App() {
   const [titulos, setTilulos] = useState([])
   const [sorteado, setSorteado] = useState(null)
+  const [novoTitulo, setAdicionado] = useState("")
+  const [novaPlataforma, setNovaPlataforma] = useState("")
 
   async function sortear() {
     const escolhido = await sortearTitulo()
     setSorteado(escolhido)    
+  }
+
+  async function adicionar() {
+    console.log("enviando:", novoTitulo, novaPlataforma)
+    const adicionado = await adicionarTitulo(novoTitulo, novaPlataforma)
+    setAdicionado(adicionado)    
+    console.log("resposta:", adicionado)
   }
 
   return (
@@ -30,6 +39,18 @@ export default function App() {
           {sorteado.plataforma}
         </p>
       )}
+
+      <input type="text" value={novoTitulo} id="iNovoTitulo" onChange={(e) => setAdicionado(e.target.value)} placeholder="Novo título" />
+      <select value={novaPlataforma} id="iNovaPlataforma" onChange={(e) => setNovaPlataforma(e.target.value)}>
+        <option>Netflix</option>
+        <option>Crunchyroll</option>
+        <option>Disney+</option>
+        <option>GloboPlay</option>
+        <option>HBOMax</option>
+        <option>AppleTV</option>
+        <option>PrimeVideo</option>
+      </select>
+      <button onClick={adicionar}>Adicionar</button>
     </div>
   )
 };
