@@ -14,15 +14,18 @@ def listarTitulos():
 
 def adicionarTitulo(titulo, plataforma):
     dados = listarTitulos()
-    dados.append({
-        "id": len(dados) + 1,
-        "titulo": titulo,
-        "plataforma": plataforma
-    })
-    arquivo = open("./roletela/backend/filmes.json", "w")
-    json.dump(dados, arquivo)
-    arquivo.close()
-    return "Filme cadastrado com sucesso!"
+    if titulo not in [filme["titulo"] for filme in dados]:
+        dados.append({
+            "id": len(dados) + 1,
+            "titulo": titulo.capitalize(),
+            "plataforma": plataforma.capitalize()
+        })
+        arquivo = open("./roletela/backend/filmes.json", "w")
+        json.dump(dados, arquivo)
+        arquivo.close()
+        return 'Filme adicionado.'
+    else:
+        return 'Filme já cadastrado.'
 
 def sortearTitulo(*plataformas):
     import random
@@ -32,10 +35,10 @@ def sortearTitulo(*plataformas):
         for plataforma in list(plataformas):
             for filme in dados:
                 if plataforma in filme["plataforma"]:
-                    filmes_filtrados += [filme]
+                    if filme not in filmes_filtrados:
+                        filmes_filtrados += [filme]
         dados = filmes_filtrados
-        print(dados)
+    if not dados:
+        return 'Nenhum filme encontrado para as plataformas selecionadas.'
     filme_sorteado = random.choice(dados)    
     return filme_sorteado
-
-print(sortearTitulo("Netflix", "Amazon Prime"))
