@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { adicionarTitulo, listarTitulos, sortearTitulo } from "./services/api";
 
 export default function App() {
@@ -7,16 +7,24 @@ export default function App() {
   const [novoTitulo, setAdicionado] = useState("")
   const [novaPlataforma, setNovaPlataforma] = useState("")
 
+  useEffect(() => {
+  buscarLista()
+  }, [])
+
   async function sortear() {
     const escolhido = await sortearTitulo()
     setSorteado(escolhido)    
   }
 
   async function adicionar() {
-    console.log("enviando:", novoTitulo, novaPlataforma)
-    const adicionado = await adicionarTitulo(novoTitulo, novaPlataforma)
-    setAdicionado(adicionado)    
-    console.log("resposta:", adicionado)
+    await adicionarTitulo(novoTitulo, novaPlataforma)
+    await buscarLista()
+    setAdicionado("")    
+  }
+
+  async function buscarLista() {
+    const lista = await listarTitulos()
+    setTilulos(lista)
   }
 
   return (
@@ -51,6 +59,14 @@ export default function App() {
         <option>PrimeVideo</option>
       </select>
       <button onClick={adicionar}>Adicionar</button>
+
+      <ul>
+        {titulos.map((titulo, index) => (
+          <li key={index}>
+            {titulo.id} - {titulo.titulo} — {titulo.plataforma}
+          </li>
+        ))}
+      </ul>
     </div>
   )
 };
