@@ -3,7 +3,7 @@ from flask import Flask, jsonify, render_template, request
 from functions import *
 
 app = Flask(__name__, template_folder='../')
-CORS(app, resources={r"/": {"origins": "", "methods": ["GET", "POST", "OPTIONS"]}})
+CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST", "OPTIONS"]}})
 
 @app.route('/sortear', methods=['GET'])
 def sortear():
