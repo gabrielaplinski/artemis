@@ -50,7 +50,7 @@ export default function App() {
   }
 
   return (
-    <div className="bg-gray-900 min-h-screen text-white p-50 flex flex-wrap items-center justify-center">
+    <div className="bg-gray-900 min-h-screen text-white pt-50 px-80 flex flex-col items-center">
       <h1 className="text-5xl text-center font-bold mb-20 w-full">RoleTela</h1>
       <nav className="mb-10 w-full flex flex-row justify-between" >
         <div className="columns-2" >
@@ -103,6 +103,9 @@ export default function App() {
           </li>
         ))}
       </ul>
+      <footer className="w-full text-center text-sm py-6 mt-auto" >
+        Feito por <a href="#">Gabriela Plinski</a> & <a href="#">Rafael Lunkes</a>
+      </footer>
     </div>
   )
 };
