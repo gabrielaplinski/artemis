@@ -24,18 +24,18 @@ def adicionarTitulo(titulo, plataforma):
     arquivo.close()
     return "Filme cadastrado com sucesso!"
 
-def sortearTitulo():
+def sortearTitulo(*plataformas):
     import random
     dados = listarTitulos()
+    if plataformas:
+        filmes_filtrados = []
+        for plataforma in list(plataformas):
+            for filme in dados:
+                if plataforma in filme["plataforma"]:
+                    filmes_filtrados += [filme]
+        dados = filmes_filtrados
+        print(dados)
     filme_sorteado = random.choice(dados)    
     return filme_sorteado
 
-def filtrarTitulos(*plataformas):
-    dados = listarTitulos()
-    filmes_filtrados = []
-    for plataforma in list(plataformas):
-        print(plataforma)
-        for filme in dados:
-            if plataforma in filme["plataforma"]:
-                filmes_filtrados += [filme]
-    return filmes_filtrados
+print(sortearTitulo("Netflix", "Amazon Prime"))

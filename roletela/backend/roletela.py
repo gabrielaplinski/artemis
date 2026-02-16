@@ -3,11 +3,12 @@ from flask import Flask, jsonify, render_template, request
 from functions import *
 
 app = Flask(__name__, template_folder='../')
-CORS(app)
+CORS(app, resources={r"/": {"origins": "", "methods": ["GET", "POST", "OPTIONS"]}})
 
 @app.route('/sortear', methods=['GET'])
 def sortear():
-    return jsonify(sortearTitulo())
+    plataformas = request.args.getlist('plataforma')    
+    return jsonify(sortearTitulo(*plataformas))
 
 @app.route('/filmes', methods=['GET'])
 def filmes():
