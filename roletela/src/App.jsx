@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { adicionarTitulo, listarTitulos, sortearTitulo } from "./services/api";
+import { adicionarTitulo, listarTitulos, sortearTitulo, filtrarTitulos } from "./services/api";
 
 export default function App() {
   const [titulos, setTitulos] = useState([])
@@ -29,12 +29,14 @@ export default function App() {
   }
 
   async function filtrar(plataforma) {
+    console.log("filtrando por:", plataforma)
     if (plataforma === filtroAtivo) {
       setFiltroAtivo(null)
       await buscarLista()
     } else {
       setFiltroAtivo(plataforma)
       const lista = await filtrarTitulos(plataforma)
+      console.log("resultado:", lista)
       setTitulos(lista)
     }
   }
@@ -42,13 +44,13 @@ export default function App() {
   function BotaoPlataforma({ nome, onClick}) {
     return (
       <li>
-        <button onClick={onClick} className="...">{nome}</button>
+        <button onClick={onClick} className="bg-gray-700 px-5 py-2 rounded-lg hover:bg-gray-800 hover:cursor-pointer">{nome}</button>
       </li>
     )
   }
 
   return (
-    <div className="bg-gray-900 text-white p-50 flex flex-wrap items-center justify-center">
+    <div className="bg-gray-900 min-h-screen text-white p-50 flex flex-wrap items-center justify-center">
       <h1 className="text-5xl text-center font-bold mb-20 w-full">RoleTela</h1>
       <nav className="mb-10 w-full flex flex-row justify-between" >
         <div className="columns-2" >
@@ -91,14 +93,13 @@ export default function App() {
         <BotaoPlataforma nome="GloboPlay" onClick={ () => filtrar("GloboPlay")} />
         <BotaoPlataforma nome="HBOMax" onClick={ () => filtrar("HBOMax")} />
         <BotaoPlataforma nome="AppleTV" onClick={ () => filtrar("AppleTV")} />
-        <BotaoPlataforma nome="PrimeVideo" onClick={ () => filtrar("PrimeVideo")} />
+        <BotaoPlataforma nome="PrimeVideo" onClick={ () => filtrar("Prime Video")} />
       </ul>
 
       <ul className="pt-30 flex flex-wrap gap-6 items-center justify-center" >
         {titulos.map((titulo, index) => (
           <li key={index} className="basis-md" >
             {titulo.id} - {titulo.titulo} — {titulo.plataforma}
-            <input type="checkbox" id="iAssistido" />
           </li>
         ))}
       </ul>

@@ -26,6 +26,6 @@ export async function adicionarTitulo(titulo, plataforma) {
 }
 
 export async function filtrarTitulos(plataforma) {
-  const resposta = await fetch(`${BASE_URL}/filtrar?plataforma=${plataforma}`)
+  const resposta = await fetch(`${BASE_URL}/filmes?plataforma=${plataforma}`)
   return resposta.json()
 }
