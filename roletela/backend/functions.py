@@ -22,7 +22,7 @@ def adicionarTitulo(titulo, plataforma="X"):
         dados.append({
             "id": len(dados) + 1,
             "titulo": titulo.capitalize(),
-            "plataforma": plataforma.capitalize()
+            "plataforma": plataforma
         })
         arquivo = open("./roletela/backend/filmes.json", "w")
         json.dump(dados, arquivo)

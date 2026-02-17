@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { adicionarTitulo, listarTitulos, sortearTitulo, filtrarTitulos } from "./services/api";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircle } from '@fortawesome/free-solid-svg-icons'
 
 export default function App() {
   const [titulos, setTitulos] = useState([])
   const [sorteado, setSorteado] = useState(null)
   const [novoTitulo, setAdicionado] = useState("")
-  const [novaPlataforma, setNovaPlataforma] = useState("")
+  const [novasPlataformas, setNovasPlataformas] = useState([])
   const [filtrosAtivos, setFiltrosAtivos] = useState([])
 
   useEffect(() => {
@@ -18,9 +20,10 @@ export default function App() {
   }
 
   async function adicionar() {
-    await adicionarTitulo(novoTitulo, novaPlataforma)
+    await adicionarTitulo(novoTitulo, novasPlataformas)
     await buscarLista()
-    setAdicionado("")    
+    setAdicionado("")  
+    setNovasPlataformas([])  
   }
 
   async function buscarLista() {
@@ -37,7 +40,7 @@ export default function App() {
       novaLista = [...filtrosAtivos, plataforma]
     }
     
-      setFiltrosAtivos(novaLista)
+    setFiltrosAtivos(novaLista)
 
     if (novaLista.length === 0) {
       await buscarLista()
@@ -47,11 +50,47 @@ export default function App() {
     }
   }
 
-  function BotaoPlataforma({ nome, onClick}) {
+  function BotaoPlataforma({ nome, onClick, ativo, corIcone}) {
     return (
       <li>
-        <button onClick={onClick} className="bg-gray-700 px-5 py-2 rounded-lg hover:bg-gray-800 hover:cursor-pointer ">{nome}</button>
+        <button
+          onClick={onClick} 
+          className={`${ativo ? 'bg-gray-600 hover:bg-gray-500' : 'bg-gray-800 hover:bg-gray-700'} w-32 py-2 rounded-lg hover:cursor-pointer transition-colors`}
+        >
+          {ativo && (
+            <FontAwesomeIcon 
+              icon={faCircle}
+              className={`${corIcone} scale-50`} 
+            />
+          )}
+          {nome}
+        </button>
       </li>
+    )
+  }
+
+  function qualPlataforma(plataforma) {
+    console.log("antes:", novasPlataformas)
+
+    if (novasPlataformas.includes(plataforma)) {
+      setNovasPlataformas(novasPlataformas.filter(p => p !== plataforma))
+    } else {
+      setNovasPlataformas([...novasPlataformas, plataforma])
+    }
+
+    console.log("clicou em:", plataforma)
+  }   
+
+  function AdicionarPlataforma({ id }) {
+    return (
+      <label>
+            <input 
+              type="checkbox"
+              checked={novasPlataformas.includes(id)}
+              onChange={() => qualPlataforma(id)}  
+            />
+            {id}
+      </label>
     )
   }
 
@@ -79,27 +118,60 @@ export default function App() {
         </div>
         <div className="flex items-center justify-center gap-5" >
           <input type="text" value={novoTitulo} id="iNovoTitulo" onChange={(e) => setAdicionado(e.target.value)} placeholder="Novo título" className="border" />
-          <select value={novaPlataforma} id="iNovaPlataforma" onChange={(e) => setNovaPlataforma(e.target.value)}>
-            <option>Netflix</option>
-            <option>Crunchyroll</option>
-            <option>Disney+</option>
-            <option>GloboPlay</option>
-            <option>HBOMax</option>
-            <option>AppleTV</option>
-            <option>PrimeVideo</option>
-          </select>
+          <AdicionarPlataforma id='Netflix' />
+          <AdicionarPlataforma id='Crunchyroll' />
+          <AdicionarPlataforma id='Disney' />
+          <AdicionarPlataforma id='GloboPlay' />
+          <AdicionarPlataforma id='HBOMax' />
+          <AdicionarPlataforma id='AppleTV' />
+          <AdicionarPlataforma id='PrimeVideo' />
           <button onClick={adicionar} className="bg-green-600 font-semibold px-3 rounded-lg hover:cursor-pointer transition-colours" >Adicionar</button>
         </div>
       </nav>
 
       <ul className="w-full flex flex-row gap-5 justify-center" >
-        <BotaoPlataforma nome="Netflix" onClick={ () => filtrar("Netflix")} />
-        <BotaoPlataforma nome="Crunchyroll" onClick={ () => filtrar("Crunchyroll")} />
-        <BotaoPlataforma nome="Disney+" onClick={ () => filtrar("Disney")} />
-        <BotaoPlataforma nome="GloboPlay" onClick={ () => filtrar("GloboPlay")} />
-        <BotaoPlataforma nome="HBOMax" onClick={ () => filtrar("HBOMax")} />
-        <BotaoPlataforma nome="AppleTV" onClick={ () => filtrar("AppleTV")} />
-        <BotaoPlataforma nome="PrimeVideo" onClick={ () => filtrar("Prime Video")} />
+        <BotaoPlataforma 
+          nome="Netflix" 
+          onClick={() => filtrar("Netflix")} 
+          corIcone="text-purple-500"
+          ativo={filtrosAtivos.includes("Netflix")}
+        />
+        <BotaoPlataforma 
+          nome="Crunchyroll" 
+          onClick={() => filtrar("Crunchyroll")} 
+          corIcone="text-yellow-500"
+          ativo={filtrosAtivos.includes("Crunchyroll")}
+        />
+        <BotaoPlataforma 
+          nome="Disney+" 
+          onClick={() => filtrar("Disney")} 
+          corIcone="text-pink-500"
+          ativo={filtrosAtivos.includes("Disney")}
+        />
+        <BotaoPlataforma 
+          nome="GloboPlay" 
+          onClick={() => filtrar("GloboPlay")} 
+          corIcone="text-red-500"
+          ativo={filtrosAtivos.includes("GloboPlay")}
+        />
+        <BotaoPlataforma 
+          nome="HBOMax" 
+          onClick={() => filtrar("HBOMax")} 
+          corIcone="text-orange-500"
+          ativo={filtrosAtivos.includes("HBOMax")}
+        />
+        <BotaoPlataforma 
+          nome="AppleTV" 
+          onClick={() => filtrar("AppleTV")} 
+          corIcone="text-blue-500"
+          ativo={filtrosAtivos.includes("AppleTV")}
+        />
+        <BotaoPlataforma 
+          nome="PrimeVideo" 
+          onClick={() => filtrar("Prime Video")} 
+          corIcone="text-green-500"
+          ativo={filtrosAtivos.includes("Prime Video")}
+        />
       </ul>
 
       <ul className="pt-30 grid grid-cols-3 gap-6" >
