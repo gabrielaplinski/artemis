@@ -28,7 +28,7 @@ export default function App() {
 
   async function buscarLista() {
     const lista = await listarTitulos()
-    setTitulos(lista)
+    setTitulos(Array.isArray(lista) ? lista : [])
   }
 
   async function filtrar(plataforma) {
@@ -46,7 +46,7 @@ export default function App() {
       await buscarLista()
     } else {
       const lista = await filtrarTitulos(novaLista)
-      setTitulos(lista)
+      setTitulos(Array.isArray(lista) ? lista : [])
     }
   }
 
@@ -83,11 +83,11 @@ export default function App() {
 
   function AdicionarPlataforma({ id }) {
     return (
-      <label>
+      <label className='text-sm'>
             <input 
               type="checkbox"
               checked={novasPlataformas.includes(id)}
-              onChange={() => qualPlataforma(id)}  
+              onChange={() => qualPlataforma(id)} 
             />
             {id}
       </label>
@@ -95,37 +95,35 @@ export default function App() {
   }
 
   return (
-    <div className="bg-gray-900 min-h-screen text-white pt-50 px-80 flex flex-col items-center">
+    <div className="bg-gray-900 min-h-screen text-white pt-40 px-80 flex flex-col items-center">
       <h1 className="text-5xl text-center font-bold mb-20 w-full">RoleTela</h1>
-      <nav className="mb-10 w-full flex flex-row justify-between" >
-        <div className="columns-2" >
+      <nav className="mb-30 max-h-50 w-full flex gap-50" >
+        <div className="bg-gray-800 p-10 rounded-lg basis-1/3 flex flex-col items-center">
           <button
             onClick={sortear}
-            className="bg-red-800 hover:bg-red-600 hover:cursor-pointer active:bg-red-500 text-white font-semibold px-6 py-1 rounded-lg transition-colors"
+            className="bg-red-800 font-semibold h-10 px-10 py-1 rounded-lg hover:bg-red-600 hover:cursor-pointer active:bg-red-500 transition-colors"
           >
             Sortear
           </button>
           {sorteado && (
-            <p className="mt-6 text-xl text-yellow-700" >
-              {sorteado.titulo}
-            </p>
-          )}
-          {sorteado && (
-            <p className="mt-2 mb-10 text-xl text-yellow-700" >
-              {sorteado.plataforma}
+            <p className="bg-gray-700 p-2 mt-6 text-xl text-#fff rounded-lg" >
+              {sorteado.titulo} — {sorteado.plataforma}
             </p>
           )}
         </div>
-        <div className="flex items-center justify-center gap-5" >
-          <input type="text" value={novoTitulo} id="iNovoTitulo" onChange={(e) => setAdicionado(e.target.value)} placeholder="Novo título" className="border" />
-          <AdicionarPlataforma id='Netflix' />
-          <AdicionarPlataforma id='Crunchyroll' />
-          <AdicionarPlataforma id='Disney' />
-          <AdicionarPlataforma id='GloboPlay' />
-          <AdicionarPlataforma id='HBOMax' />
-          <AdicionarPlataforma id='AppleTV' />
-          <AdicionarPlataforma id='PrimeVideo' />
-          <button onClick={adicionar} className="bg-green-600 font-semibold px-3 rounded-lg hover:cursor-pointer transition-colours" >Adicionar</button>
+        <div className="bg-gray-800 p-10 rounded-lg grid grid-cols-2 grid-rows-2 gap-4 justify-items-center items-center">
+          <input type="text" value={novoTitulo} id="iNovoTitulo" onChange={(e) => setAdicionado(e.target.value)} placeholder="Novo título" className="border px-3 rounded-lg" 
+          />
+          <div className="row-span-2 grid grid-cols-2 gap-2" >
+            <AdicionarPlataforma id='Netflix' />
+            <AdicionarPlataforma id='Crunchyroll' />
+            <AdicionarPlataforma id='Disney' />
+            <AdicionarPlataforma id='GloboPlay' />
+            <AdicionarPlataforma id='HBOMax' />
+            <AdicionarPlataforma id='AppleTV' />
+            <AdicionarPlataforma id='PrimeVideo' />
+          </div>
+          <button onClick={adicionar} className="bg-green-600 font-semibold h-10 px-10 py-1 rounded-lg hover:cursor-pointer transition-colours" >Adicionar</button>
         </div>
       </nav>
 
@@ -175,12 +173,23 @@ export default function App() {
       </ul>
 
       <ul className="pt-30 grid grid-cols-3 gap-6" >
-        {titulos.map((titulo, index) => (
+        {titulos.length > 0 ? (
+          titulos.map((titulo, index) => (
           <li key={index} className="p-1" >
             {titulo.id} - {titulo.titulo} — {titulo.plataforma}
           </li>
-        ))}
+          ))
+        ) : filtrosAtivos.length > 0 ? (
+          <li className="text-sm text-red-800 col-span-full" >
+            No momento não existe nenhum título não assistido nessa(s) plataforma(s)
+          </li>
+        ) : (
+          <li>
+            Adicione títulos para começar!
+          </li>
+        )}
       </ul>
+
       <footer className="w-full text-center text-sm py-6 mt-auto" >
         Feito por <a href="#">Gabriela Plinski</a> & <a href="#">Rafael Lunkes</a>
       </footer>
