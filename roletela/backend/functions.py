@@ -16,7 +16,7 @@ def listarTitulos(*plataformas):
         return 'Nenhum filme encontrado para as plataformas selecionadas.'
     return dados
 
-def adicionarTitulo(titulo, plataforma="X"):
+def adicionarTitulo(titulo, plataforma=""):
     dados = listarTitulos()
     if titulo.capitalize() not in [filme["titulo"] for filme in dados]:
         dados.append({
