@@ -22,7 +22,7 @@ def sugerir_titulos(titulo):
     results_titulo = response.json()['results']
     
     i = 0
-    for r in results_titulo:
+    for r in results_titulo[:1]:
         if r['media_type'] == 'tv' or r['media_type'] == 'movie':
             url = 'https://api.themoviedb.org/3/{media}/{tv_id}/watch/providers'.format(media=r['media_type'],tv_id=r['id'])
             response = requests.get(url, headers=headers)
@@ -41,30 +41,24 @@ def sugerir_titulos(titulo):
                 if 'rent' in result_providers['BR']:
                     providers_rent = [provider['provider_name'] for provider in result_providers['BR']['rent']]
                 else:
-                    providers_rent = ''
+                    providers_rent = []
                 if 'buy' in result_providers['BR']:
                     providers_buy = [provider['provider_name'] for provider in result_providers['BR']['buy']]
                 else:
-                    providers_buy = ''  
+                    providers_buy = [] 
+                     
                 plataforma = []
                 if providers:
                     for provider in providers:
                         if provider['provider_name'] in plataformas:
                             plataforma.append(provider['provider_name']) 
-                if plataforma == []:
-                    plataforma = ''
                 
                 img = r['poster_path']
                 
                 if img:
                     img = 'https://image.tmdb.org/t/p/w500' + img
-                    
-                if plataforma == []:
-                        plataforma = ''
-                if providers_rent == []:
-                        providers_rent = ''
-                if providers_buy == []:
-                        providers_buy = ''
+                else:
+                    img = ''
 
                 sugestao = { 
                             "id_api": id_api,
@@ -105,3 +99,5 @@ def detalhes_titulo(id_api, media_type, title, plataforma, providers_rent, provi
     return retorno
 
 '''print(detalhes_titulo(568091, 'movie', "Fratura", ["Netflix"], ['Amazon Prime Video'], ['Amazon Prime Video'], 'https://image.tmdb.org/t/p/w500/vsvmurub7aShF1PIFJS2l2D5ArS.jpg'))'''
+
+'''print(sugerir_titulos("Fratura"))'''
