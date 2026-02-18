@@ -16,17 +16,25 @@ def listarTitulos(*plataformas):
         return 'Nenhum filme encontrado para as plataformas selecionadas.'
     return dados
 
-def adicionarTitulo(titulo, plataforma=""):
+def adicionarTitulo(dict):
     dados = listarTitulos()
-    if titulo.capitalize() not in [filme["titulo"] for filme in dados]:
+    if dict['id_api'].capitalize() not in [filme["id_api"] for filme in dados]:
         dados.append({
             "id": len(dados) + 1,
-            "titulo": titulo.capitalize(),
-            "plataforma": plataforma
-        })
-        arquivo = open("./roletela/backend/filmes.json", "w")
-        json.dump(dados, arquivo)
-        arquivo.close()
+            "id_api": dict['id_api'],
+            "media": dict['media_type'],
+            'overview': dict['overview'],
+            'title': dict['title'],
+            'release_date': dict['release_date'],
+            'vote_average': dict['vote_average'],
+            'origin_country': dict['origin_country'], 
+            'genres': dict['genres'], 
+            'img': dict['img'],
+            'plataforma': dict['plataforma'], 
+            'aluguel/compra': {"aluguel": dict['providers_rent'],
+                            "compra": dict['providers_buy']}})
+        with open("./roletela/backend/filmes.json", "w", encoding='utf-8') as arquivo:
+            json.dump(dados, arquivo, ensure_ascii=False)
         return 'Filme adicionado.'
     else:
         return 'Filme já cadastrado.'

@@ -69,7 +69,7 @@ def sugerir_titulos(titulo):
                         providers_buy = ''
 
                 sugestao = { 
-                            "id": id_api,
+                            "id_api": id_api,
                             "media": media_type,
                             'title': title,
                             "plataforma": plataforma,
@@ -92,7 +92,7 @@ def detalhes_titulo(id_api, media_type, title, plataforma, providers_rent, provi
         generos.append(g['name'])
         
     retorno = {
-        "id": id_api,
+        "id_api": id_api,
         "media": media_type,
         'overview': r['overview'],
         'title': title,
