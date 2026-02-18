@@ -30,13 +30,13 @@ def adicionar_filme():
     dados = request.get_json()
     
     id_api = dados.get('id_api')
-    media_type = dados.get('media_type')
+    media = dados.get('media')
     title = dados.get('titulo')
     plataforma = dados.get('plataforma')
     providers_rent = dados.get('providers_rent')
     providers_buy = dados.get('providers_buy')
     img = dados.get('img')
-    dados = detalhes_titulo(id_api, media_type, title, plataforma, providers_rent, providers_buy, img)
+    dados = detalhes_titulo(id_api, media, title, plataforma, providers_rent, providers_buy, img)
     
     return jsonify(adicionarTitulo(dados))
 

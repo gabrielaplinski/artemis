@@ -35,8 +35,9 @@ export default function App() {
   }
 
   async function adicionar() {
+    console.log("selecionado:", selecionado);
     if (!selecionado) return;
-    await sugerirTitulo(selecionado);
+    await adicionarTitulo(selecionado);
     await buscarLista();
     setQuery("");
     setSelecionado(null);
@@ -97,7 +98,6 @@ export default function App() {
           >
             Sortear
           </button>
-          <p className="w-50 h-20 bg-gray-700 p-2 mt-6 text-xl text-#fff rounded-lg"></p>
           {sorteado && (
             <p className="bg-gray-700 p-2 mt-6 text-xl text-#fff rounded-lg" >
               {sorteado.titulo} — {sorteado.plataforma}
