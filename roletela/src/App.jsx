@@ -75,20 +75,6 @@ export default function App() {
     } else {
       setNovasPlataformas([...novasPlataformas, plataforma])
     }
-  }   
-
-  function AdicionarPlataforma({ id, ativo }) {
-    return (
-      <label className='text-sm'>
-            <input 
-              type="checkbox"
-              checked={novasPlataformas.includes(id)}
-              onChange={() => qualPlataforma(id)} 
-              className="mx-2"
-            />
-            {id}
-      </label>
-    )
   }
 
   return (
@@ -111,17 +97,6 @@ export default function App() {
         <div className="bg-gray-800 p-10 rounded-lg grid grid-cols-2 grid-rows-2 gap-4 justify-items-center items-center">
           <input type="text" value={novoTitulo} id="iNovoTitulo" onChange={(e) => setAdicionado(e.target.value)} placeholder="Novo título" className="border px-3 rounded-lg" 
           />
-          <div className="row-span-2 grid grid-cols-2 gap-2" >
-            <AdicionarPlataforma 
-              id='Netflix'
-            />
-            <AdicionarPlataforma id='Crunchyroll' />
-            <AdicionarPlataforma id='Disney' />
-            <AdicionarPlataforma id='GloboPlay' />
-            <AdicionarPlataforma id='HBOMax' />
-            <AdicionarPlataforma id='AppleTV' />
-            <AdicionarPlataforma id='PrimeVideo' />
-          </div>
           <button onClick={adicionar} className="bg-green-600 font-semibold h-10 px-10 py-1 rounded-lg hover:cursor-pointer transition-colours" >Adicionar</button>
         </div>
       </nav>
