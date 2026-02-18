@@ -22,6 +22,7 @@ export default function App() {
     const timeout = setTimeout(async () => {
       setLoading(true);
       const data = await sugerirTitulo(query);
+      console.log(data);
       setSugestoes(data);
       setLoading(false);
     }, 300);
@@ -86,9 +87,9 @@ export default function App() {
   }
 
   return (
-    <div className="bg-gray-900 min-h-screen text-white pt-40 px-80 flex flex-col items-center">
+    <div className="bg-gray-900 min-h-screen text-white pt-40 px-80 flex flex-col">
       <h1 className="text-5xl text-center font-bold mb-20 w-full">RoleTela</h1>
-      <nav className="mb-30 max-h-50 w-full flex gap-50" >
+      <nav className="mb-30 h-50 w-full flex justify-between gap-10" >
         <div className="bg-gray-800 p-10 rounded-lg basis-1/3 flex flex-col items-center">
           <button
             onClick={sortear}
@@ -96,6 +97,7 @@ export default function App() {
           >
             Sortear
           </button>
+          <p className="w-50 h-20 bg-gray-700 p-2 mt-6 text-xl text-#fff rounded-lg"></p>
           {sorteado && (
             <p className="bg-gray-700 p-2 mt-6 text-xl text-#fff rounded-lg" >
               {sorteado.titulo} — {sorteado.plataforma}
@@ -103,7 +105,7 @@ export default function App() {
           )}
         </div>
 
-        <div className="bg-gray-800 p-10 rounded-lg grid grid-cols-2 grid-rows-2 gap-4 justify-items-center items-center">
+        <div className="bg-gray-800 p-5 rounded-lg grid grid-cols-2 grid-rows-2 gap-4 justify-items-center items-center">
           <input 
             type="text" 
             value={query} 
@@ -112,24 +114,25 @@ export default function App() {
             className="border px-3 rounded-lg" 
           />
           {sugestoes.length > 0 && (
-            <ul>
+            <ul className="row-span-2 flex flex-col justify-center items-center gap-1" >
               {sugestoes.map((item) => (
                 <li 
-                  key={item.id}
+                  key={item.id_api}
                   onClick={() => {
                     setSelecionado(item);
-                    setQuery(item.titulo);
+                    setQuery(item.title);
                     setSugestoes([]);
                   }}
-                  className="cursor-pointer hover:bg-gray-400 p-2"
+                  className="w-40 cursor-pointer rounded-lg bg-red-950 hover:bg-gray-400 p-2 flex flex-col items-center"
                 >
+                  <img src={item.img} alt={item.title} className="w-10 object-cover rounded" />
                   <strong>{item.title}</strong>
-                  <p>{item.plataforma}</p>
+                  <p>{item.plataforma.join(", ")}</p>
                 </li>
               ))}
             </ul>
           )}
-          <button onClick={adicionar} className="bg-green-600 font-semibold h-10 px-10 py-1 rounded-lg hover:cursor-pointer transition-colours" >Adicionar</button>
+          <button onClick={adicionar} className="bg-green-600 font-semibold h-10 px-10 py-1 rounded-lg hover:cursor-pointer transition-colours">Adicionar</button>
         </div>
       </nav>
 
