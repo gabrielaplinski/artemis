@@ -1,5 +1,5 @@
 import requests
-from functions import adicionarTitulo, listarTitulos
+from functions import adicionarTitulo, listarTitulos, completarTitulo
 headers = {
     "accept": 'application/json',
     "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlZDU4N2YxNjY3ZDViZDIzNjkyMDk1MjQ2NWE4OWQyZCIsIm5iZiI6MTc3MDk1NDQwOC44OTIsInN1YiI6IjY5OGU5ZWE4MjVjOGE0YThjYmI2ODk5MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.SRmYAq05TPExKlLEzQut7hOuGAE2JFO_TOjW5RfvIpE"
@@ -27,8 +27,11 @@ def sugerir_titulos(titulo):
         if r['media_type'] == 'tv' or r['media_type'] == 'movie':
             url = 'https://api.themoviedb.org/3/{media}/{tv_id}/watch/providers'.format(media=r['media_type'],tv_id=r['id'])
             response = requests.get(url, headers=headers)
-            result_providers = response.json()['results']
-            
+            try:
+                result_providers = response.json()['results']
+            except:
+                result_providers = {}
+        
             if 'BR' in result_providers:
                 i += 1
                 id_api = r['id']
@@ -113,7 +116,18 @@ def escolher_titulo(titulo):
         opcao = int(input('Digite o número do título desejado: '))
     return detalhes[opcao-1]
 
+
+# função usada pra atualizar a lista de filmes, não é necessária para o funcionamento do programa, mas pode ser útil para adicionar novos títulos sugeridos
 '''for t in listarTitulos():
-    print(t['titulo'], '-', t['plataforma'])
-    titulo_selecionado = escolher_titulo(t['titulo'])
-    adicionarTitulo(detalhes_titulo(titulo_selecionado[0], titulo_selecionado[1], titulo_selecionado[2], titulo_selecionado[3], titulo_selecionado[4]['aluguel'], titulo_selecionado[4]['compra'], titulo_selecionado[5]))'''
+    print(t['title'], '-', t['plataforma'])
+    print('----------------------------------')
+    titulo_selecionado = escolher_titulo(t['title'])
+    print(completarTitulo(detalhes_titulo(titulo_selecionado[0], titulo_selecionado[1], titulo_selecionado[2], titulo_selecionado[3], titulo_selecionado[4]['aluguel'], titulo_selecionado[4]['compra'], titulo_selecionado[5])))'''
+    
+# titulos não encontrados ou à verificar: inuyasha, tokyo show    
+'''
+{"id": 46, "title": "Kaze ga tsuyoku fuiteiru", "plataforma": "X", "id_api": "api_1046"}
+{"id": 61, "title": "91 days", "plataforma": "X", "id_api": "api_1061"}
+inuyasha
+tokyo show
+'''
