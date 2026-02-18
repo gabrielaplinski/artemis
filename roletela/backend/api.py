@@ -32,8 +32,8 @@ def sugerir_titulos(titulo):
             if 'BR' in result_providers:
                 i += 1
                 id_api = r['id']
-                media_type = r['media_type']
-                title = r['title'] if media_type == 'movie' else r['name']
+                media = r['media_type']
+                title = r['title'] if media == 'movie' else r['name']
                         
                 if 'flatrate' in result_providers['BR']:   
                     providers = result_providers['BR']['flatrate']
@@ -63,7 +63,7 @@ def sugerir_titulos(titulo):
 
                 sugestao = { 
                             "id_api": id_api,
-                            "media": media_type,
+                            "media": media,
                             'title': title,
                             "plataforma": plataforma,
                             "aluguel/compra": {"aluguel": providers_rent,

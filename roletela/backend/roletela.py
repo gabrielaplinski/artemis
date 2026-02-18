@@ -31,7 +31,7 @@ def adicionar_filme():
     
     id_api = dados.get('id_api')
     media = dados.get('media')
-    title = dados.get('titulo')
+    title = dados.get('title')
     plataforma = dados.get('plataforma')
     providers_rent = dados.get('providers_rent')
     providers_buy = dados.get('providers_buy')
