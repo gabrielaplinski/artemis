@@ -1,18 +1,32 @@
 import { useState, useEffect } from "react";
-import { adicionarTitulo, listarTitulos, sortearTitulo, filtrarTitulos, sugerirTitulo } from "./services/api";
+import { listarTitulos, sortearTitulo, filtrarTitulos, sugerirTitulo, adicionarTitulo } from "./services/api";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
 
 export default function App() {
   const [titulos, setTitulos] = useState([]);
   const [sorteado, setSorteado] = useState(null);
-  const [novoTitulo, setAdicionado] = useState("");
-  const [novasPlataformas, setNovasPlataformas] = useState([]);
   const [filtrosAtivos, setFiltrosAtivos] = useState([]);
+  const [query, setQuery] = useState("");
+  const [sugestoes, setSugestoes] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [selecionado, setSelecionado] = useState(null);
 
   useEffect(() => {
   buscarLista();
   }, []);
+
+  useEffect(() => {
+    if(query.length < 2) return setSugestoes([]);
+
+    const timeout = setTimeout(async () => {
+      setLoading(true);
+      const data = await sugerirTitulo(query);
+      setSugestoes(data);
+      setLoading(false);
+    }, 300);
+    return () => clearTimeout(timeout);
+  }, [query]);
 
   async function sortear() {
     const escolhido = await sortearTitulo();
@@ -20,15 +34,12 @@ export default function App() {
   }
 
   async function adicionar() {
-    await adicionarTitulo(novoTitulo);
+    if (!selecionado) return;
+    await sugerirTitulo(selecionado);
     await buscarLista();
-    setAdicionado("");
-  }
-
-  async function sugerir() {
-    await sugerirTitulo();
-    await buscarLista();
-    setAdicionado("");
+    setQuery("");
+    setSelecionado(null);
+    setSugestoes([]);
   }
 
   async function buscarLista() {
@@ -53,24 +64,6 @@ export default function App() {
       const lista = await filtrarTitulos(novaLista);
       setTitulos(Array.isArray(lista) ? lista : []);
     }
-  }
-
-  function BarraPesquisa() {
-    const [query, setQuery] = useState("");
-    const [sugestoes, setSugestoes] = useState([]);
-    const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-      if(query.length < 2) return setSugestoes([]);
-
-      const timeout = setTimeout(async () => {
-        setLoading(true);
-        const data = await sugerirTitulo(query);
-        setSugestoes(data);
-        setLoading(false);
-      }, 300);
-      return () => clearTimeout(timeout);
-    }, [query]);
   }
 
   function BotaoPlataforma({ nome, onClick, ativo, corIcone}) {
@@ -121,11 +114,17 @@ export default function App() {
           {sugestoes.length > 0 && (
             <ul>
               {sugestoes.map((item) => (
-                <li key={item.id}>
-                  <div>
-                    <strong>{item.title}</strong>
-                    <p>{item.plataforma}</p>
-                  </div>
+                <li 
+                  key={item.id}
+                  onClick={() => {
+                    setSelecionado(item);
+                    setQuery(item.titulo);
+                    setSugestoes([]);
+                  }}
+                  className="cursor-pointer hover:bg-gray-400 p-2"
+                >
+                  <strong>{item.title}</strong>
+                  <p>{item.plataforma}</p>
                 </li>
               ))}
             </ul>

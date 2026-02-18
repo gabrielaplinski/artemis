@@ -24,6 +24,15 @@ export async function sugerirTitulo(titulo) {
   return resposta.json()
 }
 
+export async function adicionarTitulo(item) {
+  const resposta = await fetch(`${BASE_URL}/sugerir/adicionar`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(item)
+  })
+  return resposta.json()
+}
+
 export async function filtrarTitulos(plataformas) {
   const params = plataformas.map(p => `plataforma=${p}`).join("&")
   const resposta = await fetch(`${BASE_URL}/filmes?${params}`)
