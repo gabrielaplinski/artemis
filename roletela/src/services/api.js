@@ -16,11 +16,10 @@ export async function sortearTitulo(plataforma) {
   return resposta.json()
 }
 
-export async function adicionarTitulo(titulo, plataforma) {
-  const resposta = await fetch(`${BASE_URL}/adicionar`, {
-    method: "POST",
+export async function sugerirTitulo(titulo) {
+  const resposta = await fetch(`${BASE_URL}/sugerir?titulo=${titulo}`, {
+    method: "GET",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ titulo, plataforma })
   })
   return resposta.json()
 }

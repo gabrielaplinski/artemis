@@ -1,53 +1,76 @@
 import { useState, useEffect } from "react";
-import { adicionarTitulo, listarTitulos, sortearTitulo, filtrarTitulos } from "./services/api";
+import { adicionarTitulo, listarTitulos, sortearTitulo, filtrarTitulos, sugerirTitulo } from "./services/api";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
 
 export default function App() {
-  const [titulos, setTitulos] = useState([])
-  const [sorteado, setSorteado] = useState(null)
-  const [novoTitulo, setAdicionado] = useState("")
-  const [novasPlataformas, setNovasPlataformas] = useState([])
-  const [filtrosAtivos, setFiltrosAtivos] = useState([])
+  const [titulos, setTitulos] = useState([]);
+  const [sorteado, setSorteado] = useState(null);
+  const [novoTitulo, setAdicionado] = useState("");
+  const [novasPlataformas, setNovasPlataformas] = useState([]);
+  const [filtrosAtivos, setFiltrosAtivos] = useState([]);
 
   useEffect(() => {
-  buscarLista()
-  }, [])
+  buscarLista();
+  }, []);
 
   async function sortear() {
-    const escolhido = await sortearTitulo()
-    setSorteado(escolhido)    
+    const escolhido = await sortearTitulo();
+    setSorteado(escolhido);   
   }
 
   async function adicionar() {
-    await adicionarTitulo(novoTitulo, novasPlataformas)
-    await buscarLista()
-    setAdicionado("")  
-    setNovasPlataformas([])  
+    await adicionarTitulo(novoTitulo);
+    await buscarLista();
+    setAdicionado("");
+  }
+
+  async function sugerir() {
+    await sugerirTitulo();
+    await buscarLista();
+    setAdicionado("");
   }
 
   async function buscarLista() {
-    const lista = await listarTitulos()
-    setTitulos(Array.isArray(lista) ? lista : [])
+    const lista = await listarTitulos();
+    setTitulos(Array.isArray(lista) ? lista : []);
   }
 
   async function filtrar(plataforma) {
     let novaLista
     
     if (filtrosAtivos.includes(plataforma)) {
-      novaLista = filtrosAtivos.filter(p => p !== plataforma)
+      novaLista = filtrosAtivos.filter(p => p !== plataforma);
     } else {
       novaLista = [...filtrosAtivos, plataforma]
     }
     
-    setFiltrosAtivos(novaLista)
+    setFiltrosAtivos(novaLista);
 
     if (novaLista.length === 0) {
-      await buscarLista()
+      await buscarLista();
     } else {
-      const lista = await filtrarTitulos(novaLista)
-      setTitulos(Array.isArray(lista) ? lista : [])
+      const lista = await filtrarTitulos(novaLista);
+      setTitulos(Array.isArray(lista) ? lista : []);
     }
+  }
+
+  function BarraPesquisa() {
+    const [query, setQuery] = useState("");
+    const [sugestoes, setSugestoes] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+      if(query.length < 2) return setSugestoes([]);
+
+      const timeout = setTimeout(async () => {
+        setLoading(true);
+        const data = await sugerirTitulo(query);
+        setSugestoes(data);
+        setLoading(false);
+      }, 300);
+      return () => clearTimeout(timeout);
+    }, [query]);
   }
 
   function BotaoPlataforma({ nome, onClick, ativo, corIcone}) {
@@ -69,14 +92,6 @@ export default function App() {
     )
   }
 
-  function qualPlataforma(plataforma) {
-    if (novasPlataformas.includes(plataforma)) {
-      setNovasPlataformas(novasPlataformas.filter(p => p !== plataforma))
-    } else {
-      setNovasPlataformas([...novasPlataformas, plataforma])
-    }
-  }
-
   return (
     <div className="bg-gray-900 min-h-screen text-white pt-40 px-80 flex flex-col items-center">
       <h1 className="text-5xl text-center font-bold mb-20 w-full">RoleTela</h1>
@@ -94,9 +109,27 @@ export default function App() {
             </p>
           )}
         </div>
+
         <div className="bg-gray-800 p-10 rounded-lg grid grid-cols-2 grid-rows-2 gap-4 justify-items-center items-center">
-          <input type="text" value={novoTitulo} id="iNovoTitulo" onChange={(e) => setAdicionado(e.target.value)} placeholder="Novo título" className="border px-3 rounded-lg" 
+          <input 
+            type="text" 
+            value={query} 
+            onChange={(e) => setQuery(e.target.value)} 
+            placeholder="Pesquisar novo título" 
+            className="border px-3 rounded-lg" 
           />
+          {sugestoes.length > 0 && (
+            <ul>
+              {sugestoes.map((item) => (
+                <li key={item.id}>
+                  <div>
+                    <strong>{item.title}</strong>
+                    <p>{item.plataforma}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
           <button onClick={adicionar} className="bg-green-600 font-semibold h-10 px-10 py-1 rounded-lg hover:cursor-pointer transition-colours" >Adicionar</button>
         </div>
       </nav>
