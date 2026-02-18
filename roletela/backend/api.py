@@ -1,5 +1,5 @@
 import requests
-from functions import listarTitulos
+from functions import adicionarTitulo, listarTitulos
 headers = {
     "accept": 'application/json',
     "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlZDU4N2YxNjY3ZDViZDIzNjkyMDk1MjQ2NWE4OWQyZCIsIm5iZiI6MTc3MDk1NDQwOC44OTIsInN1YiI6IjY5OGU5ZWE4MjVjOGE0YThjYmI2ODk5MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.SRmYAq05TPExKlLEzQut7hOuGAE2JFO_TOjW5RfvIpE"
@@ -19,10 +19,11 @@ def sugerir_titulos(titulo):
     
     url = 'https://api.themoviedb.org/3/search/multi'
     response = requests.get(url, headers=headers, params={"query": titulo, "region": "BR", 'language': 'pt-BR'})
+    response.encoding = 'utf-8'
     results_titulo = response.json()['results']
     
     i = 0
-    for r in results_titulo[:8]:
+    for r in results_titulo[:20]:
         if r['media_type'] == 'tv' or r['media_type'] == 'movie':
             url = 'https://api.themoviedb.org/3/{media}/{tv_id}/watch/providers'.format(media=r['media_type'],tv_id=r['id'])
             response = requests.get(url, headers=headers)
@@ -69,13 +70,13 @@ def sugerir_titulos(titulo):
                                                 "compra": providers_buy},
                             "img": img}    
                 sugestoes.append(sugestao)
-        if i == 4:
+        if i == 10:
             break  
     return sugestoes
 
-def detalhes_titulo(id_api, media_type, title, plataforma, providers_rent, providers_buy, img):
+def detalhes_titulo(id_api, media_type, title, plataforma=[], providers_rent=[], providers_buy=[], img=''):
     url_detail = 'https://api.themoviedb.org/3/{media}/{tv_id}'.format(media=media_type,tv_id=id_api)
-    response = requests.get(url_detail, headers=headers)
+    response = requests.get(url_detail, headers=headers, params={'language': 'pt-BR'})
     r = response.json()
     data = r['release_date'] if media_type == 'movie' else r['first_air_date']
     generos = []
@@ -86,8 +87,8 @@ def detalhes_titulo(id_api, media_type, title, plataforma, providers_rent, provi
     retorno = {
         "id_api": id_api,
         "media": media_type,
-        'overview': r['overview'],
         'title': title,
+        'overview': r['overview'],
         'release_date': '/'.join(data.split('-')[::-1]),
         'vote_average': r['vote_average'],
         'origin_country': r['origin_country'], 
@@ -98,6 +99,21 @@ def detalhes_titulo(id_api, media_type, title, plataforma, providers_rent, provi
                            "compra": providers_buy}}
     return retorno
 
-'''print(detalhes_titulo(568091, 'movie', "Fratura", ["Netflix"], ['Amazon Prime Video'], ['Amazon Prime Video'], 'https://image.tmdb.org/t/p/w500/vsvmurub7aShF1PIFJS2l2D5ArS.jpg'))'''
+def escolher_titulo(titulo):
+    opcao = 0
+    detalhes = []
+    for c, v in enumerate(sugerir_titulos(titulo)):
+        arg = []
+        for k, val in v.items():
+            arg.append(val)
+        detalhes.append(arg)
+    for i in detalhes:
+        print(detalhes.index(i)+1, ':', i, end='\n\n')
+    while opcao < 1 or opcao > c+1:
+        opcao = int(input('Digite o número do título desejado: '))
+    return detalhes[opcao-1]
 
-'''print(sugerir_titulos("Fratura"))'''
+'''for t in listarTitulos():
+    print(t['titulo'], '-', t['plataforma'])
+    titulo_selecionado = escolher_titulo(t['titulo'])
+    adicionarTitulo(detalhes_titulo(titulo_selecionado[0], titulo_selecionado[1], titulo_selecionado[2], titulo_selecionado[3], titulo_selecionado[4]['aluguel'], titulo_selecionado[4]['compra'], titulo_selecionado[5]))'''
