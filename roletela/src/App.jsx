@@ -70,24 +70,21 @@ export default function App() {
   }
 
   function qualPlataforma(plataforma) {
-    console.log("antes:", novasPlataformas)
-
     if (novasPlataformas.includes(plataforma)) {
       setNovasPlataformas(novasPlataformas.filter(p => p !== plataforma))
     } else {
       setNovasPlataformas([...novasPlataformas, plataforma])
     }
-
-    console.log("clicou em:", plataforma)
   }   
 
-  function AdicionarPlataforma({ id }) {
+  function AdicionarPlataforma({ id, ativo }) {
     return (
       <label className='text-sm'>
             <input 
               type="checkbox"
               checked={novasPlataformas.includes(id)}
               onChange={() => qualPlataforma(id)} 
+              className="mx-2"
             />
             {id}
       </label>
@@ -115,7 +112,9 @@ export default function App() {
           <input type="text" value={novoTitulo} id="iNovoTitulo" onChange={(e) => setAdicionado(e.target.value)} placeholder="Novo título" className="border px-3 rounded-lg" 
           />
           <div className="row-span-2 grid grid-cols-2 gap-2" >
-            <AdicionarPlataforma id='Netflix' />
+            <AdicionarPlataforma 
+              id='Netflix'
+            />
             <AdicionarPlataforma id='Crunchyroll' />
             <AdicionarPlataforma id='Disney' />
             <AdicionarPlataforma id='GloboPlay' />
