@@ -18,7 +18,7 @@ def sugerir_titulos(titulo):
     sugestoes = []
     
     url = 'https://api.themoviedb.org/3/search/multi'
-    response = requests.get(url, headers=headers, params={"query": titulo, "region": "BR"})
+    response = requests.get(url, headers=headers, params={"query": titulo, "region": "BR", 'language': 'pt-BR'})
     results_titulo = response.json()['results']
     
     i = 0
@@ -54,10 +54,8 @@ def sugerir_titulos(titulo):
                 if plataforma == []:
                     plataforma = ''
                 
-                url_img = 'https://api.themoviedb.org/3/{media}/{tv_id}'.format(media=r['media_type'],tv_id=r['id'])
-                response = requests.get(url_img, headers=headers)
-                r_img = response.json()
-                img = r_img.get('poster_path', '')
+                img = r['poster_path']
+                
                 if img:
                     img = 'https://image.tmdb.org/t/p/w500' + img
                     
@@ -105,3 +103,5 @@ def detalhes_titulo(id_api, media_type, title, plataforma, providers_rent, provi
         'aluguel/compra': {"aluguel": providers_rent,
                            "compra": providers_buy}}
     return retorno
+
+'''print(detalhes_titulo(568091, 'movie', "Fratura", ["Netflix"], ['Amazon Prime Video'], ['Amazon Prime Video'], 'https://image.tmdb.org/t/p/w500/vsvmurub7aShF1PIFJS2l2D5ArS.jpg'))'''

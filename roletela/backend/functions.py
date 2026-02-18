@@ -18,11 +18,11 @@ def listarTitulos(*plataformas):
 
 def adicionarTitulo(dict):
     dados = listarTitulos()
-    if dict['id_api'].capitalize() not in [filme["id_api"] for filme in dados]:
+    if dict['id_api'] not in [filme["id_api"] for filme in dados]:
         dados.append({
             "id": len(dados) + 1,
             "id_api": dict['id_api'],
-            "media": dict['media_type'],
+            "media": dict['media'],
             'overview': dict['overview'],
             'title': dict['title'],
             'release_date': dict['release_date'],
@@ -31,8 +31,8 @@ def adicionarTitulo(dict):
             'genres': dict['genres'], 
             'img': dict['img'],
             'plataforma': dict['plataforma'], 
-            'aluguel/compra': {"aluguel": dict['providers_rent'],
-                            "compra": dict['providers_buy']}})
+            'aluguel/compra': {"aluguel": dict['aluguel/compra']['aluguel'],
+                            "compra": dict['aluguel/compra']['compra']}})
         with open("./roletela/backend/filmes.json", "w", encoding='utf-8') as arquivo:
             json.dump(dados, arquivo, ensure_ascii=False)
         return 'Filme adicionado.'
@@ -58,3 +58,7 @@ def filtrarTitulos(*plataformas):
                 if filme not in filmes_filtrados:
                     filmes_filtrados += [filme]
     return filmes_filtrados
+
+'''dict_Fratura = {'id_api': 568091, 'media': 'movie', 'overview': "Driving cross-country, Ray and his wife and daughter stop at a highway rest area where his daughter falls and breaks her arm. After a frantic rush to the hospital and a clash with the check-in nurse, Ray is finally able to get her to a doctor. While the wife and daughter go downstairs for an MRI, Ray, exhausted, passes out in a chair in the lobby. Upon waking up, they have no record or knowledge of Ray's family ever being checked in.", 'title': 'Fratura', 'release_date': '22/09/2019', 'vote_average': 6.75, 'origin_country': ['US'], 'genres': ['Thriller', 'Drama'], 'img': 'https://image.tmdb.org/t/p/w500/vsvmurub7aShF1PIFJS2l2D5ArS.jpg', 'plataforma': ['Netflix'], 'aluguel/compra': {'aluguel': ['Amazon Prime Video'], 'compra': ['Amazon Prime Video']}}
+
+print(adicionarTitulo(dict_Fratura))'''
