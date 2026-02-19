@@ -23,7 +23,7 @@ def sugerir_titulos(titulo):
     results_titulo = response.json()['results']
     
     i = 0
-    for r in results_titulo[:20]:
+    for r in results_titulo[:8]:
         if r['media_type'] == 'tv' or r['media_type'] == 'movie':
             url = 'https://api.themoviedb.org/3/{media}/{tv_id}/watch/providers'.format(media=r['media_type'],tv_id=r['id'])
             response = requests.get(url, headers=headers)
@@ -73,7 +73,7 @@ def sugerir_titulos(titulo):
                                                 "compra": providers_buy},
                             "img": img}    
                 sugestoes.append(sugestao)
-        if i == 10:
+        if i == 5:
             break  
     return sugestoes
 

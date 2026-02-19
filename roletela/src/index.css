@@ -1,4 +1,9 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+
+:root {
+    --font1: "Nabla", system-ui;
+}
 
 html, body, #root {
     min-height: 100vh;
