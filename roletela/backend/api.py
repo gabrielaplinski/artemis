@@ -9,11 +9,11 @@ def sugerir_titulos(titulo):
     plataformas = [
         "Netflix",
         "Crunchyroll",
-        "Disney Plus",
+        "Disney",
         "Globoplay",
-        "HBO Max",
-        "Apple TV",
-        "Amazon Prime Video"
+        "HBO",
+        "Apple",
+        "Amazon"
     ]
     sugestoes = []
     
@@ -26,12 +26,14 @@ def sugerir_titulos(titulo):
     for r in results_titulo[:8]:
         if r['media_type'] == 'tv' or r['media_type'] == 'movie':
             url = 'https://api.themoviedb.org/3/{media}/{tv_id}/watch/providers'.format(media=r['media_type'],tv_id=r['id'])
+            print(r['id'])
             response = requests.get(url, headers=headers)
             try:
                 result_providers = response.json()['results']
+                print(result_providers)
             except:
                 result_providers = {}
-        
+            
             if 'BR' in result_providers:
                 i += 1
                 id_api = r['id']
@@ -54,8 +56,10 @@ def sugerir_titulos(titulo):
                 plataforma = []
                 if providers:
                     for provider in providers:
-                        if provider['provider_name'] in plataformas:
-                            plataforma.append(provider['provider_name']) 
+                        provider = provider['provider_name'].split(' ')[0]
+                        if provider in plataformas:
+                            if provider not in plataforma:
+                                plataforma.append(provider) 
                 
                 img = r['poster_path']
                 
@@ -129,5 +133,8 @@ def escolher_titulo(titulo):
 {"id": 46, "title": "Kaze ga tsuyoku fuiteiru", "plataforma": "X", "id_api": "api_1046"}
 {"id": 61, "title": "91 days", "plataforma": "X", "id_api": "api_1061"}
 inuyasha
-tokyo show
+tokyo ghoul
 '''
+
+'''titulo_selecionado = escolher_titulo('inuyasha')
+print(adicionarTitulo(detalhes_titulo(titulo_selecionado[0], titulo_selecionado[1], titulo_selecionado[2], titulo_selecionado[3], titulo_selecionado[4]['aluguel'], titulo_selecionado[4]['compra'], titulo_selecionado[5])))'''
