@@ -4,6 +4,7 @@ from functions import *
 from api import sugerir_titulos, detalhes_titulo
 
 app = Flask(__name__, template_folder='../')
+app.config['JSON_AS_ASCII'] = False
 CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST", "OPTIONS"]}})
 
 @app.route('/sortear', methods=['GET'])
