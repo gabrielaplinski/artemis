@@ -1,7 +1,7 @@
 from flask_cors import CORS
 from flask import Flask, jsonify, request
 from functions import *
-from api import sugerir_titulos, detalhes_titulo
+from api import atualizar_provedores, sugerir_titulos, detalhes_titulo
 
 app = Flask(__name__, template_folder='../')
 app.config['JSON_AS_ASCII'] = False
@@ -9,6 +9,7 @@ CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST", "OPTIONS
 
 @app.route('/sortear', methods=['GET'])
 def sortear():
+    atualizar_provedores()
     plataformas = request.args.getlist('plataforma')    
     return jsonify(sortearTitulo(*plataformas))
 
@@ -41,6 +42,16 @@ def adicionar_filme():
     
     return jsonify(adicionarTitulo(dados))
 
+@app.route('/filmes/excluir', methods=['DELETE'])
+def excluir_filme():
+    id = request.args.get('id')
+    id_api = request.args.get('id_api')
+    return jsonify(excluirTitulo(int(id), id_api))
+    
+@app.route('/filmes/atualizar', methods=['PUT'])
+def atualizar_filmes():
+    return jsonify(atualizar_provedores())
+    
 if __name__ == '__main__':
     app.run(debug=True)
     

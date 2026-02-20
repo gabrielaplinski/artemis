@@ -15,13 +15,11 @@ def listarTitulos(*plataformas):
     if plataformas:
         dados = filtrarTitulos(dados, *plataformas)
     return dados
-    
-' not in [filme["id_api"] for filme in dados]'
 
 def adicionarTitulo(dict):
     dados = listarTitulos()
     if dados:
-        if dict['id_api']:
+        if dict['id_api'] not in [filme["id_api"] for filme in dados]:
             dados.append({
                 "id": len(dados) + 1,
                 "id_api": dict['id_api'],
@@ -62,6 +60,17 @@ def filtrarTitulos(dados, *plataformas):
                 if filme not in filmes_filtrados:
                     filmes_filtrados += [filme]
     return filmes_filtrados
+
+def excluirTitulo(id, id_api):
+    dados = listarTitulos()
+    for filme in dados:
+        if filme['id'] == id and filme['id_api'] == id_api:
+            dados.remove(filme)
+            with open("./roletela/backend/filmes.json", "w", encoding='utf-8') as arquivo:
+                json.dump(dados, arquivo, ensure_ascii=False)
+            return 'Filme excluído.'
+        return 'Informações de id incorretas.'
+    return 'Filme não encontrado.'
 
 # função usada pra atualizar a lista de filmes, não é necessária para o funcionamento do programa, mas pode ser útil para adicionar novos títulos sugeridos
 '''

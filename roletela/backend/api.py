@@ -1,3 +1,4 @@
+from flask import json
 import requests
 from functions import adicionarTitulo, listarTitulos
 headers = {
@@ -118,6 +119,69 @@ def escolher_titulo(titulo):
         opcao = int(input('Digite o número do título desejado: '))
     return detalhes[opcao-1]
 
+def atualizar_provedores():
+    plataformas = [
+        "Netflix",
+        "Crunchyroll",
+        "Disney",
+        "Globoplay",
+        "HBO",
+        "Apple",
+        "Amazon"
+    ]
+    
+    dados = listarTitulos()
+    dados_backup = listarTitulos()
+    
+    for filme in dados:
+        print(filme['title'], filme['id_api'], filme['media'])
+        print('----------------------------------')
+        print(filme['plataforma'])
+        print(filme['aluguel/compra'])
+        print('----------------------------------')
+        url = 'https://api.themoviedb.org/3/{media}/{tv_id}/watch/providers'.format(media=filme['media'],tv_id=filme['id_api'])
+        response = requests.get(url, headers=headers)
+        try:
+            result_providers = response.json()['results']
+        except:
+            result_providers = {}
+            print('Nenhum resultado encontrado para o título:', filme['title'])
+        
+        if 'BR' in result_providers:                    
+            if 'flatrate' in result_providers['BR']:   
+                providers = result_providers['BR']['flatrate']
+            else:
+                providers = []
+            if 'rent' in result_providers['BR']:
+                providers_rent = [provider['provider_name'] for provider in result_providers['BR']['rent']]
+            else:
+                providers_rent = []
+            if 'buy' in result_providers['BR']:
+                providers_buy = [provider['provider_name'] for provider in result_providers['BR']['buy']]
+            else:
+                providers_buy = [] 
+                    
+            plataforma = []
+            if providers:
+                for provider in providers:
+                    provider = provider['provider_name'].split(' ')[0]
+                    if provider in plataformas:
+                        if provider not in plataforma:
+                            plataforma.append(provider)
+            print(plataforma)
+            print(providers_rent)
+            print(providers_buy)
+            print('----------------------------------')
+            filme['plataforma'] = plataforma
+            filme['aluguel/compra'] = {"aluguel": providers_rent,
+                                        "compra": providers_buy}
+    if dados == dados_backup:
+        return 'Nenhuma alteração necessária.'
+    with open("./roletela/backend/filmes.json", "w", encoding='utf-8') as arquivo:
+        json.dump(dados, arquivo, ensure_ascii=False)
+    return 'Provedores atualizados.'
+
+print(atualizar_provedores())
 
 # função usada pra atualizar a lista de filmes, não é necessária para o funcionamento do programa, mas pode ser útil para adicionar novos títulos sugeridos
 '''for t in listarTitulos():
