@@ -25,7 +25,7 @@ export default function App() {
       console.log(data);
       setSugestoes(data);
       setLoading(false);
-    }, 200);
+    }, 500);
     return () => clearTimeout(timeout);
   }, [query]);
 

@@ -26,11 +26,9 @@ def sugerir_titulos(titulo):
     for r in results_titulo[:8]:
         if r['media_type'] == 'tv' or r['media_type'] == 'movie':
             url = 'https://api.themoviedb.org/3/{media}/{tv_id}/watch/providers'.format(media=r['media_type'],tv_id=r['id'])
-            print(r['id'])
             response = requests.get(url, headers=headers)
             try:
                 result_providers = response.json()['results']
-                print(result_providers)
             except:
                 result_providers = {}
             
