@@ -1,7 +1,6 @@
 from flask_cors import CORS
 from flask import Flask, jsonify, request
-from functions import *
-from api import atualizar_provedores, sugerir_titulos, detalhes_titulo
+from api import *
 
 app = Flask(__name__, template_folder='../')
 app.config['JSON_AS_ASCII'] = False
