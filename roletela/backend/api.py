@@ -83,7 +83,7 @@ async def sugerir_titulos(titulo):
             search_providers_TMBD(session, r['id'], r['media_type']) for r in results_titulo
         ]
         result_providers = await asyncio.gather(*tasks)
-        for r in range(0,len(results_titulo)):
+        for r in range(0,len(results_titulo)+1):
             try:
                 if 'BR' in result_providers[r]['results']:
                     id_api = results_titulo[r]['id']
@@ -135,7 +135,7 @@ def detalhes_titulo(id_api, media_type, title, plataforma=[], providers_rent=[],
 def escolher_titulo(titulo):
     opcao = 0
     detalhes = []
-    for c, v in enumerate(sugerir_titulos(titulo)):
+    for c, v in enumerate(asyncio.run(sugerir_titulos(titulo))):
         arg = []
         for k, val in v.items():
             arg.append(val)
@@ -165,26 +165,10 @@ def att_provedores(filme):
     except:
         result_providers = {}
     if 'BR' in result_providers:                    
-        if 'flatrate' in result_providers['BR']:   
-            providers = result_providers['BR']['flatrate']
-        else:
-            providers = []
-        if 'rent' in result_providers['BR']:
-            providers_rent = [provider['provider_name'] for provider in result_providers['BR']['rent']]
-        else:
-            providers_rent = []
-        if 'buy' in result_providers['BR']:
-            providers_buy = [provider['provider_name'] for provider in result_providers['BR']['buy']]
-        else:
-            providers_buy = [] 
-                
-        plataforma = []
-        if providers:
-            for provider in providers:
-                provider = provider['provider_name'].split(' ')[0]
-                if provider in plataformas:
-                    if provider not in plataforma:
-                        plataforma.append(provider)
+        providers = buscar_providers(result_providers)
+        plataforma = providers[0]
+        providers_rent = providers[1]
+        providers_buy = providers[2]
         filme['plataforma'] = plataforma
         filme['aluguel/compra'] = {"aluguel": providers_rent,
                                     "compra": providers_buy}
@@ -232,7 +216,7 @@ def adicionarTitulo(dict):
             return 'Filme já cadastrado.'
     else:
         return 'Nenhum filme encontrado para as plataformas selecionadas.'
-
+    
 def sortearTitulo(*plataformas):
     import random
     dados = listarTitulos()
@@ -319,6 +303,7 @@ def completarTitulo(dict):
 inuyasha
 tokyo ghoul
 '''
+
 
 '''titulo_selecionado = escolher_titulo('inuyasha')
 print(adicionarTitulo(detalhes_titulo(titulo_selecionado[0], titulo_selecionado[1], titulo_selecionado[2], titulo_selecionado[3], titulo_selecionado[4]['aluguel'], titulo_selecionado[4]['compra'], titulo_selecionado[5])))'''
