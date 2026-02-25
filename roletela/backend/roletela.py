@@ -3,7 +3,7 @@ from flask import Flask, jsonify, request
 from api import *
 
 app = Flask(__name__, template_folder='../')
-app.config['JSON_AS_ASCII'] = False
+app.json.ensure_ascii = False
 CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST", "OPTIONS"]}})
 
 @app.route('/sortear', methods=['GET'])
@@ -21,8 +21,8 @@ def filmes():
 def sugerir_filmes():
     titulo = request.args.getlist('titulo')
     try:
-        resultado = jsonify(sugerir_titulos(titulo))
-        return resultado
+        resultado = asyncio.run(sugerir_titulos(titulo))
+        return jsonify(resultado)
     except:
         return jsonify('Nenhum resultado encontrado para o título sugerido.')
 

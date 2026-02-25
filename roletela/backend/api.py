@@ -1,5 +1,7 @@
 from flask import json
 import requests
+import asyncio
+import aiohttp
 
 headers = {
     "accept": 'application/json',
@@ -15,69 +17,94 @@ plataformas = [
         "Amazon"
     ]
 
-def sugerir_titulos(titulo):
-    sugestoes = []
-    
-    url = 'https://api.themoviedb.org/3/search/multi'
-    response = requests.get(url, headers=headers, params={"query": titulo, "region": "BR", 'language': 'pt-BR'})
-    response.encoding = 'utf-8'
-    results_titulo = response.json()['results']
-    
-    i = 0
-    for r in results_titulo[:8]:
-        if r['media_type'] == 'tv' or r['media_type'] == 'movie':
-            url = 'https://api.themoviedb.org/3/{media}/{tv_id}/watch/providers'.format(media=r['media_type'],tv_id=r['id'])
-            response = requests.get(url, headers=headers)
-            try:
-                result_providers = response.json()['results']
-            except:
-                result_providers = {}
-            
-            if 'BR' in result_providers:
-                i += 1
-                id_api = r['id']
-                media = r['media_type']
-                title = r['title'] if media == 'movie' else r['name']
-                        
-                if 'flatrate' in result_providers['BR']:   
-                    providers = result_providers['BR']['flatrate']
-                else:
-                    providers = []
-                if 'rent' in result_providers['BR']:
-                    providers_rent = [provider['provider_name'] for provider in result_providers['BR']['rent']]
-                else:
-                    providers_rent = []
-                if 'buy' in result_providers['BR']:
-                    providers_buy = [provider['provider_name'] for provider in result_providers['BR']['buy']]
-                else:
-                    providers_buy = [] 
-                     
-                plataforma = []
-                if providers:
-                    for provider in providers:
-                        provider = provider['provider_name'].split(' ')[0]
-                        if provider in plataformas:
-                            if provider not in plataforma:
-                                plataforma.append(provider) 
-                
-                img = r['poster_path']
-                
-                if img:
-                    img = 'https://image.tmdb.org/t/p/w500' + img
-                else:
-                    img = ''
+# funções com a API TMBD
 
-                sugestao = { 
-                            "id_api": id_api,
-                            "media": media,
-                            'title': title,
-                            "plataforma": plataforma,
-                            "aluguel/compra": {"aluguel": providers_rent,
-                                                "compra": providers_buy},
-                            "img": img}    
-                sugestoes.append(sugestao)
-        if i == 5:
-            break  
+async def search_multi_TMBD(session, titulo):
+    url = 'https://api.themoviedb.org/3/search/multi'
+    params = {"query": titulo, "region": "BR", 'language': 'pt-BR'}
+    try:
+        async with session.get(url,headers=headers,params=params, timeout=10) as response:
+            response.raise_for_status()
+            return await response.json()
+    except Exception as e:
+        return f'Erro {e}'
+
+async def search_providers_TMBD(session, id_api, media):
+    url = 'https://api.themoviedb.org/3/{media}/{tv_id}/watch/providers'.format(media=media,tv_id=id_api)
+    try:
+        async with session.get(url,headers=headers, timeout=10) as response:
+            response.raise_for_status()
+            return await response.json()
+    except Exception as e:
+        return f'Erro {e}'
+
+def buscar_img(result):
+    img = result['poster_path']  
+    if img:
+        img = 'https://image.tmdb.org/t/p/w500' + img
+    else:
+        img = ''
+    
+    return img
+
+def buscar_providers(result_providers):
+    if 'flatrate' in result_providers['BR']:   
+        providers = result_providers['BR']['flatrate']
+    else:
+        providers = []
+    if 'rent' in result_providers['BR']:
+        providers_rent = [provider['provider_name'] for provider in result_providers['BR']['rent']]
+    else:
+        providers_rent = []
+    if 'buy' in result_providers['BR']:
+        providers_buy = [provider['provider_name'] for provider in result_providers['BR']['buy']]
+    else:
+        providers_buy = [] 
+            
+    plataforma = []
+    if providers:
+        for provider in providers:
+            provider = provider['provider_name'].split(' ')[0]
+            if provider in plataformas:
+                if provider not in plataforma:
+                    plataforma.append(provider) 
+                    
+    return plataforma, providers_rent, providers_buy
+
+async def sugerir_titulos(titulo):
+    sugestoes = []    
+    async with aiohttp.ClientSession() as session:
+        tasks = [
+            search_multi_TMBD(session, titulo)
+        ]
+        results_titulo = await asyncio.gather(*tasks)
+        results_titulo = results_titulo[0].get('results')
+        tasks = [
+            search_providers_TMBD(session, r['id'], r['media_type']) for r in results_titulo
+        ]
+        result_providers = await asyncio.gather(*tasks)
+        for r in range(0,len(results_titulo)):
+            try:
+                if 'BR' in result_providers[r]['results']:
+                    id_api = results_titulo[r]['id']
+                    media = results_titulo[r]['media_type']
+                    title = results_titulo[r]['title'] if media == 'movie' else results_titulo[r]['name']
+                    providers = buscar_providers(result_providers[r]['results'])
+                    plataforma = providers[0]
+                    providers_rent = providers[1]
+                    providers_buy = providers[2]
+                    img = buscar_img(results_titulo[r])
+                    sugestao = {
+                                "id_api": id_api,
+                                "media": media,
+                                'title': title,
+                                "plataforma": plataforma,
+                                "aluguel/compra": {"aluguel": providers_rent,
+                                                    "compra": providers_buy},
+                                "img": img}
+                    sugestoes.append(sugestao)
+            except:
+                continue
     return sugestoes
 
 def detalhes_titulo(id_api, media_type, title, plataforma=[], providers_rent=[], providers_buy=[], img=''):
@@ -293,5 +320,5 @@ inuyasha
 tokyo ghoul
 '''
 
-titulo_selecionado = escolher_titulo('inuyasha')
-print(adicionarTitulo(detalhes_titulo(titulo_selecionado[0], titulo_selecionado[1], titulo_selecionado[2], titulo_selecionado[3], titulo_selecionado[4]['aluguel'], titulo_selecionado[4]['compra'], titulo_selecionado[5])))
+'''titulo_selecionado = escolher_titulo('inuyasha')
+print(adicionarTitulo(detalhes_titulo(titulo_selecionado[0], titulo_selecionado[1], titulo_selecionado[2], titulo_selecionado[3], titulo_selecionado[4]['aluguel'], titulo_selecionado[4]['compra'], titulo_selecionado[5])))'''
