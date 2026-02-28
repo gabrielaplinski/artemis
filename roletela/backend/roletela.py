@@ -22,10 +22,10 @@ def filmes_sorteaveis():
     return jsonify(listar_sorteaveis(*plataformas))
 
 @app.route('/sugerir', methods=['GET'])
-def sugerir_filmes():
+async def sugerir_filmes():
     titulo = request.args.getlist('titulo')
     try:
-        resultado = asyncio.run(sugerir_titulos(titulo))
+        resultado = await sugerir_titulos(titulo)
         return jsonify(resultado)
     except:
         return jsonify('Nenhum resultado encontrado para o título sugerido.')
