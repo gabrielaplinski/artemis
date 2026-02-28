@@ -194,10 +194,24 @@ export default function App() {
           <ul className="pt-10 grid grid-cols-3 gap-10" >
             {titulos.length > 0 ? (
               titulos.map((titulo, index) => (
-              <li key={index} className="p-1 w-60 flex flex-col justify-center items-center" >
+              <li key={index} className="p-1 w-60 relative group flex flex-col justify-center items-center" >
                 {titulo.title}
+                <div>
+                  <input 
+                    type="checkbox" 
+                    title="Marcar como assistido"
+                    className="w-5 h-5 cursor-pointer"
+                    onChange={() => confirmarAssistido(titulo)}
+                  />
+                  <button
+                    onClick={() => confirmarExcluir(titulo)}
+                    title="Excluir título"
+                    className="bg-reg-800 hover:bg-red-600 text-white text-xs px-2 py-1 rounded cursor-pointer"
+                  >
+                    ✗
+                  </button>
+                </div>
                 <img src={titulo.img} alt="Capa do título" className="w-50" ></img>
-                <input type="checkbox" className="z-10" />
                 <p className="text-orange-700 text-sm" >{titulo.plataforma}</p>
               </li>
               ))
