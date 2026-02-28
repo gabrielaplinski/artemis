@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { listarTitulos, sortearTitulo, filtrarTitulos, sugerirTitulo, adicionarTitulo } from "./services/api";
+import { listarTitulos, sortearTitulo, filtrarTitulos, sugerirTitulo, adicionarTitulo, excluirTitulo, alterarStatus } from "./services/api";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
 
@@ -11,6 +11,7 @@ export default function App() {
   const [sugestoes, setSugestoes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selecionado, setSelecionado] = useState(null);
+  const [confirmacao, setConfirmacao] = useState(null);
 
   useEffect(() => {
   buscarLista();
@@ -65,6 +66,24 @@ export default function App() {
       const lista = await filtrarTitulos(novaLista);
       setTitulos(Array.isArray(lista) ? lista : []);
     }
+  }
+
+  function confirmarExcluir(titulo) {
+    setConfirmacao({ tipo: "excluir", titulo });
+  }
+
+  function confirmarAssistido(titulo) {
+    setConfirmacao({ tipo: "assistido", titulo });
+  }
+
+  async function executarConfirmacao() {
+    if (confirmacao.tipo === "excluir") {
+      await excluirTitulo(confirmacao.titulo.id, confirmacao.titulo.id_api);
+    } else if (confirmacao.tipo === "assistido") {
+      await alterarStatus(confirmacao.titulo.id_api, "assistido");
+    }
+    await buscarLista();
+    setConfirmacao(null);
   }
 
   function BotaoPlataforma({ nome, onClick, ativo, corIcone}) {
@@ -196,17 +215,18 @@ export default function App() {
               titulos.map((titulo, index) => (
               <li key={index} className="p-1 w-60 relative group flex flex-col justify-center items-center" >
                 {titulo.title}
-                <div>
-                  <input 
-                    type="checkbox" 
-                    title="Marcar como assistido"
-                    className="w-5 h-5 cursor-pointer"
+                <div className="absolute top-75 w-full flex justify-between px-8 opacity-0 group-hover:opacity-100 transition-opacity z-10" >
+                  <button
                     onChange={() => confirmarAssistido(titulo)}
-                  />
+                    title="Marcar como assistido"
+                    className="bg-green-800 hover:bg-green-600 text-white text-sm m-1 px-1 py-.9 rounded cursor-pointer"
+                  >
+                    ✓
+                  </button>
                   <button
                     onClick={() => confirmarExcluir(titulo)}
                     title="Excluir título"
-                    className="bg-reg-800 hover:bg-red-600 text-white text-xs px-2 py-1 rounded cursor-pointer"
+                    className="bg-red-800 hover:bg-red-600 text-white text-sm m-1 px-1 py-.9 rounded cursor-pointer"
                   >
                     ✗
                   </button>

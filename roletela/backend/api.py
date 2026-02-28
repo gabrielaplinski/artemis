@@ -370,5 +370,3 @@ tokyo ghoul
 
 '''titulo_selecionado = escolher_titulo('inuyasha')
 print(adicionarTitulo(detalhes_titulo(titulo_selecionado[0], titulo_selecionado[1], titulo_selecionado[2], titulo_selecionado[3], titulo_selecionado[4]['aluguel'], titulo_selecionado[4]['compra'], titulo_selecionado[5])))'''
-
-atualizar_provedores()
