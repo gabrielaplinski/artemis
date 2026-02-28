@@ -10,12 +10,17 @@ CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST", "OPTIONS
 def sortear():
     atualizar_provedores()
     plataformas = request.args.getlist('plataforma')    
-    return jsonify(sortearTitulo(*plataformas))
+    return jsonify(sortear_titulo(*plataformas))
 
-@app.route('/filmes', methods=['GET'])
-def filmes():
+@app.route('/filmes_assistidos', methods=['GET'])
+def filmes_assistidos():
     plataformas = request.args.getlist('plataforma')    
-    return jsonify(listarTitulos(*plataformas))
+    return jsonify(listar_assistidos(*plataformas))
+
+@app.route('/filmes_sorteaveis', methods=['GET'])
+def filmes_sorteaveis():
+    plataformas = request.args.getlist('plataforma')
+    return jsonify(listar_sorteaveis(*plataformas))
 
 @app.route('/sugerir', methods=['GET'])
 def sugerir_filmes():
@@ -49,7 +54,13 @@ def excluir_filme():
     
 @app.route('/filmes/atualizar', methods=['PUT'])
 def atualizar_filmes():
-    return jsonify(atualizar_provedores())
+    return jsonify(atualizar_provedores()) 
+   
+@app.route('/alterar_status', methods=['GET'])
+def alterar_status():
+    status = request.args.get('status')
+    id_api = request.args.get('id_api')
+    return jsonify(alterar_status(id_api, status))
     
 if __name__ == '__main__':
     app.run(debug=True)

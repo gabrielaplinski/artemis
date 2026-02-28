@@ -2,6 +2,7 @@ from flask import json
 import requests
 import asyncio
 import aiohttp
+import copy
 
 headers = {
     "accept": 'application/json',
@@ -19,6 +20,7 @@ plataformas = [
 
 # funções com a API TMBD
 
+# função pra fazer a primeira busca na API
 async def search_multi_TMBD(session, titulo):
     url = 'https://api.themoviedb.org/3/search/multi'
     params = {"query": titulo, "region": "BR", 'language': 'pt-BR'}
@@ -29,6 +31,7 @@ async def search_multi_TMBD(session, titulo):
     except Exception as e:
         return f'Erro {e}'
 
+# função pra buscar os provedores de cada sugestão na API
 async def search_providers_TMBD(session, id_api, media):
     url = 'https://api.themoviedb.org/3/{media}/{tv_id}/watch/providers'.format(media=media,tv_id=id_api)
     try:
@@ -38,6 +41,7 @@ async def search_providers_TMBD(session, id_api, media):
     except Exception as e:
         return f'Erro {e}'
 
+# função prra buscar a img de cada sugestão na API
 def buscar_img(result):
     img = result['poster_path']  
     if img:
@@ -47,6 +51,7 @@ def buscar_img(result):
     
     return img
 
+# função pra filtrar e salvar cada provedor no dict de cada sugestão
 def buscar_providers(result_providers):
     if 'flatrate' in result_providers['BR']:   
         providers = result_providers['BR']['flatrate']
@@ -64,13 +69,15 @@ def buscar_providers(result_providers):
     plataforma = []
     if providers:
         for provider in providers:
-            provider = provider['provider_name'].split(' ')[0]
-            if provider in plataformas:
-                if provider not in plataforma:
-                    plataforma.append(provider) 
+            provider = provider['provider_name'].split(' ')
+            for p in plataformas:
+                if p in provider:
+                    if provider not in plataforma:
+                        plataforma.append(provider[0]) 
                     
     return plataforma, providers_rent, providers_buy
 
+# função que chama as 4 acima, completando a ciclo de: receber uma pesquisa por titulos, buscar na API e retornar com sugestões disponíveis no Brasil
 async def sugerir_titulos(titulo):
     sugestoes = []    
     async with aiohttp.ClientSession() as session:
@@ -83,7 +90,7 @@ async def sugerir_titulos(titulo):
             search_providers_TMBD(session, r['id'], r['media_type']) for r in results_titulo
         ]
         result_providers = await asyncio.gather(*tasks)
-        for r in range(0,len(results_titulo)+1):
+        for r in range(0,len(results_titulo)):
             try:
                 if 'BR' in result_providers[r]['results']:
                     id_api = results_titulo[r]['id']
@@ -107,6 +114,7 @@ async def sugerir_titulos(titulo):
                 continue
     return sugestoes
 
+# função buscar na API e salvar os detalhes do título escolhido na lista de filmes
 def detalhes_titulo(id_api, media_type, title, plataforma=[], providers_rent=[], providers_buy=[], img=''):
     url_detail = 'https://api.themoviedb.org/3/{media}/{tv_id}'.format(media=media_type,tv_id=id_api)
     response = requests.get(url_detail, headers=headers, params={'language': 'pt-BR'})
@@ -132,6 +140,7 @@ def detalhes_titulo(id_api, media_type, title, plataforma=[], providers_rent=[],
                            "compra": providers_buy}}
     return retorno
 
+# função pra adicionar titulos no terrminal - NÃO UTILIZADA NO SITE
 def escolher_titulo(titulo):
     opcao = 0
     detalhes = []
@@ -146,17 +155,19 @@ def escolher_titulo(titulo):
         opcao = int(input('Digite o número do título desejado: '))
     return detalhes[opcao-1]
 
+# função que atualiza os provedores dos filmes na lista
 def atualizar_provedores():
     dados = listarTitulos()
-    dados_backup = listarTitulos()
+    dados_backup = copy.deepcopy(dados)
     for filme in dados:
         att_provedores(filme)
     if dados == dados_backup:
         return 'Nenhuma alteração necessária.'
     with open("./roletela/backend/filmes.json", "w", encoding='utf-8') as arquivo:
-        json.dump(dados, arquivo, ensure_ascii=False)
+        json.dump(dados, arquivo, indent=4, ensure_ascii=False)
     return 'Provedores atualizados.'
 
+# função semelhante à atualizar_provedores(), mas atualiza apenas o filme informado nos parametros
 def att_provedores(filme):
     url = 'https://api.themoviedb.org/3/{media}/{tv_id}/watch/providers'.format(media=filme['media'],tv_id=filme['id_api'])
     response = requests.get(url, headers=headers)
@@ -175,25 +186,37 @@ def att_provedores(filme):
 
 # funções da lógica do site
    
-def listarTitulos(*plataformas):
-    try:
-        arquivo = open("./roletela/backend/filmes.json", "r", encoding='utf-8')
-    except:
-        arquivo = open("./roletela/backend/filmes.json", "w", encoding='utf-8')
-        arquivo.close()
-    try:
-        arquivo = open("./roletela/backend/filmes.json", "r", encoding='utf-8')
-        dados = json.load(arquivo)
-    except:
-        dados = []
-    arquivo.close()
+# lista filmes assistidos
+def listar_assistidos(*plataformas):
+    with open('./roletela/backend/filmes-assistidos.json', 'r', encoding='utf-8') as arquivo:
+        filmes_assistidos = json.load(arquivo)
     if plataformas:
-        dados = filtrarTitulos(dados, *plataformas)
-    return dados
+        filmes_assistidos = filtrarTitulos(filmes_assistidos, *plataformas)
+    return filmes_assistidos
 
+# lista filmes não assistidos, à sortear
+def listar_sorteaveis(*plataformas):
+    with open('./roletela/backend/filmes.json', 'r', encoding='utf-8') as arquivo:
+        filmes_sorteaveis = json.load(arquivo)
+    if plataformas:
+        filmes_sorteaveis = filtrarTitulos(filmes_sorteaveis, *plataformas)
+    return filmes_sorteaveis
+
+# lista todos os filmes, assistidos ou não
+def listarTitulos(*plataformas):
+    with open('./roletela/backend/filmes.json', 'r', encoding='utf-8') as arquivo:
+        filmes_sorteaveis = json.load(arquivo)
+    with open('./roletela/backend/filmes-assistidos.json', 'r', encoding='utf-8') as arquivo:
+        filmes_assistidos = json.load(arquivo)
+    filmes = filmes_assistidos + filmes_sorteaveis
+    if plataformas:
+        filmes = filtrarTitulos(filmes, *plataformas)
+    return filmes
+
+# adiciona um título na lista
 def adicionarTitulo(dict):
     dados = listarTitulos()
-    if dados:
+    try:
         if dict['id_api'] not in [filme["id_api"] for filme in dados]:
             dados.append({
                 "id": len(dados) + 1,
@@ -208,18 +231,38 @@ def adicionarTitulo(dict):
                 'img': dict['img'],
                 'plataforma': dict['plataforma'], 
                 'aluguel/compra': {"aluguel": dict['aluguel/compra']['aluguel'],
-                                "compra": dict['aluguel/compra']['compra']}})
-            with open("./roletela/backend/filmes.json", "w", encoding='utf-8') as arquivo:
-                json.dump(dados, arquivo, ensure_ascii=False)
+                                "compra": dict['aluguel/compra']['compra']},
+                'status': False})
+            separar_titulos(dados)
             return 'Filme adicionado.'
         else:
             return 'Filme já cadastrado.'
-    else:
-        return 'Nenhum filme encontrado para as plataformas selecionadas.'
-    
-def sortearTitulo(*plataformas):
+    except Exception as e:
+        return f'Erro {e}'
+
+# separa os titulos entre assistidos e sorteàveis (não assistidos), também reorganiza os IDs de cada lista
+def separar_titulos(titulos):
+    filmes_sorteaveis = []
+    filmes_assistidos = []
+    filmes = titulos
+    for filme in filmes:
+        if filme['status'] == True:
+            filmes_assistidos.append(filme)
+        if filme['status'] == False:
+            filmes_sorteaveis.append(filme)
+    for i, f in enumerate(filmes_assistidos):
+        f['id'] = i+1
+    for i, f in enumerate(filmes_sorteaveis):
+        f['id'] = i+1                
+    with open('./roletela/backend/filmes.json', 'w', encoding='utf-8') as arquivo:
+        json.dump(filmes_sorteaveis, arquivo, indent=4 , ensure_ascii=False)
+    with open('./roletela/backend/filmes-assistidos.json', 'w', encoding='utf-8') as arquivo:
+        json.dump(filmes_assistidos, arquivo, indent=4 , ensure_ascii=False)
+
+# sorteia um título para ser assitido, filtrando por plataformas, caso alguma seja informada nos parametros
+def sortear_titulo(*plataformas):
     import random
-    dados = listarTitulos()
+    dados = listar_sorteaveis()
     if plataformas:
         dados = filtrarTitulos(dados, *plataformas)
     if not dados:
@@ -228,6 +271,7 @@ def sortearTitulo(*plataformas):
     att_provedores(filme_sorteado)
     return filme_sorteado['title'], filme_sorteado['plataforma']
 
+# filtra titulos por plataforma
 def filtrarTitulos(dados, *plataformas):
     filmes_filtrados = []
     for plataforma in list(plataformas):
@@ -237,17 +281,34 @@ def filtrarTitulos(dados, *plataformas):
                     filmes_filtrados += [filme]
     return filmes_filtrados
 
-def excluirTitulo(id, id_api):
+# exclui um título da lista
+def excluirTitulo(id_api):
     dados = listarTitulos()
     for filme in dados:
-        if filme['id'] == id and filme['id_api'] == id_api:
+        if filme['id_api'] == id_api:
             dados.remove(filme)
-            with open("./roletela/backend/filmes.json", "w", encoding='utf-8') as arquivo:
-                json.dump(dados, arquivo, ensure_ascii=False)
+            separar_titulos(dados)
             return 'Filme excluído.'
-        return 'Informações de id incorretas.'
     return 'Filme não encontrado.'
 
+# adiciona uma chave aos títulos na lista - NÃO UTILIZADA NO SITE
+def adicionar_flag(flag, valor):
+    dados = listarTitulos()
+    for filme in dados:
+        filme[flag] = valor
+    with open('./roletela/backend/filmes.json', 'w', encoding='utf-8') as arquivo:
+        json.dump(dados, arquivo, indent=4 , ensure_ascii=False)
+        
+# atera status entre True para assistido e False para não assistido
+def alterar_status(id_api, status):
+    filmes = listarTitulos()
+    print(filmes)
+    for filme in filmes:
+        if filme['id_api'] == id_api:
+            filme['status'] = status
+    separar_titulos(filmes)
+    print('OK')
+    
 # função usada pra atualizar a lista de filmes, não é necessária para o funcionamento do programa, mas pode ser útil para adicionar novos títulos sugeridos
 '''
 def completarTitulo(dict):
@@ -282,7 +343,7 @@ def completarTitulo(dict):
                 'aluguel/compra': {"aluguel": dict['aluguel/compra']['aluguel'],
                                 "compra": dict['aluguel/compra']['compra']}})
             with open("./roletela/backend/novos_filmes.json", "w", encoding='utf-8') as arquivo:
-                json.dump(novos_dados, arquivo, ensure_ascii=False)
+                json.dump(novos_dados, arquivo, indent=4 , ensure_ascii=False)
             return 'Filme adicionado.'
         else:
             return 'Filme já cadastrado.'
@@ -304,6 +365,6 @@ inuyasha
 tokyo ghoul
 '''
 
-
 '''titulo_selecionado = escolher_titulo('inuyasha')
+
 print(adicionarTitulo(detalhes_titulo(titulo_selecionado[0], titulo_selecionado[1], titulo_selecionado[2], titulo_selecionado[3], titulo_selecionado[4]['aluguel'], titulo_selecionado[4]['compra'], titulo_selecionado[5])))'''
