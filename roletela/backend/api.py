@@ -208,7 +208,7 @@ def listarTitulos(*plataformas):
         filmes_sorteaveis = json.load(arquivo)
     with open('./roletela/backend/filmes-assistidos.json', 'r', encoding='utf-8') as arquivo:
         filmes_assistidos = json.load(arquivo)
-    filmes = filmes_assistidos + filmes_sorteaveis
+    filmes = filmes_sorteaveis + filmes_assistidos 
     if plataformas:
         filmes = filtrarTitulos(filmes, *plataformas)
     return filmes
@@ -367,6 +367,8 @@ inuyasha
 tokyo ghoul
 '''
 
+alterar_status(90937, False)
+alterar_status(71024, False)
 
 '''titulo_selecionado = escolher_titulo('inuyasha')
 

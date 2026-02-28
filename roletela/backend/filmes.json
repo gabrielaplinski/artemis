@@ -5,61 +5,6 @@
             "compra": []
         },
         "genres": [
-            "Animação",
-            "Drama",
-            "Mistério",
-            "Crime"
-        ],
-        "id": 1,
-        "id_api": 90937,
-        "img": "https://image.tmdb.org/t/p/w500/jJHykaBex66D01wlfPx0tcyEQ8E.jpg",
-        "media": "tv",
-        "origin_country": [
-            "JP"
-        ],
-        "overview": "Em um mundo onde convivem animais de todo tipo, um lobo manso começa a descobrir seus instintos predatórios justamente quando acontece um assassinato na escola.",
-        "plataforma": [
-            "Netflix",
-            "Netflix"
-        ],
-        "release_date": "10/10/2019",
-        "status": false,
-        "title": "BEASTARS - O Lobo Bom",
-        "vote_average": 8.426
-    },
-    {
-        "aluguel/compra": {
-            "aluguel": [],
-            "compra": []
-        },
-        "genres": [
-            "Animação",
-            "Sci-Fi & Fantasy",
-            "Drama"
-        ],
-        "id": 1,
-        "id_api": 71024,
-        "img": "https://image.tmdb.org/t/p/w500/ubDtIBwdS9b29sBofAkqWz3PqkT.jpg",
-        "media": "tv",
-        "origin_country": [
-            "US"
-        ],
-        "overview": "Um caçador de vampiros luta para salvar uma cidade sitiada por um exército de criaturas controladas pelo próprio Drácula.",
-        "plataforma": [
-            "Netflix",
-            "Netflix"
-        ],
-        "release_date": "07/07/2017",
-        "status": false,
-        "title": "Castlevania",
-        "vote_average": 8.254
-    },
-    {
-        "aluguel/compra": {
-            "aluguel": [],
-            "compra": []
-        },
-        "genres": [
             "Thriller",
             "Drama"
         ],
@@ -1859,5 +1804,60 @@
         "status": false,
         "title": "O Cavaleiro dos Sete Reinos",
         "vote_average": 8.532
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": [],
+            "compra": []
+        },
+        "genres": [
+            "Animação",
+            "Drama",
+            "Mistério",
+            "Crime"
+        ],
+        "id": 64,
+        "id_api": 90937,
+        "img": "https://image.tmdb.org/t/p/w500/jJHykaBex66D01wlfPx0tcyEQ8E.jpg",
+        "media": "tv",
+        "origin_country": [
+            "JP"
+        ],
+        "overview": "Em um mundo onde convivem animais de todo tipo, um lobo manso começa a descobrir seus instintos predatórios justamente quando acontece um assassinato na escola.",
+        "plataforma": [
+            "Netflix",
+            "Netflix"
+        ],
+        "release_date": "10/10/2019",
+        "status": false,
+        "title": "BEASTARS - O Lobo Bom",
+        "vote_average": 8.426
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": [],
+            "compra": []
+        },
+        "genres": [
+            "Animação",
+            "Sci-Fi & Fantasy",
+            "Drama"
+        ],
+        "id": 65,
+        "id_api": 71024,
+        "img": "https://image.tmdb.org/t/p/w500/ubDtIBwdS9b29sBofAkqWz3PqkT.jpg",
+        "media": "tv",
+        "origin_country": [
+            "US"
+        ],
+        "overview": "Um caçador de vampiros luta para salvar uma cidade sitiada por um exército de criaturas controladas pelo próprio Drácula.",
+        "plataforma": [
+            "Netflix",
+            "Netflix"
+        ],
+        "release_date": "07/07/2017",
+        "status": false,
+        "title": "Castlevania",
+        "vote_average": 8.254
     }
 ]
