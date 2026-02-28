@@ -197,6 +197,7 @@ export default function App() {
               <li key={index} className="p-1 w-60 flex flex-col justify-center items-center" >
                 {titulo.title}
                 <img src={titulo.img} alt="Capa do título" className="w-50" ></img>
+                <input type="checkbox" className="z-10" />
                 <p className="text-orange-700 text-sm" >{titulo.plataforma}</p>
               </li>
               ))
