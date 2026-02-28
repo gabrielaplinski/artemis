@@ -2,8 +2,8 @@ const BASE_URL = "http://localhost:5000"
 
 export async function listarTitulos(plataforma) {
   const url = plataforma
-    ? `${BASE_URL}/filmes?plataforma=${plataforma}`
-    : `${BASE_URL}/filmes`
+    ? `${BASE_URL}/filmes_sorteaveis?plataforma=${plataforma}`
+    : `${BASE_URL}/filmes_sorteaveis`
   const resposta = await fetch(url)
   return resposta.json()
 }
