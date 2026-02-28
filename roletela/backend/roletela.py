@@ -8,7 +8,6 @@ CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST", "OPTIONS
 
 @app.route('/sortear', methods=['GET'])
 def sortear():
-    atualizar_provedores()
     plataformas = request.args.getlist('plataforma')    
     return jsonify(sortear_titulo(*plataformas))
 

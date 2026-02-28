@@ -269,7 +269,7 @@ def sortear_titulo(*plataformas):
         return 'Nenhum filme encontrado para as plataformas selecionadas.'
     filme_sorteado = random.choice(dados)
     att_provedores(filme_sorteado)
-    return filme_sorteado['title'], filme_sorteado['plataforma']
+    return {'title':filme_sorteado['title'], 'plafaforma':filme_sorteado['plataforma']}
 
 # filtra titulos por plataforma
 def filtrarTitulos(dados, *plataformas):
@@ -364,6 +364,7 @@ def completarTitulo(dict):
 inuyasha
 tokyo ghoul
 '''
+
 
 '''titulo_selecionado = escolher_titulo('inuyasha')
 
