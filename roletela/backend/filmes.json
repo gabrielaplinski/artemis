@@ -5,61 +5,6 @@
             "compra": []
         },
         "genres": [
-            "Animação",
-            "Drama",
-            "Mistério",
-            "Crime"
-        ],
-        "id": 1,
-        "id_api": 90937,
-        "img": "https://image.tmdb.org/t/p/w500/jJHykaBex66D01wlfPx0tcyEQ8E.jpg",
-        "media": "tv",
-        "origin_country": [
-            "JP"
-        ],
-        "overview": "Em um mundo onde convivem animais de todo tipo, um lobo manso começa a descobrir seus instintos predatórios justamente quando acontece um assassinato na escola.",
-        "plataforma": [
-            "Netflix",
-            "Netflix"
-        ],
-        "release_date": "10/10/2019",
-        "status": false,
-        "title": "BEASTARS - O Lobo Bom",
-        "vote_average": 8.426
-    },
-    {
-        "aluguel/compra": {
-            "aluguel": [],
-            "compra": []
-        },
-        "genres": [
-            "Animação",
-            "Sci-Fi & Fantasy",
-            "Drama"
-        ],
-        "id": 1,
-        "id_api": 71024,
-        "img": "https://image.tmdb.org/t/p/w500/ubDtIBwdS9b29sBofAkqWz3PqkT.jpg",
-        "media": "tv",
-        "origin_country": [
-            "US"
-        ],
-        "overview": "Um caçador de vampiros luta para salvar uma cidade sitiada por um exército de criaturas controladas pelo próprio Drácula.",
-        "plataforma": [
-            "Netflix",
-            "Netflix"
-        ],
-        "release_date": "07/07/2017",
-        "status": false,
-        "title": "Castlevania",
-        "vote_average": 8.254
-    },
-    {
-        "aluguel/compra": {
-            "aluguel": [],
-            "compra": []
-        },
-        "genres": [
             "Thriller",
             "Drama"
         ],
@@ -72,7 +17,6 @@
         ],
         "overview": "Sua mulher e a filha desapareceram de um pronto-socorro. Convencido de que o hospital está escondendo algo, ele parte numa busca desesperada para encontrá-las.",
         "plataforma": [
-            "Netflix",
             "Netflix"
         ],
         "release_date": "22/09/2019",
@@ -100,7 +44,6 @@
         ],
         "overview": "O enorme sistema de cavernas, conhecido como Abyss, é o único lugar inexplorado no mundo. Ninguém sabe até que ponto este poço titânico está habitado por criaturas estranhas e maravilhosas e cheio de misteriosas relíquias antigas cujo propósito é desconhecido para o homem moderno. Gerações de aventureiros arrojados foram desenhadas pelas profundidades crípticas do abismo. Ao longo do tempo, esses corajosos o suficiente para explorar o poço perigoso vieram a ser conhecidos como Cave Raiders. Em Oosu, a cidade à beira do Abismo, vive uma pequena órfã chamada Rico, que sonha em se tornar uma grande raider como sua mãe e resolver o grande mistério do poço. Um dia explorando as profundidades sombrias que ela tropeça em um garotinho, que acaba por ser um robô.",
         "plataforma": [
-            "Netflix",
             "Netflix"
         ],
         "release_date": "07/07/2017",
@@ -129,8 +72,7 @@
         "overview": "A agência Hellsing é um grupo dos guerreiros que protege a Inglaterra e a igreja Anglicana de vampiros. Guiados por Integra Hellsing, a líder da lendária família Hellsing, a agência combate vampiros junto com Arucard, um vampiro renegado que luta pela humanidade. Arucard não é um vampiro ordinário, e também não é um amante dos humanos, ele possui seus próprios motivos para lutar ao lado dos humanos.",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "11/10/2001",
         "status": false,
@@ -162,7 +104,7 @@
         ],
         "overview": "Julie luta sozinha para criar seus dois filhos no subúrbio e manter seu emprego em Paris. Quando ela finalmente consegue uma entrevista para um cargo correspondente às suas aspirações, uma greve geral eclode, paralisando o transporte. Ela então embarcará em uma corrida frenética para salvar seu emprego e sua família.",
         "plataforma": [
-            "Looke"
+            "Amazon"
         ],
         "release_date": "16/03/2022",
         "status": false,
@@ -190,8 +132,7 @@
         "overview": "No ano de 2063, viajar pelo espaço tornou-se comum. Oito alunos do Colégio Caird, juntamente com uma criança, partiram para um acampamento escolar em um planeta próximo. No entanto, os alunos são misteriosamente transportados a 5.012 anos-luz de distância de casa, sem meios de pedir ajuda. A bordo de uma espaçonave abandonada que chamam de Astra, esses nove estudantes lentamente tentam voltar e descobrir por que eles foram transportados.",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "03/07/2019",
         "status": false,
@@ -220,12 +161,7 @@
             "Netflix",
             "HBO",
             "Crunchyroll",
-            "Netflix",
-            "HBO",
-            "HBO",
-            "Crunchyroll",
-            "Crunchyroll",
-            "Adultswim"
+            "Amazon"
         ],
         "release_date": "22/10/2023",
         "status": false,
@@ -277,7 +213,6 @@
         ],
         "overview": "Akira Fudo aprende com seu melhor amigo Ryo Asuka que os demônios vão reviver e recuperar o mundo dos humanos. Com humanos sem esperança contra essa ameaça, Ryo sugere combinar com um demônio. Com isso, Akira se torna Devilman, um ser com o poder do demônio, mas com um coração humano.",
         "plataforma": [
-            "Netflix",
             "Netflix"
         ],
         "release_date": "05/01/2018",
@@ -312,7 +247,6 @@
         ],
         "overview": "Depois de perder a mãe durante a guerra, o jovem Mahito muda-se para a propriedade de sua família no campo. Lá, uma série de eventos misteriosos o levam a uma torre antiga e isolada, lar de uma travessa garça cinzenta. Quando a nova madrasta de Mahito desaparece, ele segue a garça até a torre e entra num mundo fantástico partilhado pelos vivos e pelos mortos. Ao embarcar em uma jornada épica com a garça como guia, Mahito deve descobrir os segredos deste mundo e a verdade sobre si mesmo.",
         "plataforma": [
-            "Netflix",
             "Netflix"
         ],
         "release_date": "14/07/2023",
@@ -342,8 +276,7 @@
         "overview": "Shuuichi Kagaya é um garoto comum do ensino médio de uma cidade pequena e chata, mas quando uma bela colega de sua classe é pega em um incêndio no armazém, ele descobre um poder misterioso: Ele pode se transformar em um cachorro peludo com um revólver enorme e um zíper nas costas. Ele salva a vida da garota, compartilhando seu segredo com ela. Mas ela está procurando a irmã que matou sua família e ela não se importa com o quão degradante seja: Ela usará Shuuichi para cumprir sua vingança!",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "05/04/2020",
         "status": false,
@@ -369,8 +302,7 @@
         "overview": "Todos os jovens de elite com futuros brilhantes acabam indo parar na Academia Shuchiin. E ambos os líderes do conselho estudantil, Kaguya Shinomiya e Miyuki Shirogane, estão apaixonados um pelo outro. Mas seis meses se passaram e nada aconteceu?! Ambos são orgulhosos demais para confessar seu amor, e agora ambos estão brigando pra ver quem faz o outro se declarar primeiro! A parte mais divertida do amor é o jogo da conquista!",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "12/01/2019",
         "status": false,
@@ -396,8 +328,7 @@
         "overview": "No ano 1333, o governo do xogunato Kamakura desmorona. Um vassalo de confiança, Ashikaga Takauji, trai o xogunato e organiza uma rebelião. Hojo Tokiyuki, o herdeiro legítimo, escapa do massagre com um sacerdote xintoísta chamado Suwa Yorisige para Kamakura. Em fuga e lutando para se manter vivo, Tokiyuki coloca em ação seu plano de recuperar seus direitos hereditários.",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "06/07/2024",
         "status": false,
@@ -426,8 +357,7 @@
         "overview": "Cho Soran leva uma vida comum de um estudante universitário, até o dia em que se vê preso em um incidente terrível que aconteceu em uma pequena aldeia. Enquanto caminhava por um cemitério, Cho Soran é atacado por zumbis. Quando achava que tudo estava acabado, uma misteriosa garota portando uma espada surge e o salva, desaparecendo logo em seguida. Este estranho encontro vai mudar drasticamente o destino Cho Soran.",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "09/07/2016",
         "status": false,
@@ -512,8 +442,7 @@
         "overview": "Jason Dessen é sequestrado para uma versão alternativa de sua vida. Em busca de voltar para sua verdadeira família, ele embarca em uma jornada angustiante para salvá-los do inimigo mais terrível que se possa imaginar: ele mesmo.",
         "plataforma": [
             "Apple",
-            "Apple",
-            "Apple"
+            "Amazon"
         ],
         "release_date": "07/05/2024",
         "status": false,
@@ -541,8 +470,7 @@
         "overview": "No ano de 2010 do Calendário Imperial, partes do mundo estão sob o jugo do Sacro Império Britânnico. Lelouch Lamperouge, um príncipe exilado de Britannia, encontra uma estranha garota chamada C.C. que lhe presenteia com um incrível e terrível poder - o Geass. Com esta potente habilidade, Lelouch é capaz de dobrar qualquer um aos seus desejos... Mas seria o poder do Geass uma bênção ou uma maldição?",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "05/10/2006",
         "status": false,
@@ -567,7 +495,6 @@
         ],
         "overview": "No Japão feudal, Lord Daigo Kagemitsu faz um acordo com 12 demônios, trocando seu filho ainda não nascido pela prosperidade de suas terras. A criança deformada é abandonada em um rio, enquanto as terras de Kagemitsu prosperam. Anos depois, um jovem ladrão chamado Dororo conhece o misterioso “Hyakkimaru”, um garoto com lâminas no lugar dos braços e olhos sem visão que podem ver monstros.",
         "plataforma": [
-            "Amazon",
             "Amazon"
         ],
         "release_date": "07/01/2019",
@@ -595,8 +522,7 @@
         "overview": "Num mundo steampunk de segredos e deuses, Klein mergulha profundamente no ocultismo, no poder e no perigo!",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "28/06/2025",
         "status": false,
@@ -622,7 +548,6 @@
         ],
         "overview": "Neste suspense macabro, uma musicista excepcional reencontra seus ex-mentores, mas descobre que eles têm uma nova aprendiz talentosa.",
         "plataforma": [
-            "Netflix",
             "Netflix"
         ],
         "release_date": "20/09/2018",
@@ -651,9 +576,8 @@
         "overview": "Eles vieram silenciosamente na escuridão, vindos do céu em busca de carne humana. Os parasitas - criaturas que assumem o controle de um hospedeiro humano para sobreviver - chegaram à Terra. Ninguém sabe disto exceto Shinichi Izumi, um estudante do ensino médio cuja mão direita foi infectada por um parasita. Shinichi, contra sua vontade, faz amizade com Migi, o parasita. Ambos se encontram agora no meio de uma guerra entre espécies.",
         "plataforma": [
             "Netflix",
-            "Netflix",
             "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "09/10/2014",
         "status": false,
@@ -678,7 +602,6 @@
         ],
         "overview": "Na trama, conhecemos um mundo em que super-heróis são as maiores celebridades do planeta, e rotineiramente abusam dos seus poderes ao invés de os usarem para o bem.",
         "plataforma": [
-            "Amazon",
             "Amazon"
         ],
         "release_date": "25/07/2019",
@@ -706,8 +629,7 @@
         "overview": "O jovem Yusuke Urameshi estava tendo um dia comum: matando aula, discutindo com seus professores e arrumando briga com seu rival, Kuwabara. Mas, contrariando sua reputação de encrenqueiro, Yusuke revela ter um bom coração ao saltar na frente de um carro para salvar a vida de um menininho. E então, tudo muda. Guiado pela simpática Botan, Yusuke acaba sendo levado para o Mundo Espiritual. Lá, ele conhece o divertido Koenma, um governante de 700 anos preso no corpo de um bebê. E a grande surpresa é que ele tem um desafio para Yusuke, que pode restaurar a sua vida: chocar o ovo de um monstro espiritual. Ao mesmo tempo, o rapaz vai ter que ajudar Kuwabara, seu antigo desafeto, a lidar com uma nova gangue de inimigos. Depois, Koenma envia Yusuke ao mundo dos humanos para descobrir se alguém ainda quer a sua volta, afinal de contas...",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "10/10/1992",
         "status": false,
@@ -735,8 +657,7 @@
         "overview": "Sakurakouji Sakura é uma garota que parece ser graciosa e modesta, mas na realidade é muito habilidosa nas artes marciais. Um dia andando de ônibus ela acaba testemunhando um garoto da sua idade em volta de pessoas queimando com uma espécie de fogo azul. No dia seguinte ela acaba voltando para aquele lugar, mas não tem mais nenhuma evidência de qualquer assassinato ali e ainda mais estranho é o fato que o novo aluno transferido para a sua classe se parece exatamente com o garoto que ela viu antes. Seu nome é Oogami Rei, ele é um Code Breaker, aquele que não existe. Ele aparentemente é um assassino de sangue frio, seguindo o princípio de “olho por olho”, usando “o mal contra o mal”. Sakurakouji acha que matar não está certo e resolve o deter, tentando entrar em seu coração “de gelo”. Porém não será tão fácil assim.",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "07/10/2012",
         "status": false,
@@ -764,8 +685,7 @@
         "overview": "Kageyama Shigeo, o \"Mob\", é um garoto que não leva muito jeito pra se expressar, mas que é um poderoso telepata. Decidido a levar uma vida normal, Mob suprime seus poderes extrasensoriais, mas quando suas emoções atingem um pico de 100%, algo terrível lhe acontece!\n\nRodeado de falsos telepatas, espíritos do mal e misteriosas organizações, como Mob reagirá? Que decisões ele vai tomar?",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "12/07/2016",
         "status": false,
@@ -794,11 +714,7 @@
             "Netflix",
             "HBO",
             "Crunchyroll",
-            "Netflix",
-            "HBO",
-            "HBO",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "20/10/1999",
         "status": false,
@@ -825,7 +741,7 @@
         "overview": "O que vai acontecer quando Hachiman Hikigaya, um estudante antissocial que não não a menor tem vontade de fazer amigos e acha que todas as histórias fantásticas de colegial que os outros contam são pura invenção, é coagido por um docente bem-intencionado a participar do Clube de Serviço Voluntário, gerido por Yukino Yukinoshita, uma garota inteligente, atraente e que acha que o colégio inteiro é inferior a ela?",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "05/04/2013",
         "status": false,
@@ -854,8 +770,7 @@
         "overview": "Expulso do orfanato e prestes a morrer de fome, Atsushi Nakajima conhece alguns homens bastante estranhos. Um deles, Osamu Dazai, é um suicida tentando se afogar em plena luz do dia. Outro, chamado Doppo Kunikida, fica parado, folheando nervosamente seu bloco de anotações. Ambos são membros da Agência de Detetives Armados, e se dizem responsáveis por solucionar casos que nem a polícia e o exército ousam tocar. Atsushi acaba acompanhando-os em uma missão para eliminar um tigre comedor de gente que está aterrorizando a população...",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "07/04/2016",
         "status": false,
@@ -881,8 +796,7 @@
         "overview": "História das práticas tóxicas e abusivas nos bastidores dos programas de TV infantis dos anos 90.",
         "plataforma": [
             "HBO",
-            "HBO",
-            "HBO"
+            "Amazon"
         ],
         "release_date": "17/03/2024",
         "status": false,
@@ -919,7 +833,7 @@
         ],
         "overview": "Steven é um cirurgião casado e pai de dois filhos que leva uma vida relativamente tranquila até encontrar Martin, um garoto de 16 anos a quem resolve cuidar. Quando Martin entra em sua família, o mundo de Steven se torna caótico.",
         "plataforma": [
-            "Diamond"
+            "Amazon"
         ],
         "release_date": "20/10/2017",
         "status": false,
@@ -946,8 +860,7 @@
         "overview": "Titãs estão quase exterminando a raça humana. Porém alguns estão dispostos a formar um exército de ataque aos seres assassinos. O jovem Eren, após ver sua mãe ser devorada por um titã, decide que não deixará nenhum deles vivo e buscará sua vingança completa.",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "07/04/2013",
         "status": false,
@@ -975,8 +888,7 @@
         "overview": "Futuro distante: a humanidade se estabeleceu em Latifúndios, cidades-fortalezas erguidas sobre os destroços da guerra, e a civilização floresceu. Nessa cidade, há o Mistilteinn, um quartel de pilotos também conhecido como Gaiola. É lá que as crianças vivem... Alheios ao mundo de fora e da vastidão dos céus. Sua única missão em vida é lutar.\n\nSeus inimigos são os urrossauros, gigantescos organismos misteriosos. As crianças operam robôs chamados FRANXX para enfrentar esses inimigos desconhecidos, crentes de que esse é seu objetivo de vida.",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "13/01/2018",
         "status": false,
@@ -1007,7 +919,7 @@
         ],
         "overview": "Clara, enfermeira solitária da periferia de São Paulo, é contratada pela rica e misteriosa Ana como babá de seu futuro filho. Uma noite de lua cheia muda para sempre a vida das duas mulheres.",
         "plataforma": [
-            "Reserva"
+            "Amazon"
         ],
         "release_date": "04/08/2017",
         "status": false,
@@ -1041,9 +953,7 @@
         "overview": "Uma estrela em declínio descobre uma substância misteriosa que lhe permite criar uma versão mais jovem e perfeita de si mesma. No entanto, o que parece ser uma solução milagrosa para recuperar sua glória logo se transforma em um pesadelo perturbador quando as consequências desta decisão começam a se manifestar de formas sombrias e irreversíveis.",
         "plataforma": [
             "HBO",
-            "HBO",
-            "HBO",
-            "MUBI"
+            "Amazon"
         ],
         "release_date": "07/09/2024",
         "status": false,
@@ -1105,8 +1015,7 @@
         "overview": "200 anos antes dos eventos de \"Game of Thrones\", os Targaryen estavam no ápice de seu poder, tendo inúmeros dragões sob seu comando, mas nem tudo dura para sempre. O início do fim da dinastia Targaryen.",
         "plataforma": [
             "HBO",
-            "HBO",
-            "HBO"
+            "Amazon"
         ],
         "release_date": "21/08/2022",
         "status": false,
@@ -1132,8 +1041,7 @@
         "overview": "O engenheiro gênio-socialmente-desajeitado, Appare Sorano e o samurai sábio, mas covarde, Kosame Isshiki, participam de uma corrida transamericana para ganhar o prêmio em dinheiro e voltar para casa. Mas vários perigos os esperam nessa corrida.",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "10/04/2020",
         "status": false,
@@ -1159,7 +1067,6 @@
         ],
         "overview": "No ano 2000, um grande impacto de um meteoro na Antártida derreteu o continente gelado, elevando o nível dos mares. Chegou-se a conclusão que Deus estaria tentando eliminar a raça humana e previu-se o envio de \"Angels\" para acabar com a humanidade. Preparando-se para isso, criou-se uma grande organização, custeada por todo o mundo: A NERV. Seu objetivo seria o de proteger a humanidade, pesquisando formas de defesa. Assim nasceram os Evangelions (ou EVA's): Gigantescos robôs pilotados por alguém com o dom de \"sincronizar\" com o sistema.",
         "plataforma": [
-            "Netflix",
             "Netflix"
         ],
         "release_date": "04/10/1995",
@@ -1185,7 +1092,6 @@
         ],
         "overview": "Narumi é secretária e esconde o fato de ser fã de yaoi. Quando muda de emprego, ela reencontra Hirotaka, um amigo de infância atraente e talentoso, mas um ávido fã de videogames. Eles começam a namorar, mas como são obcecados por seus interesses pessoais, ambos são estranhos e, por isso, ter um relacionamento sério é difícil para eles.",
         "plataforma": [
-            "Amazon",
             "Amazon"
         ],
         "release_date": "13/04/2018",
@@ -1211,8 +1117,7 @@
         ],
         "overview": "Quando amigos chegam ao endereço errado para a viagem de reencontro anual, eles invadem uma casa isolada. O que parecia ser um local tranquilo se transforma em um pesadelo quando eles descobrem que os moradores são assassinos psicóticos vestidos de Cachinhos Dourados e os Três Ursos.",
         "plataforma": [
-            "Looke",
-            "Booh"
+            "Amazon"
         ],
         "release_date": "05/06/2024",
         "status": false,
@@ -1236,7 +1141,6 @@
         ],
         "overview": "O veterinário pobretão Antón arruma emprego em uma pet shop chique e deixa de tratar animais de fazenda para dar petiscos premium a bichinhos mimados.",
         "plataforma": [
-            "Netflix",
             "Netflix"
         ],
         "release_date": "03/10/2025",
@@ -1286,7 +1190,6 @@
         ],
         "overview": "Ao descobrir que vai ser castrado, um cachorro tem 24 horas para meter o pé na jaca com os amigos.",
         "plataforma": [
-            "Netflix",
             "Netflix"
         ],
         "release_date": "13/08/2025",
@@ -1315,8 +1218,7 @@
         "overview": "Shinra e seus companheiros estão prontos para entrar para a Brigada de Incêndio para impedir que os demônios flamejantes, chamados de Infernais, incendeiem toda a cidade!",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "05/07/2019",
         "status": false,
@@ -1342,8 +1244,7 @@
         "overview": "Seth Rogen interpreta o novo diretor de um estúdio de cinema. Buscando desesperadamente a aprovação das celebridades, ele e sua equipe de executivos da Continental Estúdios precisam equilibrar as exigências corporativas com suas ambições criativas enquanto tentam manter o cinema vivo e relevante.",
         "plataforma": [
             "Apple",
-            "Apple",
-            "Apple"
+            "Amazon"
         ],
         "release_date": "25/03/2025",
         "status": false,
@@ -1371,8 +1272,7 @@
         "overview": "Esqueça lições de casa e provas relâmpago. A Classe 3-E tem uma tarefa muito mais importante: matar seu professor antes do fim do ano!",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "10/01/2015",
         "status": false,
@@ -1398,7 +1298,6 @@
         ],
         "overview": "Earwig vive em um orfanato (e até gosta disso), até ser adotada por uma bruxa e ser levada para uma casa assombrada. Entretanto, em vez de ficar horrorizada, a esperta garota se mostra determinada em se transformar a mestra de sua nova situação.",
         "plataforma": [
-            "Netflix",
             "Netflix"
         ],
         "release_date": "03/02/2021",
@@ -1426,8 +1325,7 @@
         "overview": "Após um trágico acidente, Jinta Yadomi e seu grupo de amigos de infância se afastaram, e cada um seguiu seu caminho. Agora no colegial, uma surpresa repentina os força a confrontar a culpa e o remorso que sentem pelo que aconteceu naquele dia, e a ficar em paz com esse fantasma do passado.",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "15/04/2011",
         "status": false,
@@ -1454,8 +1352,7 @@
         "overview": "O mangaká novato Fujinuma Satoru é obstruído pelo seu medo de se expressar. No entanto, ele possui um talento sobrenatural de ser forçado a evitar mortes e catástrofes ao ser enviado de volta no tempo antes da ocorrência do acidente, se repetindo até que o acidente seja impedido. Um dia, ele se envolve em um acidente que ele mesmo é enquadrado como um assassino. Desesperado para salvar a vítima, ele volta no tempo só para encontrar a si mesmo como um aluno do primário, um mês antes de sua colega de classe Hinadzuki Kayo desaparecer. Satoru agora embarca em uma nova missão: salvar Kayo e resolver o mistério por trás do seu desaparecimento.",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "08/01/2016",
         "status": false,
@@ -1481,7 +1378,6 @@
         ],
         "overview": "Quando uma adolescente é vítima de tráfico sexual, um pirata fluvial e uma mãe corajosa embarcam em jornadas paralelas para encontrá-la, até que seus caminhos se cruzam.",
         "plataforma": [
-            "Netflix",
             "Netflix"
         ],
         "release_date": "20/08/2025",
@@ -1510,8 +1406,7 @@
         "overview": "Em uma cidade flutuante onde os ricos descartam seu lixo (e pessoas), Rudo é acusado falsamente de homicídio e jogado no Abismo, um lugar infernal onde vivem monstros de lixo mutantes. Para sobreviver, ele precisa conquistar um novo poder e se unir aos errantes Zeladores. Rudo não quer apenas lutar com os monstros, mas também contra os corruptos que o jogaram no Inferno.",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "06/07/2025",
         "status": false,
@@ -1539,8 +1434,7 @@
         "overview": "Ichiro Inuyashiki era um escriturário monótono que vivia rejeitado pela família e pelos colegas. Certa noite, um óvni o acerta, e seu corpo é reconstituído em um poderoso robô. Um aluno do ensino médio chamado Hiro Shishigami também foi envolvido no mesmo acidente e ele passa a usar os novos poderes para dar vazão aos seus impulsos mais sombrios. A verdadeira natureza humana é boa ou má?",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "12/10/2017",
         "status": false,
@@ -1569,14 +1463,7 @@
             "Amazon",
             "Netflix",
             "HBO",
-            "Crunchyroll",
-            "Netflix",
-            "HBO",
-            "HBO",
-            "Crunchyroll",
-            "Crunchyroll",
-            "Amazon",
-            "Adultswim"
+            "Crunchyroll"
         ],
         "release_date": "03/04/2016",
         "status": false,
@@ -1605,8 +1492,7 @@
         "overview": "A mulher a quem chamam de \"\"mãe\"\" não é uma mãe de verdade.\n\nAs crianças que convivem naquele lugar não são irmãos de verdade.\n\nNa Casa Grace Field, moram apenas crianças órfãs.\n\nUm lar sem igual, onde 38 crianças sem parentesco algum levam vidas felizes ao lado de suas mães.\n\nAté que sua rotina pacífica chega a um fim abrupto...",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "11/01/2019",
         "status": false,
@@ -1632,7 +1518,6 @@
         ],
         "overview": "A guerra acabou, e Violet Evergarden precisa de trabalho. Cheia de cicatrizes, ela aceita trabalhar como escritora de cartas para entender a si mesma e seu passado.",
         "plataforma": [
-            "Netflix",
             "Netflix"
         ],
         "release_date": "11/01/2018",
@@ -1660,8 +1545,7 @@
         "overview": "Tohru pensava que sua vida seria só de azar quando uma tragédia a força a ir morar em uma tenda. Mas quando os rapazes do Clã Soma a convidam para morar com eles, ela descobre um segredo de família muito estranho: ao serem abraçados, eles viram animais do Zodíaco Chinês!",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "06/04/2019",
         "status": false,
@@ -1688,8 +1572,7 @@
         "overview": "O pequeno alienígena fofo Takopi pousa na Terra. Qual é a missão dele? Ser levado ao nosso líder? Não. Espalhar a felicidade por todo o universo! A primeira pessoa que Takopi conhece é Shizuka, uma aluna deprimida da quarta série. (Ou será...?) Takopi está determinado a fazer o que for preciso para fazer Shizuka sorrir novamente. Mas suas tentativas equivocadas de ajudá-la usando sua tecnologia para voltar no tempo só resultam em caos e morte. Qual é a verdade que Takopi não consegue lembrar? E o que o polvo alienígena rosa com um coração de ouro deve sacrificar para realmente ajudar Shizuka e seus amigos…?",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "28/06/2025",
         "status": false,
@@ -1713,7 +1596,6 @@
         ],
         "overview": "Neste reality inovador, cantores talentosos lutam pela chance de formar um grupo musical de sucesso sem se ver, tirando a aparência da jogada.",
         "plataforma": [
-            "Netflix",
             "Netflix"
         ],
         "release_date": "09/07/2025",
@@ -1742,9 +1624,7 @@
         "plataforma": [
             "Netflix",
             "Crunchyroll",
-            "Netflix",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "02/10/2011",
         "status": false,
@@ -1771,8 +1651,7 @@
         "overview": "Há mais de uma década, surgiu uma misteriosa passagem chamada \"portal\", que conecta este mundo a uma dimensão diferente, o que fez com que pessoas despertassem poderes únicos… e essas pessoas são chamadas de \"caçadores\". Os caçadores usam seus poderes sobre-humanos para conquistar masmorras dentro dos portais e assim ganhar a vida. Sung Jinwoo, um caçador de nível baixo, é considerado o caçador mais fraco de toda a humanidade. Certo dia, ele se depara com uma \"masmorra dupla\", que tem uma masmorra de nível alto escondida dentro de uma masmorra de nível baixo. Diante de um Jinwoo gravemente ferido, surge uma misteriosa missão! À beira da morte, Jinwoo decide aceitar essa missão, tornando-se assim a única pessoa capaz de subir de nível!",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "07/01/2024",
         "status": false,
@@ -1797,7 +1676,6 @@
         ],
         "overview": "Criaturas aterrorizantes, surpresas bizarras e humor ácido habitam e florescem de cada um dos vários universos únicos criados para essa coletânea de curtas de animação, em que cada episódio apresenta sua própria narrativa e estilo visual.",
         "plataforma": [
-            "Netflix",
             "Netflix"
         ],
         "release_date": "15/03/2019",
@@ -1825,7 +1703,7 @@
         "overview": "Em Tóquio, criaturas conhecidas como \"Ghouls\" vivem entre os humanos e os devoram para sobreviver. Alheio a eles, o jovem universitário Ken Kaneki leva uma vida pacata entre livros, até que um trágico encontro o coloca diante desses seres e o obriga a lutar por sua humanidade.",
         "plataforma": [
             "Crunchyroll",
-            "Crunchyroll"
+            "Amazon"
         ],
         "release_date": "04/07/2014",
         "status": false,
@@ -1852,12 +1730,64 @@
         "overview": "Ambientado em uma época em que a linhagem Targaryen ainda detém o Trono de Ferro e a memória do último dragão ainda não desapareceu da memória dos vivos, grandes destinos, inimigos poderosos e façanhas perigosas aguardam esses amigos improváveis ​​e incomparáveis.",
         "plataforma": [
             "HBO",
-            "HBO",
-            "HBO"
+            "Amazon"
         ],
         "release_date": "18/01/2026",
         "status": false,
         "title": "O Cavaleiro dos Sete Reinos",
         "vote_average": 8.532
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": [],
+            "compra": []
+        },
+        "genres": [
+            "Animação",
+            "Drama",
+            "Mistério",
+            "Crime"
+        ],
+        "id": 64,
+        "id_api": 90937,
+        "img": "https://image.tmdb.org/t/p/w500/jJHykaBex66D01wlfPx0tcyEQ8E.jpg",
+        "media": "tv",
+        "origin_country": [
+            "JP"
+        ],
+        "overview": "Em um mundo onde convivem animais de todo tipo, um lobo manso começa a descobrir seus instintos predatórios justamente quando acontece um assassinato na escola.",
+        "plataforma": [
+            "Netflix"
+        ],
+        "release_date": "10/10/2019",
+        "status": false,
+        "title": "BEASTARS - O Lobo Bom",
+        "vote_average": 8.426
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": [],
+            "compra": []
+        },
+        "genres": [
+            "Animação",
+            "Sci-Fi & Fantasy",
+            "Drama"
+        ],
+        "id": 65,
+        "id_api": 71024,
+        "img": "https://image.tmdb.org/t/p/w500/ubDtIBwdS9b29sBofAkqWz3PqkT.jpg",
+        "media": "tv",
+        "origin_country": [
+            "US"
+        ],
+        "overview": "Um caçador de vampiros luta para salvar uma cidade sitiada por um exército de criaturas controladas pelo próprio Drácula.",
+        "plataforma": [
+            "Netflix"
+        ],
+        "release_date": "07/07/2017",
+        "status": false,
+        "title": "Castlevania",
+        "vote_average": 8.254
     }
 ]

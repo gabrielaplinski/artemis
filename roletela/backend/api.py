@@ -71,9 +71,8 @@ def buscar_providers(result_providers):
         for provider in providers:
             provider = provider['provider_name'].split(' ')
             for p in plataformas:
-                if p in provider:
-                    if provider not in plataforma:
-                        plataforma.append(provider[0]) 
+                if p in provider and p not in plataforma:
+                    plataforma.append(p)
                     
     return plataforma, providers_rent, providers_buy
 
@@ -160,7 +159,9 @@ def atualizar_provedores():
     dados = listarTitulos()
     dados_backup = copy.deepcopy(dados)
     for filme in dados:
+        print(filme['plataforma'])
         att_provedores(filme)
+        print(filme['plataforma'])
     if dados == dados_backup:
         return 'Nenhuma alteração necessária.'
     with open("./roletela/backend/filmes.json", "w", encoding='utf-8') as arquivo:
@@ -208,7 +209,7 @@ def listarTitulos(*plataformas):
         filmes_sorteaveis = json.load(arquivo)
     with open('./roletela/backend/filmes-assistidos.json', 'r', encoding='utf-8') as arquivo:
         filmes_assistidos = json.load(arquivo)
-    filmes = filmes_assistidos + filmes_sorteaveis
+    filmes = filmes_sorteaveis + filmes_assistidos 
     if plataformas:
         filmes = filtrarTitulos(filmes, *plataformas)
     return filmes
@@ -367,7 +368,7 @@ inuyasha
 tokyo ghoul
 '''
 
-
 '''titulo_selecionado = escolher_titulo('inuyasha')
-
 print(adicionarTitulo(detalhes_titulo(titulo_selecionado[0], titulo_selecionado[1], titulo_selecionado[2], titulo_selecionado[3], titulo_selecionado[4]['aluguel'], titulo_selecionado[4]['compra'], titulo_selecionado[5])))'''
+
+atualizar_provedores()
