@@ -105,6 +105,17 @@ export default function App() {
     )
   }
 
+  function ModalConfirmacao({ confirmacao, onConfirmar, onCancelar }) {
+    if (!confirmacao) return null;
+    return (
+      <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+        <div className="w-80 h-30 bg-white text-black rounded-lg">
+          <p>Deseja mesmo exluir</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="bg-gray-900 text-white flex flex-col">
       <div className="bg-gray-800 w-50 pr-20 flex flex-row gap-2 items-center justify-self-end" >
@@ -217,7 +228,7 @@ export default function App() {
                 {titulo.title}
                 <div className="absolute top-75 w-full flex justify-between px-8 opacity-0 group-hover:opacity-100 transition-opacity z-10" >
                   <button
-                    onChange={() => confirmarAssistido(titulo)}
+                    onClick={() => confirmarAssistido(titulo)}
                     title="Marcar como assistido"
                     className="bg-green-800 hover:bg-green-600 text-white text-sm m-1 px-1 py-.9 rounded cursor-pointer"
                   >
@@ -253,6 +264,11 @@ export default function App() {
           Feito por <a href="#">Gabriela Plinski</a> & <a href="#">Rafael Lunkes</a>
         </footer>
       </main>
+      <ModalConfirmacao
+        confirmacao={confirmacao}
+        onConfirmar={executarConfirmacao}
+        onCancelar={() => setConfirmacao(null)}
+      />
     </div>
   )
 };
