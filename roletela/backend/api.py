@@ -160,9 +160,7 @@ def atualizar_provedores():
     dados = listarTitulos()
     dados_backup = copy.deepcopy(dados)
     for filme in dados:
-        print(filme['plataforma'])
         att_provedores(filme)
-        print(filme['plataforma'])
     if dados == dados_backup:
         return 'Nenhuma alteração necessária.'
     separar_titulos(dados)
@@ -317,12 +315,10 @@ def adicionar_flag(flag, valor):
 # atera status entre True para assistido e False para não assistido
 def alterar_status(id_api, status):
     filmes = listarTitulos()
-    print(filmes)
     for filme in filmes:
         if filme['id_api'] == id_api:
             filme['status'] = status
     separar_titulos(filmes)
-    print('OK')
     
 # função usada pra atualizar a lista de filmes, não é necessária para o funcionamento do programa, mas pode ser útil para adicionar novos títulos sugeridos
 '''
