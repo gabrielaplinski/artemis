@@ -12,9 +12,11 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [selecionado, setSelecionado] = useState(null);
   const [confirmacao, setConfirmacao] = useState(null);
+  const [assistidos, setAssistidos] = useState([]);
 
   useEffect(() => {
-  buscarLista();
+    buscarLista();
+    buscarAssistidos();
   }, []);
 
   useEffect(() => {
@@ -66,6 +68,11 @@ export default function App() {
       const lista = await filtrarTitulos(novaLista);
       setTitulos(Array.isArray(lista) ? lista : []);
     }
+  }
+
+  async function buscarAssistidos() {
+    const lista = await listarAssistidos();
+    setAssistidos(Array.isArray(lista) ? lista : []);
   }
 
   function confirmarExcluir(titulo) {
@@ -270,6 +277,18 @@ export default function App() {
           </ul>
           <aside>
             <h2 className="p" >Títulos assistidos</h2>
+            {assistidos.length > 0 ? (
+              <ul>
+                {assistidos.map((titulo, index) => (
+                  <li key={index}>
+                    <img src={titulo.img} alt={titulo.title} />
+                    <p>{titulo.title}</p>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p>Nenhum título assistido ainda!</p>
+            )}
           </aside>
         </div>
         <footer className="w-full text-center text-sm py-6 mt-auto" >

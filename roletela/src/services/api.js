@@ -50,3 +50,8 @@ export async function alterarStatus(id_api, status) {
   const resposta = await fetch(`${BASE_URL}/alterar_status?id_api=${id_api}&status=${status}`)
   return resposta.json()
 }
+
+export async function listaAssistidos() {
+  const resposta = await fetch(`${BASE_URL}/filmes_assistidos`)
+  return resposta.json()
+}
