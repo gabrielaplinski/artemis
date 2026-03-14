@@ -57,8 +57,8 @@ def atualizar_filmes():
    
 @app.route('/alterar_status', methods=['GET'])
 def alterar_status():
-    status = request.args.get('status')
-    id_api = request.args.get('id_api')
+    status = request.args.getlist('status')
+    id_api = request.args.getlist('id_api')
     return jsonify(alterar_status(id_api, status))
     
 if __name__ == '__main__':
