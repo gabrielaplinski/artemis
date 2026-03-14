@@ -51,7 +51,7 @@ export async function alterarStatus(id_api, status) {
   return resposta.json()
 }
 
-export async function listaAssistidos() {
+export async function listarAssistidos() {
   const resposta = await fetch(`${BASE_URL}/filmes_assistidos`)
   return resposta.json()
 }

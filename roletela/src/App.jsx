@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { listarTitulos, sortearTitulo, filtrarTitulos, sugerirTitulo, adicionarTitulo, excluirTitulo, alterarStatus } from "./services/api";
+import { listarTitulos, sortearTitulo, filtrarTitulos, sugerirTitulo, adicionarTitulo, excluirTitulo, alterarStatus, listarAssistidos } from "./services/api";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
 
@@ -87,9 +87,10 @@ export default function App() {
     if (confirmacao.tipo === "excluir") {
       await excluirTitulo(confirmacao.titulo.id, confirmacao.titulo.id_api);
     } else if (confirmacao.tipo === "assistido") {
-      await alterarStatus(confirmacao.titulo.id_api, "assistido");
+      await alterarStatus(confirmacao.titulo.id_api, true);
     }
     await buscarLista();
+    await buscarAssistidos();
     setConfirmacao(null);
   }
 
