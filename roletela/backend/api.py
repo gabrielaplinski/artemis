@@ -165,8 +165,7 @@ def atualizar_provedores():
         print(filme['plataforma'])
     if dados == dados_backup:
         return 'Nenhuma alteração necessária.'
-    with open("./roletela/backend/filmes.json", "w", encoding='utf-8') as arquivo:
-        json.dump(dados, arquivo, indent=4, ensure_ascii=False)
+    separar_titulos(dados)
     return 'Provedores atualizados.'
 
 # função semelhante à atualizar_provedores(), mas atualiza apenas o filme informado nos parametros
@@ -264,9 +263,13 @@ def separar_titulos(titulos):
         f['id'] = i+1
     for i, f in enumerate(filmes_sorteaveis):
         f['id'] = i+1                
-    with open('./roletela/backend/filmes.json', 'w', encoding='utf-8') as arquivo:
+    diretorio = os.path.dirname(os.path.abspath(__file__))
+    caminho = os.path.join(diretorio, 'filmes.json')
+    with open(caminho, 'w', encoding='utf-8') as arquivo:
         json.dump(filmes_sorteaveis, arquivo, indent=4 , ensure_ascii=False)
-    with open('./roletela/backend/filmes-assistidos.json', 'w', encoding='utf-8') as arquivo:
+    diretorio = os.path.dirname(os.path.abspath(__file__))
+    caminho = os.path.join(diretorio, 'filmes-assistidos.json')
+    with open(caminho, 'w', encoding='utf-8') as arquivo:
         json.dump(filmes_assistidos, arquivo, indent=4 , ensure_ascii=False)
 
 # sorteia um título para ser assitido, filtrando por plataformas, caso alguma seja informada nos parametros
