@@ -110,7 +110,19 @@ export default function App() {
     return (
       <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
         <div className="w-80 h-30 bg-white text-black rounded-lg">
-          <p>Deseja mesmo exluir</p>
+          <p>
+            {confirmacao.tipo === "excluir"
+            ? `Deseja excluir "${confirmacao.titulo.title}"?`
+            : `Marcar "${confirmacao.titulo.title}" como assistido?`}
+          </p>
+          <div>
+            <button onClick={onConfirmar}>
+              Confirmar
+            </button>
+            <button onClick={onCancelar}>
+              Cancelar
+            </button>
+          </div>
         </div>
       </div>
     )
