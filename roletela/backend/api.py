@@ -3,6 +3,7 @@ import requests
 import asyncio
 import aiohttp
 import copy
+import os
 
 headers = {
     "accept": 'application/json',
@@ -189,7 +190,9 @@ def att_provedores(filme):
    
 # lista filmes assistidos
 def listar_assistidos(*plataformas):
-    with open('./roletela/backend/filmes-assistidos.json', 'r', encoding='utf-8') as arquivo:
+    diretorio = os.path.dirname(os.path.abspath(__file__))
+    caminho = os.path.join(diretorio, 'filmes-assistidos.json')
+    with open(caminho, 'r', encoding='utf-8') as arquivo:
         filmes_assistidos = json.load(arquivo)
     if plataformas:
         filmes_assistidos = filtrarTitulos(filmes_assistidos, *plataformas)
@@ -197,7 +200,9 @@ def listar_assistidos(*plataformas):
 
 # lista filmes não assistidos, à sortear
 def listar_sorteaveis(*plataformas):
-    with open('./roletela/backend/filmes.json', 'r', encoding='utf-8') as arquivo:
+    diretorio = os.path.dirname(os.path.abspath(__file__))
+    caminho = os.path.join(diretorio, 'filmes.json')
+    with open(caminho, 'r', encoding='utf-8') as arquivo:
         filmes_sorteaveis = json.load(arquivo)
     if plataformas:
         filmes_sorteaveis = filtrarTitulos(filmes_sorteaveis, *plataformas)
@@ -205,9 +210,13 @@ def listar_sorteaveis(*plataformas):
 
 # lista todos os filmes, assistidos ou não
 def listarTitulos(*plataformas):
-    with open('./roletela/backend/filmes.json', 'r', encoding='utf-8') as arquivo:
+    diretorio = os.path.dirname(os.path.abspath(__file__))
+    caminho = os.path.join(diretorio, 'filmes.json')
+    with open(caminho, 'r', encoding='utf-8') as arquivo:
         filmes_sorteaveis = json.load(arquivo)
-    with open('./roletela/backend/filmes-assistidos.json', 'r', encoding='utf-8') as arquivo:
+    diretorio = os.path.dirname(os.path.abspath(__file__))
+    caminho = os.path.join(diretorio, 'filmes-assistidos.json')
+    with open(caminho, 'r', encoding='utf-8') as arquivo:
         filmes_assistidos = json.load(arquivo)
     filmes = filmes_sorteaveis + filmes_assistidos 
     if plataformas:
