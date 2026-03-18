@@ -1789,5 +1789,183 @@
         "status": false,
         "title": "Castlevania",
         "vote_average": 8.254
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": null,
+            "compra": null
+        },
+        "genres": [
+            "Crime",
+            "Drama",
+            "Thriller"
+        ],
+        "id": 66,
+        "id_api": 1220564,
+        "img": "https://image.tmdb.org/t/p/w500/t1DQ4XXIqTm5LvUjz8jypN43JjZ.jpg",
+        "media": "movie",
+        "origin_country": [
+            "BR"
+        ],
+        "overview": "No Brasil de 1977, Marcelo, um especialista em tecnologia fugindo de um passado misterioso, volta ao Recife em busca de um pouco de paz, mas percebe que a cidade está longe de ser o refúgio que procura.",
+        "plataforma": [
+            "Netflix"
+        ],
+        "release_date": "23/07/2025",
+        "status": false,
+        "title": "O Agente Secreto",
+        "vote_average": 7.348
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": null,
+            "compra": null
+        },
+        "genres": [
+            "Drama"
+        ],
+        "id": 67,
+        "id_api": 50014,
+        "img": "https://image.tmdb.org/t/p/w500/7iWfEm9VOeX8AAnC7F1ApxRDTfw.jpg",
+        "media": "movie",
+        "origin_country": [
+            "US"
+        ],
+        "overview": "Nos anos 60, no Mississippi, Skeeter é uma garota da sociedade que retorna determinada a se tornar escritora. Ela começa a entrevistar as mulheres negras da cidade, que deixaram suas vidas para trabalhar na criação dos filhos da elite branca, da qual a própria Skeeter faz parte. Aibileen Clark, a emprega da melhor amiga de Skeeter, é a primeira a conceder uma entrevista. Apesar das críticas, Skeeter e Aibileen continuam trabalhando juntas e, aos poucos, conseguem novas adesões.",
+        "plataforma": [
+            "Disney"
+        ],
+        "release_date": "09/08/2011",
+        "status": false,
+        "title": "Histórias Cruzadas",
+        "vote_average": 8.2
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": null,
+            "compra": null
+        },
+        "genres": [
+            "Mistério",
+            "Drama",
+            "Sci-Fi & Fantasy"
+        ],
+        "id": 68,
+        "id_api": 124364,
+        "img": "https://image.tmdb.org/t/p/w500/j4DJV91VGx7eAIWPeolV0nOtT1G.jpg",
+        "media": "tv",
+        "origin_country": [
+            "US"
+        ],
+        "overview": "Desvende o mistério de uma cidade no centro dos EUA. Enquanto os moradores lutam para manter um senso de normalidade, eles também devem sobreviver às ameaças da floresta ao redor, incluindo as criaturas aterrorizantes que surgem quando o sol se põe.",
+        "plataforma": [
+            "Globoplay"
+        ],
+        "release_date": "20/02/2022",
+        "status": false,
+        "title": "Origem",
+        "vote_average": 8.153
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": null,
+            "compra": null
+        },
+        "genres": [
+            "Sci-Fi & Fantasy",
+            "Drama",
+            "Action & Adventure"
+        ],
+        "id": 69,
+        "id_api": 1399,
+        "img": "https://image.tmdb.org/t/p/w500/eDn8XWA0a4U3zOhd1gh7HExdt4Y.jpg",
+        "media": "tv",
+        "origin_country": [
+            "US"
+        ],
+        "overview": "Em uma terra onde os verões podem durar vários anos e o inverno toda uma vida, sete nobres famílias lutam pelo controle da mítica terra de Westeros, dividida depois de uma guerra. Num cenário que lembra a Europa medieval, reis, rainhas, cavaleiros e renegados usam todos os meios possíveis em um jogo político pela disputa do Trono de Ferro, o símbolo do poder absoluto.",
+        "plataforma": [
+            "HBO"
+        ],
+        "release_date": "17/04/2011",
+        "status": false,
+        "title": "Game of Thrones",
+        "vote_average": 8.458
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": null,
+            "compra": null
+        },
+        "genres": [
+            "Drama",
+            "Crime",
+            "Thriller"
+        ],
+        "id": 70,
+        "id_api": 889737,
+        "img": "https://image.tmdb.org/t/p/w500/9RmVr8dPWicFyPZ5JCQK3NcBNB5.jpg",
+        "media": "movie",
+        "origin_country": [
+            "US"
+        ],
+        "overview": "Arthur Fleck está institucionalizado em Arkham à espera do julgamento por seus crimes como Coringa. Enquanto luta com sua dupla identidade, Arthur não apenas se depara com o amor verdadeiro, como encontra a música que sempre esteve dentro dele.",
+        "plataforma": [
+            "Netflix"
+        ],
+        "release_date": "01/10/2024",
+        "status": false,
+        "title": "Coringa: Delírio a Dois",
+        "vote_average": 5.401
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": null,
+            "compra": null
+        },
+        "genres": [
+            "Crime",
+            "Documentário"
+        ],
+        "id": 71,
+        "id_api": 103506,
+        "img": "https://image.tmdb.org/t/p/w500/vV72HIa2a1nnqb5nCHUf5Dn2Y5d.jpg",
+        "media": "tv",
+        "origin_country": [
+            "US"
+        ],
+        "overview": "Esta série documental investiga como o predador sexual Jeffrey Epstein usou dinheiro e poder para cometer seus crimes.",
+        "plataforma": [
+            "Netflix"
+        ],
+        "release_date": "27/05/2020",
+        "status": false,
+        "title": "Jeffrey Epstein: Poder e Perversão",
+        "vote_average": 7.0
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": null,
+            "compra": null
+        },
+        "genres": [
+            "Crime",
+            "Drama"
+        ],
+        "id": 72,
+        "id_api": 1409,
+        "img": "https://image.tmdb.org/t/p/w500/sa9VPlQneBi5xDz69kp7EJReUC1.jpg",
+        "media": "tv",
+        "origin_country": [
+            "US"
+        ],
+        "overview": "Uma gangue de motoqueiros segue suas próprias leis e comanda, por debaixo dos panos, o tráfico de armas na região da aparentemente pacata da cidade de Charming, protegendo-a contra forasteiros hostis.",
+        "plataforma": [
+            "Disney"
+        ],
+        "release_date": "03/09/2008",
+        "status": false,
+        "title": "Filhos da Anarquia",
+        "vote_average": 8.4
     }
 ]
