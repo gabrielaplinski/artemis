@@ -54,8 +54,9 @@ def excluir_filme():
 @app.route('/filmes/atualizar', methods=['PUT'])
 def atualizar_filmes():
     return jsonify(atualizar_provedores()) 
-   
-@app.route('/alterar_status', methods=['GET'])
+
+#testar com POST   
+@app.route('/alterar_status', methods=['GET']) 
 def alterar_status_flask():
     status = request.args.getlist('status')
     id_api = request.args.getlist('id_api')

@@ -253,10 +253,10 @@ def separar_titulos(titulos):
     filmes_assistidos = []
     filmes = titulos
     for filme in filmes:
-        if filme['status'] == True or filme['status'] == 'true':
+        if filme['status'] == True or filme['status'] == 'true' or filme['status'] == 'True':
             if not any(f['id_api'] == filme['id_api'] for f in filmes_assistidos):
                 filmes_assistidos.append(filme)
-        if filme['status'] == False or filme['status'] == 'false':
+        if filme['status'] == False or filme['status'] == 'false' or filme['status'] == 'False':
             if not any(f['id_api'] == filme['id_api'] for f in filmes_sorteaveis):
                 filmes_sorteaveis.append(filme)
     for i, f in enumerate(filmes_assistidos):
