@@ -12,7 +12,7 @@ def sortear():
     return jsonify(sortear_titulo(*plataformas))
 
 @app.route('/filmes_assistidos', methods=['GET'])
-def filmes_assistidos():
+def filmes_assistidos_flask():
     plataformas = request.args.getlist('plataforma')    
     return jsonify(listar_assistidos(*plataformas))
 

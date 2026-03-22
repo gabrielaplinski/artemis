@@ -253,9 +253,9 @@ def separar_titulos(titulos):
     filmes_assistidos = []
     filmes = titulos
     for filme in filmes:
-        if filme['status'] == True:
+        if filme['status'] == True or "true":
             filmes_assistidos.append(filme)
-        if filme['status'] == False:
+        if filme['status'] == False or "false":
             filmes_sorteaveis.append(filme)
     for i, f in enumerate(filmes_assistidos):
         f['id'] = i+1
