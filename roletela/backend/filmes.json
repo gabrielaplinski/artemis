@@ -7874,5 +7874,55 @@
         "status": false,
         "title": "Made in Abyss",
         "vote_average": 8.335
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": null,
+            "compra": null
+        },
+        "genres": [
+            "Animação",
+            "Action & Adventure",
+            "Sci-Fi & Fantasy"
+        ],
+        "id": 289,
+        "id_api": 35610,
+        "img": "https://image.tmdb.org/t/p/w500/zQhjMsdk27gQOgHxPx3wuYVaq8L.jpg",
+        "media": "tv",
+        "origin_country": [
+            "JP"
+        ],
+        "overview": "InuYasha é um hanyou, por ser filho de um youkai e de uma humana. Desta forma, os youkais possuem poderes diferenciados. Kagome Higurashi é uma garota japonesa dos tempos atuais e ainda estudante colegial. Certa vez ela descobre uma passagem secreta em um poço de sua casa, que é um templo muito antigo, e volta no tempo, para o Japão feudal, onde encontra InuYasha.",
+        "plataforma": [
+            "Netflix"
+        ],
+        "release_date": "16/10/2000",
+        "status": false,
+        "title": "InuYasha",
+        "vote_average": 8.577
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": null,
+            "compra": null
+        },
+        "genres": [
+            "Reality"
+        ],
+        "id": 290,
+        "id_api": 133356,
+        "img": "https://image.tmdb.org/t/p/w500/718VDCzJKzfCSepnG7MeEoprZ5B.jpg",
+        "media": "tv",
+        "origin_country": [
+            "BR"
+        ],
+        "overview": "Em busca do amor verdadeiro e com a intenção de subir ao altar, os participantes desse reality devem escolher seus parceiros às cegas. Já noivos, eles precisam enfrentar os desafios da convivência e se conhecer melhor antes do grande dia.",
+        "plataforma": [
+            "Netflix"
+        ],
+        "release_date": "06/10/2021",
+        "status": false,
+        "title": "Casamento às Cegas: Brasil",
+        "vote_average": 6.486
     }
 ]
