@@ -143,7 +143,7 @@ export default function App() {
           <p>{titulos.length} títulos sorteáveis</p>
           <p>-- títulos assistidos</p>
       </div>
-      
+
       <main className="min-h-screen pt-40 px-80">
         <h1 className="font-['Nabla'] text-5xl text-start indent-25 font-bold mb-30 w-full">RoleTela</h1>
         <nav className="mb-30 h-50 w-full flex justify-between gap-10" >
@@ -278,12 +278,12 @@ export default function App() {
             )}
           </ul>
           <aside>
-            <h2 className="p" >Títulos assistidos</h2>
+            <h2 className="bg-red-500" >Títulos assistidos</h2>
             {assistidos.length > 0 ? (
               <ul>
                 {assistidos.map((titulo, index) => (
                   <li key={index}>
-                    <img src={titulo.img} alt={titulo.title} />
+                    <img src={titulo.img} alt={titulo.title} className="w-50"/>
                     <p>{titulo.title}</p>
                   </li>
                 ))}
