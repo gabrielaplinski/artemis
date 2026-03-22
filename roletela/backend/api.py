@@ -253,9 +253,9 @@ def separar_titulos(titulos):
     filmes_assistidos = []
     filmes = titulos
     for filme in filmes:
-        if filme['status'] == True or filme['status'] == "true":
+        if filme['status'] == True or filme['status'] == 'true':
             filmes_assistidos.append(filme)
-        if filme['status'] == False or filme['status'] == "false":
+        if filme['status'] == False or filme['status'] == 'false':
             filmes_sorteaveis.append(filme)
     for i, f in enumerate(filmes_assistidos):
         f['id'] = i+1
@@ -344,8 +344,6 @@ def assistindo():
     with open(caminho, 'r') as arquivo:
         filme = json.load(arquivo)
     return filme
-
-alterar_status(72636, False)
 
 # função usada pra atualizar a lista de filmes, não é necessária para o funcionamento do programa, mas pode ser útil para adicionar novos títulos sugeridos
 '''
