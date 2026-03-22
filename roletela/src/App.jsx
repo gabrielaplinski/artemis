@@ -99,7 +99,7 @@ export default function App() {
       <li>
         <button
           onClick={onClick} 
-          className={`${ativo ? 'bg-gray-600 hover:bg-gray-500' : 'bg-gray-800 hover:bg-gray-700'} w-32 py-2 rounded-lg hover:cursor-pointer transition-colors`}
+          className={`${ativo ? 'bg-neutral-700 hover:bg-neutral-600' : 'bg-neutral-900 hover:bg-neutral-800'} w-32 py-2 rounded-lg hover:cursor-pointer transition-colors`}
         >
           {ativo && (
             <FontAwesomeIcon 
@@ -137,8 +137,8 @@ export default function App() {
   }
 
   return (
-    <div className="bg-gray-900 text-white flex flex-col">
-      <div className="bg-gray-800 w-50 pr-20 flex flex-row gap-2 items-center justify-self-end" >
+    <div className="bg-neutral-950 text-white flex flex-col">
+      <div className="bg-neutral-900 w-50 pr-20 flex flex-row gap-2 items-center justify-self-end" >
           <p>{titulos.length} títulos sorteáveis</p>
           <p>-- títulos assistidos</p>
       </div>
@@ -146,7 +146,7 @@ export default function App() {
       <main className="min-h-screen pt-40 px-80">
         <h1 className="font-['Nabla'] text-5xl text-start indent-25 font-bold mb-30 w-full">RoleTela</h1>
         <nav className="mb-30 h-50 w-full flex justify-between gap-10" >
-          <div className="bg-gray-800 p-10 rounded-lg basis-1/3 flex flex-col items-center">
+          <div className="bg-neutral-900 p-10 rounded-lg basis-1/3 flex flex-col items-center">
             <button
               onClick={sortear}
               className="bg-red-800 font-semibold h-10 px-10 py-1 rounded-lg hover:bg-red-600 hover:cursor-pointer active:bg-red-500 transition-colors"
@@ -154,12 +154,12 @@ export default function App() {
               Sortear
             </button>
             {sorteado && (
-              <p className="bg-gray-700 p-2 mt-6 text-xl text-yellow-500 rounded-lg" >
-                {sorteado.title} — {sorteado.plataforma}
+              <p className="bg-neutral-700 text-center p-2 mt-6 text-xl text-yellow-500 rounded-lg" >
+                {sorteado.title} {sorteado.plataforma}
               </p>
             )}
           </div>
-          <div className="w-150 max-w-200 bg-gray-800 p-5 rounded-lg flex flex-wrap justify-center">
+          <div className="w-150 max-w-200 bg-neutral-900 p-5 rounded-lg flex flex-wrap justify-center">
             <div className="flex items-start gap-5" >
               <input
                 type="text"

@@ -35,7 +35,7 @@ export async function adicionarTitulo(item) {
 
 export async function filtrarTitulos(plataformas) {
   const params = plataformas.map(p => `plataforma=${p}`).join("&")
-  const resposta = await fetch(`${BASE_URL}/filmes?${params}`)
+  const resposta = await fetch(`${BASE_URL}/filmes_sorteaveis?${params}`)
   return resposta.json()
 }
 
