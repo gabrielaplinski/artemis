@@ -319,7 +319,34 @@ def alterar_status(id_api, status):
         if filme['id_api'] == id_api:
             filme['status'] = status
     separar_titulos(filmes)
-    
+
+# adiciona um filme como "assistindo" e retira o antigo, caso exista algum
+def add_assistindo(id_api):
+    filmes = listarTitulos()
+    for filme in filmes:
+        if id_api == filme['id_api']:
+            diretorio = os.path.dirname(os.path.abspath(__file__))
+            caminho = os.path.join(diretorio, 'assistindo.json')
+            with open(caminho, 'w', encoding='utf-8') as arquivo:
+                json.dump(filme, arquivo, indent=4, ensure_ascii=False)
+
+# limpa o arquivo "assistindo.json"     
+def remover_assistindo():
+    diretorio = os.path.dirname(os.path.abspath(__file__))
+    caminho = os.path.join(diretorio, 'assistindo.json')
+    with open(caminho, 'w', encoding='utf-8') as arquivo:
+        json.dump([], arquivo, indent=4, ensure_ascii=False)
+
+# lê o arquivo "assistindo.json"
+def assistindo():
+    diretorio = os.path.dirname(os.path.abspath(__file__))
+    caminho = os.path.join(diretorio, 'assistindo.json')
+    with open(caminho, 'r') as arquivo:
+        filme = json.load(arquivo)
+    return filme
+
+alterar_status(72636, False)
+
 # função usada pra atualizar a lista de filmes, não é necessária para o funcionamento do programa, mas pode ser útil para adicionar novos títulos sugeridos
 '''
 def completarTitulo(dict):
