@@ -1,0 +1,27 @@
+{
+    "aluguel/compra": {
+        "aluguel": [],
+        "compra": []
+    },
+    "genres": [
+        "Animação",
+        "Drama",
+        "Action & Adventure",
+        "Sci-Fi & Fantasy"
+    ],
+    "id": 2,
+    "id_api": 72636,
+    "img": "https://image.tmdb.org/t/p/w500/4Bh9qzB1Kau4RDaVQXVFdoJ0HcE.jpg",
+    "media": "tv",
+    "origin_country": [
+        "JP"
+    ],
+    "overview": "O enorme sistema de cavernas, conhecido como Abyss, é o único lugar inexplorado no mundo. Ninguém sabe até que ponto este poço titânico está habitado por criaturas estranhas e maravilhosas e cheio de misteriosas relíquias antigas cujo propósito é desconhecido para o homem moderno. Gerações de aventureiros arrojados foram desenhadas pelas profundidades crípticas do abismo. Ao longo do tempo, esses corajosos o suficiente para explorar o poço perigoso vieram a ser conhecidos como Cave Raiders. Em Oosu, a cidade à beira do Abismo, vive uma pequena órfã chamada Rico, que sonha em se tornar uma grande raider como sua mãe e resolver o grande mistério do poço. Um dia explorando as profundidades sombrias que ela tropeça em um garotinho, que acaba por ser um robô.",
+    "plataforma": [
+        "Netflix"
+    ],
+    "release_date": "07/07/2017",
+    "status": false,
+    "title": "Made in Abyss",
+    "vote_average": 8.335
+}

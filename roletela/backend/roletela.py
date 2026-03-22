@@ -61,6 +61,19 @@ def alterar_status_flask():
     id_api = request.args.getlist('id_api')
     return jsonify(alterar_status(id_api, status))
     
+@app.route('/add_assistindo', method=['POST'])
+def add_assistindo_flask():
+    id_api = request.args.getlist('id_api')
+    return jsonify(add_assistindo(id_api))
+
+@app.route('/remover_assistindo')
+def remover_assistindo_flask():
+    return remover_assistindo
+
+@app.route('/assistindo', method=['GET'])
+def assistindo_flask():
+    return jsonify(assistindo)
+
 if __name__ == '__main__':
     app.run(debug=True)
     
