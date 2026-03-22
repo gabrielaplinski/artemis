@@ -345,8 +345,6 @@ def assistindo():
         filme = json.load(arquivo)
     return filme
 
-alterar_status(72636, False)
-
 # função usada pra atualizar a lista de filmes, não é necessária para o funcionamento do programa, mas pode ser útil para adicionar novos títulos sugeridos
 '''
 def completarTitulo(dict):

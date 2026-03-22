@@ -264,7 +264,7 @@ export default function App() {
                   </button>
                 </div>
                 <img src={titulo.img} alt="Capa do título" className="w-50" ></img>
-                <p className="text-orange-700 text-sm" >{titulo.plataforma}</p>
+                <p className="text-orange-700 text-sm" >{titulo.plataforma.join(" • ")}</p>
               </li>
               ))
             ) : filtrosAtivos.length > 0 ? (
