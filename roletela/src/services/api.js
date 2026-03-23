@@ -47,7 +47,11 @@ export async function excluirTitulo(id, id_api) {
 }
 
 export async function alterarStatus(id_api, status) {
-  const resposta = await fetch(`${BASE_URL}/alterar_status?id_api=${id_api}&status=${status}`)
+  const resposta = await fetch(`${BASE_URL}/alterar_status`, {
+    method: "POST", 
+    headers: {"Content-Type": "aplication/json"}, 
+    body: JSON.stringify(id_api, status)
+  })
   return resposta.json()
 }
 
