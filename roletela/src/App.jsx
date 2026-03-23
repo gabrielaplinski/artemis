@@ -86,7 +86,7 @@ export default function App() {
 
   async function executarConfirmacao() {
     if (confirmacao.tipo === "excluir") {
-      await excluirTitulo(confirmacao.titulo.id, confirmacao.titulo.id_api);
+      await excluirTitulo(confirmacao.titulo.id_api);
     } else if (confirmacao.tipo === "assistido") {
       await alterarStatus(confirmacao.titulo.id_api, true);
     }

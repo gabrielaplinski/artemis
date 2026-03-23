@@ -39,9 +39,10 @@ export async function filtrarTitulos(plataformas) {
   return resposta.json()
 }
 
-export async function excluirTitulo(id, id_api) {
-  const resposta = await fetch(`${BASE_URL}/filmes/excluir?id=${id}&id_api=${id_api}`, {
+export async function excluirTitulo(id_api) {
+  const resposta = await fetch(`${BASE_URL}/filmes/excluir?id_api=${id_api}`, {
     method: "DELETE",
+    headers: {"Content-Type": "application/json"}
   })
   return resposta.json()
 }
@@ -49,8 +50,8 @@ export async function excluirTitulo(id, id_api) {
 export async function alterarStatus(id_api, status) {
   const resposta = await fetch(`${BASE_URL}/alterar_status`, {
     method: "POST", 
-    headers: {"Content-Type": "aplication/json"}, 
-    body: JSON.stringify(id_api, status)
+    headers: {"Content-Type": "application/json"}, 
+    body: JSON.stringify({id_api: id_api, status: status})
   })
   return resposta.json()
 }

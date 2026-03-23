@@ -54,38 +54,6 @@
     },
     {
         "aluguel/compra": {
-            "aluguel": [
-                "Apple TV Store",
-                "Amazon Video",
-                "Google Play Movies"
-            ],
-            "compra": [
-                "Apple TV Store",
-                "Amazon Video",
-                "Google Play Movies"
-            ]
-        },
-        "genres": [
-            "Drama"
-        ],
-        "id": 3,
-        "id_api": 833417,
-        "img": "https://image.tmdb.org/t/p/w500/2G81vE1U714zwYcKMpwEBtJx1me.jpg",
-        "media": "movie",
-        "origin_country": [
-            "FR"
-        ],
-        "overview": "Julie luta sozinha para criar seus dois filhos no subúrbio e manter seu emprego em Paris. Quando ela finalmente consegue uma entrevista para um cargo correspondente às suas aspirações, uma greve geral eclode, paralisando o transporte. Ela então embarcará em uma corrida frenética para salvar seu emprego e sua família.",
-        "plataforma": [
-            "Amazon"
-        ],
-        "release_date": "16/03/2022",
-        "status": false,
-        "title": "Contratempos",
-        "vote_average": 7.034
-    },
-    {
-        "aluguel/compra": {
             "aluguel": [],
             "compra": []
         },
@@ -95,7 +63,7 @@
             "Sci-Fi & Fantasy",
             "Mistério"
         ],
-        "id": 4,
+        "id": 3,
         "id_api": 88041,
         "img": "https://image.tmdb.org/t/p/w500/iQtvwkseinHBxQHxIIOViZw9t9T.jpg",
         "media": "tv",
@@ -122,7 +90,7 @@
             "Drama",
             "Mistério"
         ],
-        "id": 5,
+        "id": 4,
         "id_api": 220542,
         "img": "https://image.tmdb.org/t/p/w500/t8fC3K3XnwE6Iso6b1bi5Fdo93n.jpg",
         "media": "tv",
@@ -151,7 +119,7 @@
             "Animação",
             "Sci-Fi & Fantasy"
         ],
-        "id": 6,
+        "id": 5,
         "id_api": 30984,
         "img": "https://image.tmdb.org/t/p/w500/e0kKmeM8R7Kersh5N2PPzIRNRhr.jpg",
         "media": "tv",
@@ -177,7 +145,7 @@
             "Action & Adventure",
             "Sci-Fi & Fantasy"
         ],
-        "id": 7,
+        "id": 6,
         "id_api": 75208,
         "img": "https://image.tmdb.org/t/p/w500/vFIk26CGrhDrWgYkTdVqp6dZc48.jpg",
         "media": "tv",
@@ -211,7 +179,7 @@
             "Drama",
             "Família"
         ],
-        "id": 8,
+        "id": 7,
         "id_api": 508883,
         "img": "https://image.tmdb.org/t/p/w500/dYwihSnQmCVuIQbuG9n18BK5Iqd.jpg",
         "media": "movie",
@@ -239,7 +207,7 @@
             "Action & Adventure",
             "Sci-Fi & Fantasy"
         ],
-        "id": 9,
+        "id": 8,
         "id_api": 96203,
         "img": "https://image.tmdb.org/t/p/w500/1hPI4AAM4hOMNV2ucOvsVg7LJsV.jpg",
         "media": "tv",
@@ -265,7 +233,7 @@
             "Comédia",
             "Animação"
         ],
-        "id": 10,
+        "id": 9,
         "id_api": 83121,
         "img": "https://image.tmdb.org/t/p/w500/tvemh1UGxnDKWPFYj40Zs6IWN7y.jpg",
         "media": "tv",
@@ -291,7 +259,7 @@
             "Animação",
             "Action & Adventure"
         ],
-        "id": 11,
+        "id": 10,
         "id_api": 222623,
         "img": "https://image.tmdb.org/t/p/w500/8T3QsGzRvvAPUUw9Z1UjLNCQZlH.jpg",
         "media": "tv",
@@ -319,7 +287,7 @@
             "Action & Adventure",
             "Comédia"
         ],
-        "id": 12,
+        "id": 11,
         "id_api": 67063,
         "img": "https://image.tmdb.org/t/p/w500/kUTsnVSo9JWcFK3Y2XILQfH0imK.jpg",
         "media": "tv",
@@ -354,7 +322,7 @@
             "Mistério",
             "Thriller"
         ],
-        "id": 13,
+        "id": 12,
         "id_api": 840705,
         "img": "https://image.tmdb.org/t/p/w500/1BCZ1rOI41cGkae6RZgLVVmYczE.jpg",
         "media": "movie",
@@ -382,7 +350,7 @@
             "Comédia",
             "Crime"
         ],
-        "id": 14,
+        "id": 13,
         "id_api": 13154,
         "img": "https://image.tmdb.org/t/p/w500/vgiGW7F1VVue9EAOR70gJwHecLj.jpg",
         "media": "movie",
@@ -405,7 +373,7 @@
             "Sci-Fi & Fantasy",
             "Drama"
         ],
-        "id": 15,
+        "id": 14,
         "id_api": 196322,
         "img": "https://image.tmdb.org/t/p/w500/mAbuZuS4CqlTI6lvWIxPRHppbVs.jpg",
         "media": "tv",
@@ -433,7 +401,7 @@
             "Action & Adventure",
             "Drama"
         ],
-        "id": 16,
+        "id": 15,
         "id_api": 31724,
         "img": "https://image.tmdb.org/t/p/w500/r2sbQjPgutBLyT2Jwoh2YY5ZYTo.jpg",
         "media": "tv",
@@ -459,7 +427,7 @@
             "Animação",
             "Action & Adventure"
         ],
-        "id": 17,
+        "id": 16,
         "id_api": 83100,
         "img": "https://image.tmdb.org/t/p/w500/6TX5aQHlJKdRZqV9nFPty3dOdfe.jpg",
         "media": "tv",
@@ -485,7 +453,7 @@
             "Mistério",
             "Sci-Fi & Fantasy"
         ],
-        "id": 18,
+        "id": 17,
         "id_api": 232230,
         "img": "https://image.tmdb.org/t/p/w500/kBRyCCZWipMO5Gu9Y02nE3iMgr0.jpg",
         "media": "tv",
@@ -508,38 +476,12 @@
             "compra": []
         },
         "genres": [
-            "Terror",
-            "Thriller",
-            "Drama"
-        ],
-        "id": 19,
-        "id_api": 529962,
-        "img": "https://image.tmdb.org/t/p/w500/tPDe68PDsgIGMs6wdJLtcwVVxA7.jpg",
-        "media": "movie",
-        "origin_country": [
-            "US"
-        ],
-        "overview": "Neste suspense macabro, uma musicista excepcional reencontra seus ex-mentores, mas descobre que eles têm uma nova aprendiz talentosa.",
-        "plataforma": [
-            "Netflix"
-        ],
-        "release_date": "20/09/2018",
-        "status": false,
-        "title": "A Perfeição",
-        "vote_average": 6.451
-    },
-    {
-        "aluguel/compra": {
-            "aluguel": [],
-            "compra": []
-        },
-        "genres": [
             "Animação",
             "Drama",
             "Sci-Fi & Fantasy",
             "Action & Adventure"
         ],
-        "id": 20,
+        "id": 18,
         "id_api": 61459,
         "img": "https://image.tmdb.org/t/p/w500/dC1rIfKScgrHjmZYdTpUgWpZF4h.jpg",
         "media": "tv",
@@ -566,7 +508,7 @@
             "Sci-Fi & Fantasy",
             "Action & Adventure"
         ],
-        "id": 21,
+        "id": 19,
         "id_api": 76479,
         "img": "https://image.tmdb.org/t/p/w500/2zmTngn1tYC1AvfnrFLhxeD82hz.jpg",
         "media": "tv",
@@ -592,7 +534,7 @@
             "Action & Adventure",
             "Sci-Fi & Fantasy"
         ],
-        "id": 22,
+        "id": 20,
         "id_api": 30669,
         "img": "https://image.tmdb.org/t/p/w500/j6dzDPkrAsfJ6GUyyMPz38ZkpbF.jpg",
         "media": "tv",
@@ -620,7 +562,7 @@
             "Action & Adventure",
             "Sci-Fi & Fantasy"
         ],
-        "id": 23,
+        "id": 21,
         "id_api": 57287,
         "img": "https://image.tmdb.org/t/p/w500/iwUWYgItga8EdVkqgS5R1q0V5md.jpg",
         "media": "tv",
@@ -648,7 +590,7 @@
             "Comédia",
             "Sci-Fi & Fantasy"
         ],
-        "id": 24,
+        "id": 22,
         "id_api": 67075,
         "img": "https://image.tmdb.org/t/p/w500/aFcv9zeJtSbJHSYUlQCOQYV3Gio.jpg",
         "media": "tv",
@@ -675,7 +617,7 @@
             "Comédia",
             "Animação"
         ],
-        "id": 25,
+        "id": 23,
         "id_api": 37854,
         "img": "https://image.tmdb.org/t/p/w500/9ltisibeD4gzqjM1AzmQwCdyirQ.jpg",
         "media": "tv",
@@ -704,7 +646,7 @@
             "Comédia",
             "Drama"
         ],
-        "id": 26,
+        "id": 24,
         "id_api": 65676,
         "img": "https://image.tmdb.org/t/p/w500/uLCcMQT9gBf81wI1sbHx2ICBiYH.jpg",
         "media": "tv",
@@ -733,7 +675,7 @@
             "Sci-Fi & Fantasy",
             "Crime"
         ],
-        "id": 27,
+        "id": 25,
         "id_api": 65931,
         "img": "https://image.tmdb.org/t/p/w500/4WlY8Wflsa4ySLxwQzBSLORBQPy.jpg",
         "media": "tv",
@@ -759,7 +701,7 @@
             "Documentário",
             "Crime"
         ],
-        "id": 28,
+        "id": 26,
         "id_api": 245902,
         "img": "https://image.tmdb.org/t/p/w500/zpZEMkTVnR7o3StN2BME8Ru26Nt.jpg",
         "media": "tv",
@@ -795,7 +737,7 @@
             "Thriller",
             "Mistério"
         ],
-        "id": 29,
+        "id": 27,
         "id_api": 399057,
         "img": "https://image.tmdb.org/t/p/w500/xb52s7YrVQEusl4azCI3ItyWDIW.jpg",
         "media": "movie",
@@ -823,7 +765,7 @@
             "Sci-Fi & Fantasy",
             "Action & Adventure"
         ],
-        "id": 30,
+        "id": 28,
         "id_api": 1429,
         "img": "https://image.tmdb.org/t/p/w500/8aMqmB5xSblsZc7bLMEhE28yHa2.jpg",
         "media": "tv",
@@ -851,7 +793,7 @@
             "Sci-Fi & Fantasy",
             "Comédia"
         ],
-        "id": 31,
+        "id": 29,
         "id_api": 76121,
         "img": "https://image.tmdb.org/t/p/w500/rR8HgnD9tqFaSiJ69FpruHo9Gm9.jpg",
         "media": "tv",
@@ -883,7 +825,7 @@
             "Mistério",
             "Drama"
         ],
-        "id": 32,
+        "id": 30,
         "id_api": 315205,
         "img": "https://image.tmdb.org/t/p/w500/rZsXwlpYluOAiWRDO1SQq4ddad6.jpg",
         "media": "movie",
@@ -915,7 +857,7 @@
             "Ficção científica",
             "Thriller"
         ],
-        "id": 33,
+        "id": 31,
         "id_api": 933260,
         "img": "https://image.tmdb.org/t/p/w500/vWeOgzlhnP1sS23H3rzctGHB9Nb.jpg",
         "media": "movie",
@@ -952,7 +894,7 @@
             "Romance",
             "História"
         ],
-        "id": 34,
+        "id": 32,
         "id_api": 535544,
         "img": "https://image.tmdb.org/t/p/w500/lXoUmgHslfmC6kIhy814unBhptx.jpg",
         "media": "movie",
@@ -978,7 +920,7 @@
             "Drama",
             "Action & Adventure"
         ],
-        "id": 35,
+        "id": 33,
         "id_api": 94997,
         "img": "https://image.tmdb.org/t/p/w500/xEC4nyJvcWcOu7QaobLcqz6iRUL.jpg",
         "media": "tv",
@@ -1004,7 +946,7 @@
             "Animação",
             "Action & Adventure"
         ],
-        "id": 36,
+        "id": 34,
         "id_api": 94498,
         "img": "https://image.tmdb.org/t/p/w500/mEJ4sm3QeU3k8ERApIQSOzQaDId.jpg",
         "media": "tv",
@@ -1031,7 +973,7 @@
             "Animação",
             "Drama"
         ],
-        "id": 37,
+        "id": 35,
         "id_api": 890,
         "img": "https://image.tmdb.org/t/p/w500/AhtWPHqIT1cWdrKTZVDMZD4Ca4F.jpg",
         "media": "tv",
@@ -1056,7 +998,7 @@
             "Comédia",
             "Animação"
         ],
-        "id": 38,
+        "id": 36,
         "id_api": 78457,
         "img": "https://image.tmdb.org/t/p/w500/m3bGZApoBomEwpp0mUEUn4NCVHV.jpg",
         "media": "tv",
@@ -1081,7 +1023,7 @@
             "Terror",
             "Thriller"
         ],
-        "id": 39,
+        "id": 37,
         "id_api": 1186274,
         "img": "https://image.tmdb.org/t/p/w500/1CgmX7TLTYi1q79r2iGIe3yPmg.jpg",
         "media": "movie",
@@ -1105,7 +1047,7 @@
         "genres": [
             "Comédia"
         ],
-        "id": 40,
+        "id": 38,
         "id_api": 243200,
         "img": "https://image.tmdb.org/t/p/w500/5MGDcHyLLtrnv1v3vMaoJ8sMj7p.jpg",
         "media": "tv",
@@ -1131,7 +1073,7 @@
             "Drama",
             "Romance"
         ],
-        "id": 41,
+        "id": 39,
         "id_api": 290098,
         "img": "https://image.tmdb.org/t/p/w500/q6ngYthHXCvA2ZubO4FHTFNRrmc.jpg",
         "media": "movie",
@@ -1154,7 +1096,7 @@
             "Animação",
             "Comédia"
         ],
-        "id": 42,
+        "id": 40,
         "id_api": 537921,
         "img": "https://image.tmdb.org/t/p/w500/iqAdJynMKna1c9fHQWD884s3HuR.jpg",
         "media": "movie",
@@ -1181,7 +1123,7 @@
             "Sci-Fi & Fantasy",
             "Comédia"
         ],
-        "id": 43,
+        "id": 41,
         "id_api": 88046,
         "img": "https://image.tmdb.org/t/p/w500/qDNgM4STqdzl4IBMyqCVMIr6uUV.jpg",
         "media": "tv",
@@ -1207,7 +1149,7 @@
             "Comédia",
             "Drama"
         ],
-        "id": 44,
+        "id": 42,
         "id_api": 247767,
         "img": "https://image.tmdb.org/t/p/w500/7Qlpnaj2aBSfLZ1e99ee7J8JogV.jpg",
         "media": "tv",
@@ -1235,7 +1177,7 @@
             "Action & Adventure",
             "Sci-Fi & Fantasy"
         ],
-        "id": 45,
+        "id": 43,
         "id_api": 62110,
         "img": "https://image.tmdb.org/t/p/w500/fIOYLPOorKvP4wut9y0edpnWROz.jpg",
         "media": "tv",
@@ -1262,7 +1204,7 @@
             "Fantasia",
             "Família"
         ],
-        "id": 46,
+        "id": 44,
         "id_api": 683127,
         "img": "https://image.tmdb.org/t/p/w500/3xgAhWu3v78zP6GIAbVHjcaBOR2.jpg",
         "media": "movie",
@@ -1288,7 +1230,7 @@
             "Drama",
             "Mistério"
         ],
-        "id": 47,
+        "id": 45,
         "id_api": 39434,
         "img": "https://image.tmdb.org/t/p/w500/dZf3KcRtHBzJ4EjgjwTuqYqoGJe.jpg",
         "media": "tv",
@@ -1315,7 +1257,7 @@
             "Drama",
             "Mistério"
         ],
-        "id": 48,
+        "id": 46,
         "id_api": 65249,
         "img": "https://image.tmdb.org/t/p/w500/2xo5jNOwXGP41umcmxzZgPxGpaI.jpg",
         "media": "tv",
@@ -1342,7 +1284,7 @@
             "Drama",
             "Crime"
         ],
-        "id": 49,
+        "id": 47,
         "id_api": 258897,
         "img": "https://image.tmdb.org/t/p/w500/AspGWTFcEFgnDTTRA70at5zyKYj.jpg",
         "media": "tv",
@@ -1369,7 +1311,7 @@
             "Drama",
             "Sci-Fi & Fantasy"
         ],
-        "id": 50,
+        "id": 48,
         "id_api": 256721,
         "img": "https://image.tmdb.org/t/p/w500/RxuL7KuFoOzHC0htjtLGxJEGGx.jpg",
         "media": "tv",
@@ -1397,7 +1339,7 @@
             "Sci-Fi & Fantasy",
             "Action & Adventure"
         ],
-        "id": 51,
+        "id": 49,
         "id_api": 73946,
         "img": "https://image.tmdb.org/t/p/w500/5zqngLZU6PBblfzOqu4TmejcFp2.jpg",
         "media": "tv",
@@ -1424,7 +1366,7 @@
             "Animação",
             "Sci-Fi & Fantasy"
         ],
-        "id": 52,
+        "id": 50,
         "id_api": 65930,
         "img": "https://image.tmdb.org/t/p/w500/cfESQ8y8oNAeLuRbs7NkW7Qjwhy.jpg",
         "media": "tv",
@@ -1455,7 +1397,7 @@
             "Sci-Fi & Fantasy",
             "Crime"
         ],
-        "id": 53,
+        "id": 51,
         "id_api": 83097,
         "img": "https://image.tmdb.org/t/p/w500/8RWcKSmCbwsN8porFyTOB5e2cDG.jpg",
         "media": "tv",
@@ -1482,7 +1424,7 @@
             "Drama",
             "Sci-Fi & Fantasy"
         ],
-        "id": 54,
+        "id": 52,
         "id_api": 75214,
         "img": "https://image.tmdb.org/t/p/w500/2pV3XjjwRjevbaHoWH0Z3orOSrL.jpg",
         "media": "tv",
@@ -1508,7 +1450,7 @@
             "Drama",
             "Sci-Fi & Fantasy"
         ],
-        "id": 55,
+        "id": 53,
         "id_api": 85991,
         "img": "https://image.tmdb.org/t/p/w500/wVe8vcSqpJjLib5TWer6kgkGjjM.jpg",
         "media": "tv",
@@ -1535,7 +1477,7 @@
             "Drama",
             "Sci-Fi & Fantasy"
         ],
-        "id": 56,
+        "id": 54,
         "id_api": 284445,
         "img": "https://image.tmdb.org/t/p/w500/aIZldplw1isQQSjaLS0o3SEob9H.jpg",
         "media": "tv",
@@ -1560,7 +1502,7 @@
         "genres": [
             "Reality"
         ],
-        "id": 57,
+        "id": 55,
         "id_api": 261887,
         "img": "https://image.tmdb.org/t/p/w500/5ByseXePVhj1kJ3ewGRf3W9hRxY.jpg",
         "media": "tv",
@@ -1586,7 +1528,7 @@
             "Action & Adventure",
             "Sci-Fi & Fantasy"
         ],
-        "id": 58,
+        "id": 56,
         "id_api": 46298,
         "img": "https://image.tmdb.org/t/p/w500/9WxfAQquTun9ATkV6iAeFHMkqxv.jpg",
         "media": "tv",
@@ -1614,7 +1556,7 @@
             "Action & Adventure",
             "Sci-Fi & Fantasy"
         ],
-        "id": 59,
+        "id": 57,
         "id_api": 127532,
         "img": "https://image.tmdb.org/t/p/w500/eCD7WS9h4lCT8N4Xavc9u8R1IGk.jpg",
         "media": "tv",
@@ -1640,7 +1582,7 @@
             "Animação",
             "Sci-Fi & Fantasy"
         ],
-        "id": 60,
+        "id": 58,
         "id_api": 86831,
         "img": "https://image.tmdb.org/t/p/w500/vL5BQvXH96cJzmNK5n7QliQxy90.jpg",
         "media": "tv",
@@ -1666,7 +1608,7 @@
             "Drama",
             "Sci-Fi & Fantasy"
         ],
-        "id": 61,
+        "id": 59,
         "id_api": 61374,
         "img": "https://image.tmdb.org/t/p/w500/5XBk7T4NsGeN9RG39y2nU6gRWQl.jpg",
         "media": "tv",
@@ -1693,7 +1635,7 @@
             "Sci-Fi & Fantasy",
             "Action & Adventure"
         ],
-        "id": 62,
+        "id": 60,
         "id_api": 224372,
         "img": "https://image.tmdb.org/t/p/w500/whIZtYminSyVOwjxhjxYcOaCuBg.jpg",
         "media": "tv",
@@ -1721,7 +1663,7 @@
             "Mistério",
             "Crime"
         ],
-        "id": 63,
+        "id": 61,
         "id_api": 90937,
         "img": "https://image.tmdb.org/t/p/w500/jJHykaBex66D01wlfPx0tcyEQ8E.jpg",
         "media": "tv",
@@ -1747,7 +1689,7 @@
             "Sci-Fi & Fantasy",
             "Drama"
         ],
-        "id": 64,
+        "id": 62,
         "id_api": 71024,
         "img": "https://image.tmdb.org/t/p/w500/ubDtIBwdS9b29sBofAkqWz3PqkT.jpg",
         "media": "tv",
@@ -1773,7 +1715,7 @@
             "Drama",
             "Thriller"
         ],
-        "id": 65,
+        "id": 63,
         "id_api": 1220564,
         "img": "https://image.tmdb.org/t/p/w500/t1DQ4XXIqTm5LvUjz8jypN43JjZ.jpg",
         "media": "movie",
@@ -1795,35 +1737,11 @@
             "compra": null
         },
         "genres": [
-            "Drama"
-        ],
-        "id": 66,
-        "id_api": 50014,
-        "img": "https://image.tmdb.org/t/p/w500/7iWfEm9VOeX8AAnC7F1ApxRDTfw.jpg",
-        "media": "movie",
-        "origin_country": [
-            "US"
-        ],
-        "overview": "Nos anos 60, no Mississippi, Skeeter é uma garota da sociedade que retorna determinada a se tornar escritora. Ela começa a entrevistar as mulheres negras da cidade, que deixaram suas vidas para trabalhar na criação dos filhos da elite branca, da qual a própria Skeeter faz parte. Aibileen Clark, a emprega da melhor amiga de Skeeter, é a primeira a conceder uma entrevista. Apesar das críticas, Skeeter e Aibileen continuam trabalhando juntas e, aos poucos, conseguem novas adesões.",
-        "plataforma": [
-            "Disney"
-        ],
-        "release_date": "09/08/2011",
-        "status": false,
-        "title": "Histórias Cruzadas",
-        "vote_average": 8.2
-    },
-    {
-        "aluguel/compra": {
-            "aluguel": null,
-            "compra": null
-        },
-        "genres": [
             "Mistério",
             "Drama",
             "Sci-Fi & Fantasy"
         ],
-        "id": 67,
+        "id": 64,
         "id_api": 124364,
         "img": "https://image.tmdb.org/t/p/w500/j4DJV91VGx7eAIWPeolV0nOtT1G.jpg",
         "media": "tv",
@@ -1849,7 +1767,7 @@
             "Drama",
             "Action & Adventure"
         ],
-        "id": 68,
+        "id": 65,
         "id_api": 1399,
         "img": "https://image.tmdb.org/t/p/w500/eDn8XWA0a4U3zOhd1gh7HExdt4Y.jpg",
         "media": "tv",
@@ -1875,7 +1793,7 @@
             "Crime",
             "Thriller"
         ],
-        "id": 69,
+        "id": 66,
         "id_api": 889737,
         "img": "https://image.tmdb.org/t/p/w500/9RmVr8dPWicFyPZ5JCQK3NcBNB5.jpg",
         "media": "movie",
@@ -1900,7 +1818,7 @@
             "Crime",
             "Documentário"
         ],
-        "id": 70,
+        "id": 67,
         "id_api": 103506,
         "img": "https://image.tmdb.org/t/p/w500/vV72HIa2a1nnqb5nCHUf5Dn2Y5d.jpg",
         "media": "tv",
@@ -1925,7 +1843,7 @@
             "Crime",
             "Drama"
         ],
-        "id": 71,
+        "id": 68,
         "id_api": 1409,
         "img": "https://image.tmdb.org/t/p/w500/sa9VPlQneBi5xDz69kp7EJReUC1.jpg",
         "media": "tv",
@@ -1943,33 +1861,6 @@
     },
     {
         "aluguel/compra": {
-            "aluguel": [],
-            "compra": []
-        },
-        "genres": [
-            "Animação",
-            "Drama",
-            "Action & Adventure",
-            "Sci-Fi & Fantasy"
-        ],
-        "id": 72,
-        "id_api": 72636,
-        "img": "https://image.tmdb.org/t/p/w500/4Bh9qzB1Kau4RDaVQXVFdoJ0HcE.jpg",
-        "media": "tv",
-        "origin_country": [
-            "JP"
-        ],
-        "overview": "O enorme sistema de cavernas, conhecido como Abyss, é o único lugar inexplorado no mundo. Ninguém sabe até que ponto este poço titânico está habitado por criaturas estranhas e maravilhosas e cheio de misteriosas relíquias antigas cujo propósito é desconhecido para o homem moderno. Gerações de aventureiros arrojados foram desenhadas pelas profundidades crípticas do abismo. Ao longo do tempo, esses corajosos o suficiente para explorar o poço perigoso vieram a ser conhecidos como Cave Raiders. Em Oosu, a cidade à beira do Abismo, vive uma pequena órfã chamada Rico, que sonha em se tornar uma grande raider como sua mãe e resolver o grande mistério do poço. Um dia explorando as profundidades sombrias que ela tropeça em um garotinho, que acaba por ser um robô.",
-        "plataforma": [
-            "Netflix"
-        ],
-        "release_date": "07/07/2017",
-        "status": false,
-        "title": "Made in Abyss",
-        "vote_average": 8.335
-    },
-    {
-        "aluguel/compra": {
             "aluguel": null,
             "compra": null
         },
@@ -1978,7 +1869,7 @@
             "Action & Adventure",
             "Sci-Fi & Fantasy"
         ],
-        "id": 73,
+        "id": 69,
         "id_api": 35610,
         "img": "https://image.tmdb.org/t/p/w500/zQhjMsdk27gQOgHxPx3wuYVaq8L.jpg",
         "media": "tv",
@@ -2002,7 +1893,7 @@
         "genres": [
             "Reality"
         ],
-        "id": 74,
+        "id": 70,
         "id_api": 133356,
         "img": "https://image.tmdb.org/t/p/w500/718VDCzJKzfCSepnG7MeEoprZ5B.jpg",
         "media": "tv",

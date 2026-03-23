@@ -47,19 +47,18 @@ def adicionar_filme():
 
 @app.route('/filmes/excluir', methods=['DELETE'])
 def excluir_filme():
-    id = request.args.get('id')
     id_api = request.args.get('id_api')
-    return jsonify(excluirTitulo(int(id), id_api))
+    return jsonify(excluirTitulo(id_api))
     
 @app.route('/filmes/atualizar', methods=['PUT'])
 def atualizar_filmes():
     return jsonify(atualizar_provedores()) 
 
-#testar com POST   
 @app.route('/alterar_status', methods=['POST']) 
 def alterar_status_flask():
-    status = request.args.getlist('status')
-    id_api = request.args.getlist('id_api')
+    dados = request.get_json()
+    status = dados.get('status')
+    id_api = dados.get('id_api')
     return jsonify(alterar_status(id_api, status))
     
 @app.route('/add_assistindo', methods=['POST'])

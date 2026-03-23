@@ -1,1 +1,111 @@
-[]
+[
+    {
+        "aluguel/compra": {
+            "aluguel": [
+                "Apple TV Store",
+                "Amazon Video",
+                "Google Play Movies"
+            ],
+            "compra": [
+                "Apple TV Store",
+                "Amazon Video",
+                "Google Play Movies"
+            ]
+        },
+        "genres": [
+            "Drama"
+        ],
+        "id": 1,
+        "id_api": 833417,
+        "img": "https://image.tmdb.org/t/p/w500/2G81vE1U714zwYcKMpwEBtJx1me.jpg",
+        "media": "movie",
+        "origin_country": [
+            "FR"
+        ],
+        "overview": "Julie luta sozinha para criar seus dois filhos no subúrbio e manter seu emprego em Paris. Quando ela finalmente consegue uma entrevista para um cargo correspondente às suas aspirações, uma greve geral eclode, paralisando o transporte. Ela então embarcará em uma corrida frenética para salvar seu emprego e sua família.",
+        "plataforma": [
+            "Amazon"
+        ],
+        "release_date": "16/03/2022",
+        "status": true,
+        "title": "Contratempos",
+        "vote_average": 7.034
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": null,
+            "compra": null
+        },
+        "genres": [
+            "Drama"
+        ],
+        "id": 2,
+        "id_api": 50014,
+        "img": "https://image.tmdb.org/t/p/w500/7iWfEm9VOeX8AAnC7F1ApxRDTfw.jpg",
+        "media": "movie",
+        "origin_country": [
+            "US"
+        ],
+        "overview": "Nos anos 60, no Mississippi, Skeeter é uma garota da sociedade que retorna determinada a se tornar escritora. Ela começa a entrevistar as mulheres negras da cidade, que deixaram suas vidas para trabalhar na criação dos filhos da elite branca, da qual a própria Skeeter faz parte. Aibileen Clark, a emprega da melhor amiga de Skeeter, é a primeira a conceder uma entrevista. Apesar das críticas, Skeeter e Aibileen continuam trabalhando juntas e, aos poucos, conseguem novas adesões.",
+        "plataforma": [
+            "Disney"
+        ],
+        "release_date": "09/08/2011",
+        "status": true,
+        "title": "Histórias Cruzadas",
+        "vote_average": 8.2
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": [],
+            "compra": []
+        },
+        "genres": [
+            "Terror",
+            "Thriller",
+            "Drama"
+        ],
+        "id": 3,
+        "id_api": 529962,
+        "img": "https://image.tmdb.org/t/p/w500/tPDe68PDsgIGMs6wdJLtcwVVxA7.jpg",
+        "media": "movie",
+        "origin_country": [
+            "US"
+        ],
+        "overview": "Neste suspense macabro, uma musicista excepcional reencontra seus ex-mentores, mas descobre que eles têm uma nova aprendiz talentosa.",
+        "plataforma": [
+            "Netflix"
+        ],
+        "release_date": "20/09/2018",
+        "status": true,
+        "title": "A Perfeição",
+        "vote_average": 6.451
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": [],
+            "compra": []
+        },
+        "genres": [
+            "Animação",
+            "Drama",
+            "Action & Adventure",
+            "Sci-Fi & Fantasy"
+        ],
+        "id": 4,
+        "id_api": 72636,
+        "img": "https://image.tmdb.org/t/p/w500/4Bh9qzB1Kau4RDaVQXVFdoJ0HcE.jpg",
+        "media": "tv",
+        "origin_country": [
+            "JP"
+        ],
+        "overview": "O enorme sistema de cavernas, conhecido como Abyss, é o único lugar inexplorado no mundo. Ninguém sabe até que ponto este poço titânico está habitado por criaturas estranhas e maravilhosas e cheio de misteriosas relíquias antigas cujo propósito é desconhecido para o homem moderno. Gerações de aventureiros arrojados foram desenhadas pelas profundidades crípticas do abismo. Ao longo do tempo, esses corajosos o suficiente para explorar o poço perigoso vieram a ser conhecidos como Cave Raiders. Em Oosu, a cidade à beira do Abismo, vive uma pequena órfã chamada Rico, que sonha em se tornar uma grande raider como sua mãe e resolver o grande mistério do poço. Um dia explorando as profundidades sombrias que ela tropeça em um garotinho, que acaba por ser um robô.",
+        "plataforma": [
+            "Netflix"
+        ],
+        "release_date": "07/07/2017",
+        "status": true,
+        "title": "Made in Abyss",
+        "vote_average": 8.335
+    }
+]
