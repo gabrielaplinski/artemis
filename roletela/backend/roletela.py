@@ -56,7 +56,7 @@ def atualizar_filmes():
     return jsonify(atualizar_provedores()) 
 
 #testar com POST   
-@app.route('/alterar_status', methods=['GET']) 
+@app.route('/alterar_status', methods=['POST']) 
 def alterar_status_flask():
     status = request.args.getlist('status')
     id_api = request.args.getlist('id_api')

@@ -217,28 +217,28 @@ export default function App() {
             ativo={filtrosAtivos.includes("Disney")}
           />
           <BotaoPlataforma
-            nome="GloboPlay"
-            onClick={() => filtrar("GloboPlay")}
+            nome="Globoplay"
+            onClick={() => filtrar("Globoplay")}
             corIcone="text-red-500"
-            ativo={filtrosAtivos.includes("GloboPlay")}
+            ativo={filtrosAtivos.includes("Globoplay")}
           />
           <BotaoPlataforma
             nome="HBOMax"
-            onClick={() => filtrar("HBOMax")}
+            onClick={() => filtrar("HBO")}
             corIcone="text-orange-500"
-            ativo={filtrosAtivos.includes("HBOMax")}
+            ativo={filtrosAtivos.includes("HBO")}
           />
           <BotaoPlataforma
             nome="AppleTV"
-            onClick={() => filtrar("AppleTV")}
+            onClick={() => filtrar("Apple")}
             corIcone="text-blue-500"
-            ativo={filtrosAtivos.includes("AppleTV")}
+            ativo={filtrosAtivos.includes("Apple")}
           />
           <BotaoPlataforma
             nome="PrimeVideo"
-            onClick={() => filtrar("Prime Video")}
+            onClick={() => filtrar("Amazon")}
             corIcone="text-green-500"
-            ativo={filtrosAtivos.includes("Prime Video")}
+            ativo={filtrosAtivos.includes("Amazon")}
           />
         </ul>
         <div className="w-full pt-20 flex justify-around" >
