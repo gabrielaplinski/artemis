@@ -300,7 +300,7 @@ def filtrarTitulos(dados, *plataformas):
 def excluirTitulo(id_api):
     dados = listarTitulos()
     for filme in dados:
-        if filme['id_api'] == id_api:
+        if filme['id_api'] == int(id_api):
             dados.remove(filme)
             separar_titulos(dados)
             return 'Filme excluído.'
@@ -346,6 +346,7 @@ def assistindo():
     with open(caminho, 'r') as arquivo:
         filme = json.load(arquivo)
     return filme
+
 
 # função usada pra atualizar a lista de filmes, não é necessária para o funcionamento do programa, mas pode ser útil para adicionar novos títulos sugeridos
 '''

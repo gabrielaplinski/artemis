@@ -4,7 +4,7 @@ from api import *
 
 app = Flask(__name__, template_folder='../')
 app.json.ensure_ascii = False
-CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST", "OPTIONS"]}})
+CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST", "OPTIONS", "DELETE"]}})
 
 @app.route('/sortear', methods=['GET'])
 def sortear():
@@ -63,7 +63,8 @@ def alterar_status_flask():
     
 @app.route('/add_assistindo', methods=['POST'])
 def add_assistindo_flask():
-    id_api = request.args.getlist('id_api')
+    dados = request.get_json()
+    id_api = dados.get('id_api')
     return jsonify(add_assistindo(id_api))
 
 @app.route('/remover_assistindo')

@@ -1,35 +1,108 @@
 [
     {
         "aluguel/compra": {
-            "aluguel": [
-                "Apple TV Store",
-                "Amazon Video",
-                "Google Play Movies"
-            ],
-            "compra": [
-                "Apple TV Store",
-                "Amazon Video",
-                "Google Play Movies"
-            ]
+            "aluguel": null,
+            "compra": null
         },
         "genres": [
-            "Drama"
+            "Crime",
+            "Drama",
+            "Sci-Fi & Fantasy",
+            "Mistério"
         ],
         "id": 1,
-        "id_api": 833417,
-        "img": "https://image.tmdb.org/t/p/w500/2G81vE1U714zwYcKMpwEBtJx1me.jpg",
+        "id_api": 70523,
+        "img": "https://image.tmdb.org/t/p/w500/7yQyDCqSazrYTnmxdQLAZ8YDH87.jpg",
+        "media": "tv",
+        "origin_country": [
+            "DE"
+        ],
+        "overview": "Quatro famílias iniciam uma desesperada busca por respostas quando uma criança desaparece e um complexo mistério envolvendo três gerações começa a se revelar.",
+        "plataforma": [
+            "Netflix"
+        ],
+        "release_date": "01/12/2017",
+        "status": true,
+        "title": "Dark",
+        "vote_average": 8.4
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": null,
+            "compra": null
+        },
+        "genres": [
+            "Sci-Fi & Fantasy",
+            "Mistério",
+            "Action & Adventure"
+        ],
+        "id": 2,
+        "id_api": 66732,
+        "img": "https://image.tmdb.org/t/p/w500/twfKp60THrcOIep9sjHODOOfO8d.jpg",
+        "media": "tv",
+        "origin_country": [
+            "US"
+        ],
+        "overview": "Quando um garoto desaparece, a cidade toda participa nas buscas. Mas o que encontram são segredos, forças sobrenaturais e uma menina.",
+        "plataforma": [
+            "Netflix"
+        ],
+        "release_date": "15/07/2016",
+        "status": true,
+        "title": "Stranger Things",
+        "vote_average": 8.574
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": null,
+            "compra": null
+        },
+        "genres": [
+            "Drama",
+            "Crime"
+        ],
+        "id": 3,
+        "id_api": 249042,
+        "img": "https://image.tmdb.org/t/p/w500/3v8MSpNNk3hhadeU9XocQrQXbuk.jpg",
+        "media": "tv",
+        "origin_country": [
+            "GB",
+            "US"
+        ],
+        "overview": "Um garoto de 13 anos é acusado de assassinar uma colega de escola, levando a família, a terapeuta e o investigador do caso a se perguntarem: o que realmente aconteceu?",
+        "plataforma": [
+            "Netflix"
+        ],
+        "release_date": "13/03/2025",
+        "status": true,
+        "title": "Adolescência",
+        "vote_average": 7.8
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": null,
+            "compra": null
+        },
+        "genres": [
+            "Drama",
+            "História"
+        ],
+        "id": 4,
+        "id_api": 1000837,
+        "img": "https://image.tmdb.org/t/p/w500/yY0HDAGfu79cpOLQBgR3kgGZ7HS.jpg",
         "media": "movie",
         "origin_country": [
-            "FR"
+            "BR"
         ],
-        "overview": "Julie luta sozinha para criar seus dois filhos no subúrbio e manter seu emprego em Paris. Quando ela finalmente consegue uma entrevista para um cargo correspondente às suas aspirações, uma greve geral eclode, paralisando o transporte. Ela então embarcará em uma corrida frenética para salvar seu emprego e sua família.",
+        "overview": "No início da década de 1970, o Brasil enfrenta o endurecimento da ditadura militar. No Rio de Janeiro, a família Paiva – Rubens, Eunice e seus cinco filhos – vive à beira da praia em uma casa de portas abertas para os amigos. Um dia, Rubens Paiva é levado por militares à paisana e desaparece.",
         "plataforma": [
+            "Globoplay",
             "Amazon"
         ],
-        "release_date": "16/03/2022",
+        "release_date": "19/09/2024",
         "status": true,
-        "title": "Contratempos",
-        "vote_average": 7.034
+        "title": "Ainda Estou Aqui",
+        "vote_average": 7.9
     },
     {
         "aluguel/compra": {
@@ -39,7 +112,7 @@
         "genres": [
             "Drama"
         ],
-        "id": 2,
+        "id": 5,
         "id_api": 50014,
         "img": "https://image.tmdb.org/t/p/w500/7iWfEm9VOeX8AAnC7F1ApxRDTfw.jpg",
         "media": "movie",
@@ -65,7 +138,7 @@
             "Thriller",
             "Drama"
         ],
-        "id": 3,
+        "id": 6,
         "id_api": 529962,
         "img": "https://image.tmdb.org/t/p/w500/tPDe68PDsgIGMs6wdJLtcwVVxA7.jpg",
         "media": "movie",
@@ -92,7 +165,7 @@
             "Action & Adventure",
             "Sci-Fi & Fantasy"
         ],
-        "id": 4,
+        "id": 7,
         "id_api": 72636,
         "img": "https://image.tmdb.org/t/p/w500/4Bh9qzB1Kau4RDaVQXVFdoJ0HcE.jpg",
         "media": "tv",
