@@ -22,9 +22,10 @@ export async function listarTitulos(plataforma) {
   return resposta.json()
 }
 
-export async function sortearTitulo(plataforma) {
-  const url = plataforma
-   ? `${BASE_URL}/sortear?plataforma=${plataforma}`
+export async function sortearTitulo(plataformas) {
+  const params = plataformas.map(p => `plataforma=${p}`).join("&")
+  const url = plataformas
+   ? `${BASE_URL}/sortear?${params}`
    : `${BASE_URL}/sortear`
   const resposta = await fetch(url)
   return resposta.json()

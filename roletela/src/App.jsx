@@ -46,7 +46,7 @@ export default function App() {
   }
 
   async function sortear() {
-    const escolhido = await sortearTitulo();
+    const escolhido = await sortearTitulo(filtrosAtivos);
     setSorteado(escolhido);  
     setAssistindo(escolhido); 
     await salvarAssistindo(escolhido.id_api);
