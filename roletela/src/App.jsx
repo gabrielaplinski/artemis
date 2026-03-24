@@ -267,7 +267,7 @@ export default function App() {
           <ul className="pt-10 grid grid-cols-3 gap-10" >
             {titulos.length > 0 ? (
               titulos.map((titulo, index) => (
-              <li key={index} className="p-1 w-60 relative group flex flex-col justify-center items-center" >
+              <li key={index} className="titulo-sorteavel p-1 w-60 relative group flex flex-col justify-center items-center" >
                 {titulo.title}
                 <div className="absolute top-75 w-full flex justify-between px-8 opacity-0 group-hover:opacity-100 transition-opacity z-10" >
                   <button
@@ -287,7 +287,7 @@ export default function App() {
                 </div>
                 <button
                   onClick={() => setAssistindo(titulo)}
-                  className="absolute text-sm bg-neutral-950 p-1 top-8 left-6 z-10 opacity-0 rounded-lg hover:bg-neutral-900 hover:cursor-pointer group-hover:opacity-100 transition-opacity ease-in-out"
+                  className="assistido absolute text-sm bg-neutral-950 p-1 top-8 left-6 z-10 opacity-0 rounded-lg hover:bg-neutral-900 hover:cursor-pointer group-hover:opacity-100 transition-opacity ease-in-out"
                   title="Assistindo agora"
                 >
                 <FontAwesomeIcon icon={faEye} />
