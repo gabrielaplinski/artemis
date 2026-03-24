@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { listarTitulos, sortearTitulo, filtrarTitulos, sugerirTitulo, adicionarTitulo, excluirTitulo, alterarStatus, listarAssistidos } from "./services/api";
+import { listarTitulos, sortearTitulo, filtrarTitulos, sugerirTitulo, adicionarTitulo, excluirTitulo, alterarStatus, listarAssistidos, salvarAssistindo, buscarAssistindo } from "./services/api";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
+import { faEye } from '@fortawesome/free-solid-svg-icons'
 
 export default function App() {
   const [titulos, setTitulos] = useState([]);
@@ -13,10 +14,12 @@ export default function App() {
   const [selecionado, setSelecionado] = useState(null);
   const [confirmacao, setConfirmacao] = useState(null);
   const [assistidos, setAssistidos] = useState([]);
+  const [assistindo, setAssistindo] = useState(null);
 
   useEffect(() => {
     buscarLista();
     buscarAssistidos();
+    carregarAssistindo();
   }, []);
 
   useEffect(() => {
@@ -32,9 +35,21 @@ export default function App() {
     return () => clearTimeout(timeout);
   }, [query]);
 
+  async function carregarAssistindo() {
+    const data = await buscarAssistindo();
+    if (data) setAssistindo(data);
+  }
+
+  async function definirAssistindo(titulo) {
+    setAssistindo(titulo);
+    await salvarAssistindo(titulo.id_api);
+  }
+
   async function sortear() {
     const escolhido = await sortearTitulo();
-    setSorteado(escolhido);   
+    setSorteado(escolhido);  
+    setAssistindo(escolhido); 
+    await salvarAssistindo(escolhido.id_api);
   }
 
   async function adicionar() {
@@ -143,8 +158,15 @@ export default function App() {
           <p>{titulos.length} títulos sorteáveis</p>
           <p>-- títulos assistidos</p>
       </div>
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={assistindo?.img || ""}
+          alt={assistindo?.title || ""}
+          className="absolute inset-0 w-full h-100 object-cover object-center opacity-10" />
+        <div className="absolute inset-0 h-100 bg-linear-to-b from-transparent via-transparent to-neutral-950"></div>
+      </div>
 
-      <main className="min-h-screen pt-40 px-80">
+      <main className="relative min-h-screen z-10 pt-50 px-80">
         <h1 className="font-['Nabla'] text-5xl text-start indent-25 font-bold mb-30 w-full">RoleTela</h1>
         <nav className="mb-30 h-50 w-full flex justify-between gap-10" >
           <div className="bg-neutral-900 p-10 rounded-lg basis-1/3 flex flex-col items-center">
@@ -263,6 +285,13 @@ export default function App() {
                     ✗
                   </button>
                 </div>
+                <button
+                  onClick={() => setAssistindo(titulo)}
+                  className="absolute text-sm bg-neutral-950 p-1 top-8 left-6 z-10 opacity-0 rounded-lg hover:bg-neutral-900 hover:cursor-pointer group-hover:opacity-100 transition-opacity ease-in-out"
+                  title="Assistindo agora"
+                >
+                <FontAwesomeIcon icon={faEye} />
+                </button>
                 <img src={titulo.img} alt="Capa do título" className="w-50" ></img>
                 <p className="text-orange-700 text-sm" >{titulo.plataforma.join(" • ")}</p>
               </li>
