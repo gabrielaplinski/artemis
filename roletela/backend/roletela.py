@@ -73,7 +73,7 @@ def remover_assistindo_flask():
 
 @app.route('/assistindo', methods=['GET'])
 def assistindo_flask():
-    return jsonify(assistindo)
+    return jsonify(assistindo())
 
 if __name__ == '__main__':
     app.run(debug=True)
