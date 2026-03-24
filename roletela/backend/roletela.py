@@ -62,16 +62,16 @@ def alterar_status_flask():
     return jsonify(alterar_status(id_api, status))
     
 @app.route('/assistindo', methods=['POST'])
-def add_assistindo_flask():
+def add_assistindo_flask(): 
     dados = request.get_json()
     id_api = dados.get('id_api')
     add_assistindo(id_api)
-    return '',200
+    return '',204
 
 @app.route('/assistindo', methods=['DELETE'])
 def remover_assistindo_flask():
     remover_assistindo()
-    return '',200
+    return '',204
 
 @app.route('/assistindo', methods=['GET'])
 def assistindo_flask():
