@@ -101,11 +101,17 @@ export default function App() {
     setConfirmacao({ tipo: "assistido", titulo });
   }
 
+  function confirmarNaoAssistido(titulo) {
+    setConfirmacao({ tipo: "naoAssistido", titulo});
+  }
+
   async function executarConfirmacao() {
     if (confirmacao.tipo === "excluir") {
       await excluirTitulo(confirmacao.titulo.id_api);
     } else if (confirmacao.tipo === "assistido") {
       await alterarStatus(confirmacao.titulo.id_api, true);
+    } else if (confirmacao.tipo === "naoAssistido") {
+      await alterarStatus(confirmacao.titulo.id_api, false);
     }
     await buscarLista();
     await buscarAssistidos();
@@ -139,7 +145,10 @@ export default function App() {
           <p>
             {confirmacao.tipo === "excluir"
             ? `Deseja excluir "${confirmacao.titulo.title}"?`
-            : `Marcar "${confirmacao.titulo.title}" como assistido?`}
+            : confirmacao.tipo === "assistido"
+              ? `Marcar "${confirmacao.titulo.title}" como assistido?`
+              : `Marcar "${confirmacao.titulo.title}" NÃO como assistido?`
+            }
           </p>
           <div>
             <button onClick={onConfirmar}>
@@ -323,7 +332,23 @@ export default function App() {
             {assistidos.length > 0 ? (
               <ul>
                 {assistidos.map((titulo, index) => (
-                  <li key={index}>
+                  <li key={index} className="p-1 w-60 relative group flex flex-col justify-center items-center">
+                    <div className="absolute top-68 w-full flex justify-between px-8 opacity-0 group-hover:opacity-100 transition-opacity z-10" >
+                      <button
+                        onClick={() => confirmarNaoAssistido(titulo)}
+                        title="Marcar como não assistido"
+                        className="bg-blue-800 hover:bg-blue-600 text-white text-sm m-1 px-1 py-.9 rounded cursor-pointer"
+                      >
+                        ←
+                      </button>
+                      <button
+                        onClick={() => confirmarExcluir(titulo)}
+                        title="Excluir título"
+                        className="bg-red-800 hover:bg-red-600 text-white text-sm m-1 px-1 py-.9 rounded cursor-pointer"
+                      >
+                        ✗
+                      </button>
+                    </div>
                     <img src={titulo.img} alt={titulo.title} className="w-50"/>
                     <p>{titulo.title}</p>
                   </li>
