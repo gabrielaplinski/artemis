@@ -3,6 +3,7 @@ import { listarTitulos, sortearTitulo, filtrarTitulos, sugerirTitulo, adicionarT
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
 import { faEye } from '@fortawesome/free-solid-svg-icons'
+import { faDice } from '@fortawesome/free-solid-svg-icons'
 
 export default function App() {
   const [titulos, setTitulos] = useState([]);
@@ -170,9 +171,9 @@ export default function App() {
       <main className="relative min-h-screen z-10 pt-50 px-80">
         <h1 className="font-['Nabla'] text-5xl text-start indent-25 font-bold mb-30 w-full">RoleTela</h1>
         <nav className="mb-30 h-50 w-full flex justify-between gap-10" >
-          <div className="bg-neutral-900 p-10 rounded-lg basis-1/3 flex flex-col gap-4">
+          <div className="bg-neutral-900 p-10 rounded-lg basis-1/3 flex flex-col gap-5">
             {(sorteado || assistindo) && (
-              <div className="bg-neutral-700 text-center p-2 mt-6 text-xl text-yellow-500 rounded-lg flex flex-col" >
+              <div className="bg-neutral-700 text-center h-20 p-2 text-xl text-yellow-500 rounded-lg flex flex-col">
                 <span>
                   {sorteado ? sorteado.title : assistindo.title}
                 </span>
@@ -183,9 +184,10 @@ export default function App() {
             )}
             <button
               onClick={sortear}
-              className="bg-red-800 font-semibold h-10 w-30 py-1 rounded-lg hover:bg-red-600 hover:cursor-pointer active:bg-red-500 transition-colors"
+              className="bg-red-800 font-semibold h-10 w-10 py-1 rounded-lg hover:bg-red-600 hover:cursor-pointer active:bg-red-500 transition-colors"
+              title="Sortear"
             >
-              Sortear
+              <FontAwesomeIcon icon={faDice} />
             </button>
           </div>
           <div className="w-150 max-w-200 bg-neutral-900 p-5 rounded-lg flex flex-wrap justify-center">
