@@ -307,7 +307,7 @@ export default function App() {
                 <button
                   onClick={() => definirAssistindo(titulo)}
                   className={`assistido absolute text-sm bg-neutral-950 p-1 top-8 left-6 z-10 rounded-lg hover:bg-neutral-900 hover:cursor-pointer transition-opacity ease-in-out 
-                    ${assistindo?.id_api === titulo.id_api || sorteado?.id_api === titulo.id_api ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+                    ${assistindo?.id_api === titulo.id_api || sorteado?.id_api === titulo.id_api ? 'opacity-100 text-blue-500 bg-white' : 'opacity-0 group-hover:opacity-100'}`}
                   title="Assistindo agora"
                 >
                 <FontAwesomeIcon icon={faEye} />
