@@ -1,12 +1,11 @@
 const BASE_URL = "http://localhost:5000"
 
 export async function salvarAssistindo(id_api) {
-  const resposta = await fetch(`${BASE_URL}/assistindo`, {
+  await fetch(`${BASE_URL}/assistindo`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ id_api })
   })
-  return resposta.json()
 }
 
 export async function buscarAssistindo() {

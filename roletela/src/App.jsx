@@ -47,9 +47,10 @@ export default function App() {
 
   async function sortear() {
     const escolhido = await sortearTitulo(filtrosAtivos);
+    console.log("escolhido completo:", escolhido);
     setSorteado(escolhido);  
     setAssistindo(escolhido); 
-    await salvarAssistindo(escolhido.id_api);
+    await definirAssistindo(escolhido);
   }
 
   async function adicionar() {
@@ -169,18 +170,23 @@ export default function App() {
       <main className="relative min-h-screen z-10 pt-50 px-80">
         <h1 className="font-['Nabla'] text-5xl text-start indent-25 font-bold mb-30 w-full">RoleTela</h1>
         <nav className="mb-30 h-50 w-full flex justify-between gap-10" >
-          <div className="bg-neutral-900 p-10 rounded-lg basis-1/3 flex flex-col items-center">
+          <div className="bg-neutral-900 p-10 rounded-lg basis-1/3 flex flex-col gap-4">
+            {(sorteado || assistindo) && (
+              <div className="bg-neutral-700 text-center p-2 mt-6 text-xl text-yellow-500 rounded-lg flex flex-col" >
+                <span>
+                  {sorteado ? sorteado.title : assistindo.title}
+                </span>
+                <span className="text-sm text-orange-700">
+                  {sorteado ? sorteado.plataforma.join(" • ") : assistindo.plataforma.join(" • ")}
+                </span>
+              </div>
+            )}
             <button
               onClick={sortear}
-              className="bg-red-800 font-semibold h-10 px-10 py-1 rounded-lg hover:bg-red-600 hover:cursor-pointer active:bg-red-500 transition-colors"
+              className="bg-red-800 font-semibold h-10 w-30 py-1 rounded-lg hover:bg-red-600 hover:cursor-pointer active:bg-red-500 transition-colors"
             >
               Sortear
             </button>
-            {sorteado && (
-              <p className="bg-neutral-700 text-center p-2 mt-6 text-xl text-yellow-500 rounded-lg" >
-                {sorteado.title} {sorteado.plataforma}
-              </p>
-            )}
           </div>
           <div className="w-150 max-w-200 bg-neutral-900 p-5 rounded-lg flex flex-wrap justify-center">
             <div className="flex items-start gap-5" >
@@ -266,7 +272,9 @@ export default function App() {
         <div className="w-full pt-20 flex justify-around" >
           <ul className="pt-10 grid grid-cols-3 gap-10" >
             {titulos.length > 0 ? (
-              titulos.map((titulo, index) => (
+              titulos.map((titulo, index) => {
+                console.log("sorteado.id_api:", sorteado?.id_api, "titulo.id_api:", titulo.id_api);
+                return (
               <li key={index} className="titulo-sorteavel p-1 w-60 relative group flex flex-col justify-center items-center" >
                 {titulo.title}
                 <div className="absolute top-75 w-full flex justify-between px-8 opacity-0 group-hover:opacity-100 transition-opacity z-10" >
@@ -286,8 +294,9 @@ export default function App() {
                   </button>
                 </div>
                 <button
-                  onClick={() => setAssistindo(titulo)}
-                  className="assistido absolute text-sm bg-neutral-950 p-1 top-8 left-6 z-10 opacity-0 rounded-lg hover:bg-neutral-900 hover:cursor-pointer group-hover:opacity-100 transition-opacity ease-in-out"
+                  onClick={() => definirAssistindo(titulo)}
+                  className={`assistido absolute text-sm bg-neutral-950 p-1 top-8 left-6 z-10 rounded-lg hover:bg-neutral-900 hover:cursor-pointer transition-opacity ease-in-out 
+                    ${assistindo?.id_api === titulo.id_api || sorteado?.id_api === titulo.id_api ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
                   title="Assistindo agora"
                 >
                 <FontAwesomeIcon icon={faEye} />
@@ -295,7 +304,8 @@ export default function App() {
                 <img src={titulo.img} alt="Capa do título" className="w-50" ></img>
                 <p className="text-orange-700 text-sm" >{titulo.plataforma.join(" • ")}</p>
               </li>
-              ))
+              );
+            })
             ) : filtrosAtivos.length > 0 ? (
               <li className="text-sm text-red-800 col-span-full" >
                 No momento não existe nenhum título não assistido nessa(s) plataforma(s)

@@ -282,7 +282,8 @@ def sortear_titulo(*plataformas):
         return 'Nenhum filme encontrado para as plataformas selecionadas.'
     filme_sorteado = random.choice(dados)
     att_provedores(filme_sorteado)
-    return {'title':filme_sorteado['title'], 
+    return {'id_api':filme_sorteado['id_api'],
+            'title':filme_sorteado['title'], 
             'plataforma':filme_sorteado['plataforma'],
             'img':filme_sorteado['img']}
 
