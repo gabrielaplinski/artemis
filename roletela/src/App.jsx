@@ -29,7 +29,6 @@ export default function App() {
     const timeout = setTimeout(async () => {
       setLoading(true);
       const data = await sugerirTitulo(query);
-      console.log(data);
       setSugestoes(data);
       setLoading(false);
     }, 500);
@@ -48,9 +47,7 @@ export default function App() {
 
   async function sortear() {
     const escolhido = await sortearTitulo(filtrosAtivos);
-    console.log("escolhido completo:", escolhido);
-    setSorteado(escolhido);  
-    setAssistindo(escolhido); 
+    setSorteado(escolhido);
     await definirAssistindo(escolhido);
   }
 
@@ -65,7 +62,6 @@ export default function App() {
 
   async function buscarLista() {
     const lista = await listarTitulos();
-    console.log("lista:", lista);
     setTitulos(Array.isArray(lista) ? lista : []);
   }
 
@@ -165,10 +161,6 @@ export default function App() {
 
   return (
     <div className="bg-neutral-950 text-white flex flex-col">
-      <div className="bg-neutral-900 w-50 pr-20 flex flex-row gap-2 items-center justify-self-end" >
-          <p>{titulos.length} títulos sorteáveis</p>
-          <p>-- títulos assistidos</p>
-      </div>
       <div className="absolute inset-0 z-0">
         <img 
           src={assistindo?.img || ""}
@@ -177,12 +169,12 @@ export default function App() {
         <div className="absolute inset-0 h-100 bg-linear-to-b from-transparent via-transparent to-neutral-950"></div>
       </div>
 
-      <main className="relative min-h-screen z-10 pt-50 px-80">
+      <main className="relative min-h-screen z-10 pt-50 px-4 md:px-20 lg:px-80">
         <h1 className="font-['Nabla'] text-5xl text-start indent-25 font-bold mb-30 w-full">RoleTela</h1>
-        <nav className="mb-30 h-50 w-full flex justify-between gap-10" >
+        <nav className="mb-15 w-full flex flex-col md:flex-row justify-between gap-10" >
           <div className="bg-neutral-900 p-10 rounded-lg basis-1/3 flex flex-col gap-5">
             {(sorteado || assistindo) && (
-              <div className="bg-neutral-700 text-center h-20 p-2 text-xl text-yellow-500 rounded-lg flex flex-col">
+              <div className="bg-neutral-700 text-center h-20 text-xl text-yellow-500 rounded-lg flex flex-col">
                 <span>
                   {sorteado ? sorteado.title : assistindo.title}
                 </span>
@@ -197,18 +189,19 @@ export default function App() {
               title="Sortear"
             >
               <FontAwesomeIcon icon={faDice} />
+              <p>Sortear</p>
             </button>
           </div>
-          <div className="w-150 max-w-200 bg-neutral-900 p-5 rounded-lg flex flex-wrap justify-center">
+          <div className="max-w-200 bg-neutral-900 p-5 rounded-lg flex flex-wrap justify-center">
             <div className="flex items-start gap-5" >
               <input
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Pesquisar novo título"
+                placeholder="Pesquisar título"
                 className="border h-8 px-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 ouline-none focus:ring-2"
               />
-              <button onClick={adicionar} className="bg-yellow-600 font-semibold h-8 px-10 py-1 rounded-lg hover:cursor-pointer transition-colours">Adicionar</button>
+              <button onClick={adicionar} className="bg-yellow-600 font-semibold h-8 px-2 py-1 rounded-lg hover:cursor-pointer transition-colours">Adicionar</button>
             </div>
             {sugestoes.length > 0 && (
               <ul className="h-35 w-full pt-2 pr-1 overflow-y-auto grid grid-cols-3 gap-1" >
@@ -236,7 +229,7 @@ export default function App() {
             )}
           </div>
         </nav>
-        <ul className="w-full flex flex-row gap-5 justify-center" >
+        <ul className="w-full flex flex-row flex-wrap gap-3 justify-center" >
           <BotaoPlataforma
             nome="Netflix"
             onClick={() => filtrar("Netflix")}
@@ -280,13 +273,12 @@ export default function App() {
             ativo={filtrosAtivos.includes("Amazon")}
           />
         </ul>
-        <div className="w-full pt-20 flex justify-around" >
-          <ul className="pt-10 grid grid-cols-3 gap-10" >
+        <div className="w-full pt-20 flex flex-col lg:flex-row justify-around gap-10" >
+          <ul className="pt-10 grid grid-cols-2 md:grid-cols-3 gap-10" >
             {titulos.length > 0 ? (
               titulos.map((titulo, index) => {
-                console.log("sorteado.id_api:", sorteado?.id_api, "titulo.id_api:", titulo.id_api);
                 return (
-              <li key={index} className="titulo-sorteavel p-1 w-60 relative group flex flex-col justify-center items-center" >
+              <li key={index} className="titulo-sorteavel p-1 w-40 md:w-50 relative group flex flex-col justify-center items-center" >
                 {titulo.title}
                 <div className="absolute top-75 w-full flex justify-between px-8 opacity-0 group-hover:opacity-100 transition-opacity z-10" >
                   <button
@@ -332,7 +324,7 @@ export default function App() {
             {assistidos.length > 0 ? (
               <ul>
                 {assistidos.map((titulo, index) => (
-                  <li key={index} className="p-1 w-60 relative group flex flex-col justify-center items-center">
+                  <li key={index} className="p-1 w-40 md:w-50 relative group flex flex-col justify-center items-center">
                     <div className="absolute top-68 w-full flex justify-between px-8 opacity-0 group-hover:opacity-100 transition-opacity z-10" >
                       <button
                         onClick={() => confirmarNaoAssistido(titulo)}
@@ -349,8 +341,10 @@ export default function App() {
                         ✗
                       </button>
                     </div>
-                    <img src={titulo.img} alt={titulo.title} className="w-50"/>
-                    <p>{titulo.title}</p>
+                    <div>
+                      <img src={titulo.img} alt={titulo.title} className="w-50"/>
+                      <p>{titulo.title}</p>
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -358,6 +352,10 @@ export default function App() {
               <p>Nenhum título assistido ainda!</p>
             )}
           </aside>
+        </div>
+        <div className="bg-neutral-900 w-50 pr-20 flex flex-row gap-2 items-center justify-self-end" >
+          <p>{titulos.length} títulos sorteáveis</p>
+          <p>{assistidos.length} títulos assistidos</p>
         </div>
         <footer className="w-full text-center text-sm py-6 mt-auto" >
           Feito por <a href="#">Gabriela Plinski</a> & <a href="#">Rafael Lunkes</a>
