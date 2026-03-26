@@ -160,7 +160,7 @@ export default function App() {
   }
 
   return (
-    <div className="bg-neutral-950 text-white flex flex-col">
+    <div className="bg-neutral-950 text-white">
       <div className="absolute inset-0 z-0">
         <img 
           src={assistindo?.img || ""}
@@ -169,7 +169,7 @@ export default function App() {
         <div className="absolute inset-0 h-100 bg-linear-to-b from-transparent via-transparent to-neutral-950"></div>
       </div>
 
-      <main className="relative min-h-screen z-10 pt-50 px-4 md:px-20 lg:px-80">
+      <main className="relative min-h-screen z-10 pt-50 px-4 md:px-20 lg:px-50 flex flex-col items-center">
         <h1 className="font-['Nabla'] text-5xl text-start indent-25 font-bold mb-30 w-full">RoleTela</h1>
         <nav className="mb-15 w-full flex flex-col md:flex-row justify-between gap-10" >
           <div className="bg-neutral-900 p-10 rounded-lg basis-1/3 flex flex-col gap-5">
@@ -273,7 +273,7 @@ export default function App() {
             ativo={filtrosAtivos.includes("Amazon")}
           />
         </ul>
-        <div className="w-full pt-20 flex flex-col lg:flex-row justify-around gap-10" >
+        <div className="w-full pt-20 flex flex-col lg:flex-row justify-around items-start gap-10" >
           <ul className="pt-10 grid grid-cols-2 md:grid-cols-3 gap-10" >
             {titulos.length > 0 ? (
               titulos.map((titulo, index) => {
