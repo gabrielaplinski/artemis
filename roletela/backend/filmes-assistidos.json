@@ -5,12 +5,38 @@
             "compra": null
         },
         "genres": [
+            "Drama",
+            "Crime",
+            "Thriller"
+        ],
+        "id": 1,
+        "id_api": 889737,
+        "img": "https://image.tmdb.org/t/p/w500/9RmVr8dPWicFyPZ5JCQK3NcBNB5.jpg",
+        "media": "movie",
+        "origin_country": [
+            "US"
+        ],
+        "overview": "Arthur Fleck está institucionalizado em Arkham à espera do julgamento por seus crimes como Coringa. Enquanto luta com sua dupla identidade, Arthur não apenas se depara com o amor verdadeiro, como encontra a música que sempre esteve dentro dele.",
+        "plataforma": [
+            "Netflix"
+        ],
+        "release_date": "01/10/2024",
+        "status": true,
+        "title": "Coringa: Delírio a Dois",
+        "vote_average": 5.401
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": null,
+            "compra": null
+        },
+        "genres": [
             "Crime",
             "Drama",
             "Sci-Fi & Fantasy",
             "Mistério"
         ],
-        "id": 1,
+        "id": 2,
         "id_api": 70523,
         "img": "https://image.tmdb.org/t/p/w500/7yQyDCqSazrYTnmxdQLAZ8YDH87.jpg",
         "media": "tv",
@@ -36,7 +62,7 @@
             "Mistério",
             "Action & Adventure"
         ],
-        "id": 2,
+        "id": 3,
         "id_api": 66732,
         "img": "https://image.tmdb.org/t/p/w500/twfKp60THrcOIep9sjHODOOfO8d.jpg",
         "media": "tv",
@@ -61,7 +87,7 @@
             "Drama",
             "Crime"
         ],
-        "id": 3,
+        "id": 4,
         "id_api": 249042,
         "img": "https://image.tmdb.org/t/p/w500/3v8MSpNNk3hhadeU9XocQrQXbuk.jpg",
         "media": "tv",
@@ -87,7 +113,7 @@
             "Drama",
             "História"
         ],
-        "id": 4,
+        "id": 5,
         "id_api": 1000837,
         "img": "https://image.tmdb.org/t/p/w500/yY0HDAGfu79cpOLQBgR3kgGZ7HS.jpg",
         "media": "movie",
@@ -112,7 +138,7 @@
         "genres": [
             "Drama"
         ],
-        "id": 5,
+        "id": 6,
         "id_api": 50014,
         "img": "https://image.tmdb.org/t/p/w500/7iWfEm9VOeX8AAnC7F1ApxRDTfw.jpg",
         "media": "movie",
@@ -138,7 +164,7 @@
             "Thriller",
             "Drama"
         ],
-        "id": 6,
+        "id": 7,
         "id_api": 529962,
         "img": "https://image.tmdb.org/t/p/w500/tPDe68PDsgIGMs6wdJLtcwVVxA7.jpg",
         "media": "movie",
@@ -165,7 +191,7 @@
             "Action & Adventure",
             "Sci-Fi & Fantasy"
         ],
-        "id": 7,
+        "id": 8,
         "id_api": 72636,
         "img": "https://image.tmdb.org/t/p/w500/4Bh9qzB1Kau4RDaVQXVFdoJ0HcE.jpg",
         "media": "tv",
