@@ -4,24 +4,26 @@
         "compra": []
     },
     "genres": [
-        "Animação",
+        "Action & Adventure",
         "Comédia",
-        "Drama"
+        "Animação"
     ],
-    "id": 23,
-    "id_api": 65676,
-    "img": "https://image.tmdb.org/t/p/w500/uLCcMQT9gBf81wI1sbHx2ICBiYH.jpg",
+    "id": 22,
+    "id_api": 37854,
+    "img": "https://image.tmdb.org/t/p/w500/9ltisibeD4gzqjM1AzmQwCdyirQ.jpg",
     "media": "tv",
     "origin_country": [
         "JP"
     ],
-    "overview": "O que vai acontecer quando Hachiman Hikigaya, um estudante antissocial que não não a menor tem vontade de fazer amigos e acha que todas as histórias fantásticas de colegial que os outros contam são pura invenção, é coagido por um docente bem-intencionado a participar do Clube de Serviço Voluntário, gerido por Yukino Yukinoshita, uma garota inteligente, atraente e que acha que o colégio inteiro é inferior a ela?",
+    "overview": "Houve um homem que conquistou tudo aquilo que o mundo tinha a oferecer, o lendário Rei dos Piratas, Gold Roger. Capturado e condenado à execução pelo Governo Mundial, suas últimas palavras lançaram legiões aos mares. \"Meu tesouro? Se quiserem, podem pegá-lo. Procurem-no! Ele contém tudo que este mundo pode oferecer!\". Foi a revelação do maior tesouro, o One Piece, cobiçado por homens de todo o mundo, sonhando com fama e riqueza imensuráveis... Assim começou a Grande Era dos Piratas!",
     "plataforma": [
+        "Netflix",
+        "HBO",
         "Crunchyroll",
         "Amazon"
     ],
-    "release_date": "05/04/2013",
+    "release_date": "20/10/1999",
     "status": false,
-    "title": "My Teen Romantic Comedy SNAFU",
-    "vote_average": 8.3
+    "title": "One Piece",
+    "vote_average": 8.723
 }
