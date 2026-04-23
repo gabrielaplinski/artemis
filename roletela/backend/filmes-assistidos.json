@@ -5,11 +5,38 @@
             "compra": null
         },
         "genres": [
+            "Animação",
+            "Sci-Fi & Fantasy",
+            "Mistério",
+            "Crime"
+        ],
+        "id": 1,
+        "id_api": 91997,
+        "img": "https://image.tmdb.org/t/p/w500/tDFSYOVUmDVkEBjfxZs59r2qSo4.jpg",
+        "media": "tv",
+        "origin_country": [
+            "JP"
+        ],
+        "overview": "Quando os sete robôs mais avançados do mundo e seus aliados humanos são assassinados um a um, o Inspetor Gesicht logo descobre que também está em perigo.",
+        "plataforma": [
+            "Netflix"
+        ],
+        "release_date": "26/10/2023",
+        "status": true,
+        "title": "PLUTO",
+        "vote_average": 7.844
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": null,
+            "compra": null
+        },
+        "genres": [
             "Drama",
             "Crime",
             "Thriller"
         ],
-        "id": 1,
+        "id": 2,
         "id_api": 889737,
         "img": "https://image.tmdb.org/t/p/w500/9RmVr8dPWicFyPZ5JCQK3NcBNB5.jpg",
         "media": "movie",
@@ -36,7 +63,7 @@
             "Sci-Fi & Fantasy",
             "Mistério"
         ],
-        "id": 2,
+        "id": 3,
         "id_api": 70523,
         "img": "https://image.tmdb.org/t/p/w500/7yQyDCqSazrYTnmxdQLAZ8YDH87.jpg",
         "media": "tv",
@@ -62,7 +89,7 @@
             "Mistério",
             "Action & Adventure"
         ],
-        "id": 3,
+        "id": 4,
         "id_api": 66732,
         "img": "https://image.tmdb.org/t/p/w500/twfKp60THrcOIep9sjHODOOfO8d.jpg",
         "media": "tv",
@@ -87,7 +114,7 @@
             "Drama",
             "Crime"
         ],
-        "id": 4,
+        "id": 5,
         "id_api": 249042,
         "img": "https://image.tmdb.org/t/p/w500/3v8MSpNNk3hhadeU9XocQrQXbuk.jpg",
         "media": "tv",
@@ -113,7 +140,7 @@
             "Drama",
             "História"
         ],
-        "id": 5,
+        "id": 6,
         "id_api": 1000837,
         "img": "https://image.tmdb.org/t/p/w500/yY0HDAGfu79cpOLQBgR3kgGZ7HS.jpg",
         "media": "movie",
@@ -138,7 +165,7 @@
         "genres": [
             "Drama"
         ],
-        "id": 6,
+        "id": 7,
         "id_api": 50014,
         "img": "https://image.tmdb.org/t/p/w500/7iWfEm9VOeX8AAnC7F1ApxRDTfw.jpg",
         "media": "movie",
@@ -164,7 +191,7 @@
             "Thriller",
             "Drama"
         ],
-        "id": 7,
+        "id": 8,
         "id_api": 529962,
         "img": "https://image.tmdb.org/t/p/w500/tPDe68PDsgIGMs6wdJLtcwVVxA7.jpg",
         "media": "movie",
@@ -191,7 +218,7 @@
             "Action & Adventure",
             "Sci-Fi & Fantasy"
         ],
-        "id": 8,
+        "id": 9,
         "id_api": 72636,
         "img": "https://image.tmdb.org/t/p/w500/4Bh9qzB1Kau4RDaVQXVFdoJ0HcE.jpg",
         "media": "tv",

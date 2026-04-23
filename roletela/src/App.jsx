@@ -171,7 +171,7 @@ export default function App() {
 
       <main className="relative min-h-screen z-10 pt-50 px-4 md:px-20 lg:px-50 flex flex-col items-center">
         <h1 className="font-['Nabla'] text-5xl text-start indent-25 font-bold mb-30 w-full">RoleTela</h1>
-        <nav className="mb-15 w-full flex flex-col md:flex-row justify-between gap-10" >
+        <nav className="mb-15 w-full flex flex-col md:flex-row justify-center gap-30" >
           <div className="bg-neutral-900 p-10 rounded-lg basis-1/3 flex flex-col gap-5">
             {(sorteado || assistindo) && (
               <div className="bg-neutral-700 text-center h-20 text-xl text-yellow-500 rounded-lg flex flex-col">

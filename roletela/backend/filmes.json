@@ -1909,5 +1909,86 @@
         "status": false,
         "title": "Contratempos",
         "vote_average": 7.034
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": null,
+            "compra": null
+        },
+        "genres": [
+            "Animação",
+            "Drama"
+        ],
+        "id": 71,
+        "id_api": 204635,
+        "img": "https://image.tmdb.org/t/p/w500/zI96XPvGOMddXAtjKPZSdNHuXTM.jpg",
+        "media": "tv",
+        "origin_country": [
+            "JP"
+        ],
+        "overview": "Depois de aprender ensinamentos heréticos sobre a Terra e o Sol, uma criança-prodígio procura as pesquisas secretas de seu mestre e tenta escapar da Inquisição.",
+        "plataforma": [
+            "Netflix"
+        ],
+        "release_date": "05/10/2024",
+        "status": false,
+        "title": "Orbe: Sobre os Movimentos da Terra",
+        "vote_average": 7.903
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": null,
+            "compra": null
+        },
+        "genres": [
+            "Animação",
+            "Drama",
+            "Action & Adventure",
+            "Mistério",
+            "Crime"
+        ],
+        "id": 72,
+        "id_api": 80564,
+        "img": "https://image.tmdb.org/t/p/w500/3GiB5Ybbhzt0ePRR2zgld9R56DB.jpg",
+        "media": "tv",
+        "origin_country": [
+            "JP"
+        ],
+        "overview": "A natureza fez Ash Lynx belo; estimulá-lo fez dele um assassino cruel e implacável. Um fugitivo criado como o herdeiro adotivo e brinquedo sexual de \"Papa\" Dino Golzine, Ash, agora na rebelde idade de dezessete anos, abandona o reino oferecido pelo demônio que o criou. Mas o segredo hediondo que deixou o irmão mais velho de Ash louco no Vietnã de repente caiu nas mãos ambiciosas de Papa - e este é o pior momento para Eiji Okamura, um jovem fotógrafo japonês de coração puro, fazer amizade com Ash Lynx...",
+        "plataforma": [
+            "Amazon"
+        ],
+        "release_date": "06/07/2018",
+        "status": false,
+        "title": "Banana Fish",
+        "vote_average": 8.576
+    },
+    {
+        "aluguel/compra": {
+            "aluguel": null,
+            "compra": null
+        },
+        "genres": [
+            "Animação",
+            "Action & Adventure",
+            "Drama",
+            "Sci-Fi & Fantasy"
+        ],
+        "id": 73,
+        "id_api": 116725,
+        "img": "https://image.tmdb.org/t/p/w500/xRakd62ihUP19NBgWyJzjO26NxE.jpg",
+        "media": "tv",
+        "origin_country": [
+            "JP"
+        ],
+        "overview": "Nierland - um complexo parque temático de IA, onde sonhos, esperanças e ciência se misturam. Criado como o primeiro humanoide autônomo com IA, Vivy atua como um elenco de IA para o estabelecimento. Para cumprir sua missão de fazer todos felizes por meio de canções, ela continua subindo no palco e se apresentando de todo o coração. No entanto, o parque temático ainda carecia de popularidade. Um dia, uma IA chamado Matsumoto aparece diante de Vivy e explica que ele vem de 100 anos no futuro, com a missão de corrigir a história com Vivy e evitar a guerra entre a IA e a humanidade que acontecerá em 100 anos. Que tipo de futuro o encontro de duas IAs com missões diferentes redesenhará? Esta é a história da IA destruindo a IA. A jornada de 100 anos da diva Vivy começa.",
+        "plataforma": [
+            "Crunchyroll",
+            "Amazon"
+        ],
+        "release_date": "03/04/2021",
+        "status": false,
+        "title": "Vivy: Fluorite Eye’s Song",
+        "vote_average": 7.944
     }
 ]
