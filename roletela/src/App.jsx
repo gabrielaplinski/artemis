@@ -189,7 +189,6 @@ export default function App() {
               title="Sortear"
             >
               <FontAwesomeIcon icon={faDice} />
-              <p>Sortear</p>
             </button>
           </div>
           <div className="max-w-200 bg-neutral-900 p-5 rounded-lg flex flex-wrap justify-center">
